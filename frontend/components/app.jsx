@@ -11,6 +11,7 @@ import GreetingContainer from './greeting_container';
 import SignInFormContainer from './signin_form_container';
 import SignUpFormContainer from './signup_form_container';
 import SearchContainer from './search_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
@@ -19,11 +20,11 @@ const App = () => (
                 <h1>Kitchen Fable&#174;</h1>
             </Link>
             <GreetingContainer />
-            
-                <Route path="/signin" component={SignInFormContainer} />
-                <Route path="/signup" component={SignUpFormContainer} />
-                {/* <Route path="/" component={SearchContainer} /> */}
-            
+            <Switch>
+                <AuthRoute exact path="/signin" component={SignInFormContainer} />
+                <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+                {/* <Route exact path="/" component={SearchContainer} /> */}
+            </Switch>
         </header>
         
     </div>

@@ -12,6 +12,7 @@ class SignUpForm extends React.Component {
             location: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demo = this.demo.bind(this);
     }
 
     update(field) {
@@ -22,12 +23,18 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
+    }
+
+    demo(e) {
+        e.preventDefault();
+        this.props.processForm({ email: 'guest@welcome.com', password: 'demologin' });
     }
 
     renderErrors() {
         return (
-            <ul class="signup-errors">
+            <ul className="signup-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -41,23 +48,25 @@ class SignUpForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    Welcome to KitchenFable!
+                    <h3>Welcome to KitchenFable!</h3>
                     <br />
                     {this.renderErrors()}
                     <div className="signup-form">
-                        <input type="text" value={this.state.fname} onChange={this.update('fname')} />
+                        <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder='First Name *'/>
                         <br />
-                        <input type="text" value={this.state.lname} onChange={this.update('lname')} />
+                        <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder='Last Name *'/>
                         <br />
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Enter email *'/>
                         <br />
-                        <input type="password" value={this.state.password} onChange={this.update('password')} />
+                        <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Enter password *'/>
                         <br />
-                        <input type="text" value={this.state.location} onChange={this.update('location')} />
+                        <input type="text" value={this.state.location} onChange={this.update('location')} placeholder='Primary Dining Location *' />
                         <br />
                         <input type="submit" value={this.props.formType} />
                         <br />
                         <h3>Don't want to complete the form?</h3>
+                        <button onClick={this.demo}>Demo Login</button>
+                        <br />
                     </div>
                 </form>
             </div>
