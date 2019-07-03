@@ -16,9 +16,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header>
-            <Link to="/" className="home-link">
-                <h1>Kitchen Fable&#174;</h1>
-            </Link>
             <GreetingContainer />
             <Switch>
                 <AuthRoute exact path="/signin" component={SignInFormContainer} />

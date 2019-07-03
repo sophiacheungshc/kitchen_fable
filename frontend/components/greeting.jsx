@@ -13,16 +13,32 @@ class Greeting extends React.Component {
     render(){
         const links = () => (
             <nav className="signin-signup">
-                <Link to="/signup">Sign up</Link> <Link to="/signin">Sign in</Link> 
+                <Link to="/signup"><button id="sign-up">Sign up</button></Link>
+                <Link to="/signin"><button id="sign-in">Sign in</button></Link>
             </nav>
         );
         const greet = () => (
-            <hgroup className="header-group">
-                <h2 className="header-name">Hi, {this.props.currentUser.fname}</h2>
-                <button className="header-button" onClick={this.props.logout}>Log Out</button>
-            </hgroup>
+            <span className="nav-right">
+                <h2 className="greeting">Hi, {this.props.currentUser.fname}</h2>
+                <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+            </span>
         );       
-        return this.props.currentUser ? greet() : links();
+        return (
+            <div className="navbar">
+                <span className="nav-left">
+                    <Link to="/" className="home-link">
+                        <span id="logo"></span>
+                    </Link>
+                    
+                    <span className="nav-location-dropdown"> 
+                        <span id="pin"></span>
+                        <span id="arrow"></span>
+                    </span>
+                    
+                </span>
+                {this.props.currentUser ? greet() : links()}
+            </div>
+        );
     }
 }
 

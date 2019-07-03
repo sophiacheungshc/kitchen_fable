@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import merge from 'lodash/merge';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ class SignUpForm extends React.Component {
         this.state = {
             email: '',
             password: '',
+            password2: '',
             fname: '',
             lname: '',
             location: ''
@@ -23,13 +25,18 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        if (this.state.password === this.state.password2){
+            const newState = merge({}, this.state);
+            delete newState[password2];
+            this.props.processForm(newState);
+        } else {
+            this.props.errors.push(['Passwords do not match']);
+        } 
     }
 
     demo(e) {
         e.preventDefault();
-        this.props.processForm({ email: 'guest@welcome.com', password: 'demologin' });
+        this.props.login({ email: 'guest@welcome.com', password: 'demologin' });
     }
 
     renderErrors() {
@@ -60,13 +67,14 @@ class SignUpForm extends React.Component {
                         <br />
                         <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Enter password *'/>
                         <br />
+                        <input type="password" value={this.state.password2} onChange={this.update('password2')} placeholder='Re-enter password *'/>
+                        <br />
                         <input type="text" value={this.state.location} onChange={this.update('location')} placeholder='Primary Dining Location *' />
                         <br />
                         <input type="submit" value={this.props.formType} />
                         <br />
                         <h3>Don't want to complete the form?</h3>
                         <button onClick={this.demo}>Demo Login</button>
-                        <br />
                     </div>
                 </form>
             </div>
