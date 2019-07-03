@@ -25,13 +25,7 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.state.password === this.state.password2){
-            const newState = merge({}, this.state);
-            delete newState[password2];
-            this.props.processForm(newState);
-        } else {
-            this.props.errors.push(['Passwords do not match']);
-        } 
+        this.props.processForm(this.state);
     }
 
     demo(e) {

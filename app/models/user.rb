@@ -18,8 +18,10 @@ class User < ApplicationRecord
   validates :password_digest, :fname, :lname, :location, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
+  validate :password_match?
 
-  attr_reader :password
+  attr_reader :password, :password2
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
@@ -32,8 +34,25 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def password2=(password2)
+    @password2 = password2
+  end
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def password_match?
+    if @password2
+      if @password2.length > 0
+        if @password != @password2
+          errors[:base] << 'Passwords do not match' 
+        end
+      else 
+        errors[:base] << 'Please re-enter your new password' 
+      end
+    end
+
   end
 
   def reset_session_token!
