@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, CHANGE_MODAL } from '../actions/modal_actions';
 
 const ModalReducer = (state = null, action) => {
     switch (action.type) {
@@ -6,6 +6,8 @@ const ModalReducer = (state = null, action) => {
             return action.modal;
         case CLOSE_MODAL:
             return null;
+        case CHANGE_MODAL:
+            return action.modal;
         default:
             return state;
     }

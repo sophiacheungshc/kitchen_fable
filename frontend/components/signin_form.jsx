@@ -61,7 +61,6 @@ class SignInForm extends React.Component {
                         <h3>Don't want to complete the form?</h3>
                         <button onClick={this.demo}>Demo Login</button>
                         <br />
-                        <label>New to KitchenFable? {this.props.navLink}</label>
                     </div>
                 </form>
             </div>

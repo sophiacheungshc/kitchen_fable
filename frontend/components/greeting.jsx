@@ -47,7 +47,7 @@ class Greeting extends React.Component {
                     </span>
                     {this.state.userMenu && (
                         <div className="container">
-                            <ul className="dropdown">
+                            <ul class="dropdown">
                                 <li>My Profile</li>
                                 <li>My Dining History</li>
                                 <li>My Saved Restaurants</li>
