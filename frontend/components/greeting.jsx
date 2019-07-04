@@ -2,27 +2,63 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
+
     constructor(props){
         super(props);
+
+        this.state = {
+            userMenu: false,
+        }
+
+        this.showDropdownMenu = this.showDropdownMenu.bind(this);
+        this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+    }
+    
+    showDropdownMenu(e) {
+        e.preventDefault();
+        this.setState({ userMenu: true }, () => {
+            document.addEventListener('click', this.hideDropdownMenu);
+        });
     }
 
-    handleToggle(){
-        document.getElementById('dropdown-menu').classList.toggle('show');
+    hideDropdownMenu() {
+        this.setState({ userMenu: false }, () => {
+            document.removeEventListener('click', this.hideDropdownMenu);
+        });
+    }
+
+    handleUserToggle(){
+        this.setState({ userMenu: !this.state.userMenu});
     }
 
     render(){
         const links = () => (
-            <nav className="signin-signup">
-                <Link to="/signup"><button id="sign-up">Sign up</button></Link>
-                <Link to="/signin"><button id="sign-in">Sign in</button></Link>
-            </nav>
+            <span className="nav-right">
+                <button id="sign-up" onClick={() => this.props.openModal('signup')}>Sign up</button>
+                <button id="sign-in" onClick={() => this.props.openModal('signin')}>Sign in</button>
+            </span>
         );
         const greet = () => (
             <span className="nav-right">
-                <h2 className="greeting">Hi, {this.props.currentUser.fname}</h2>
-                <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+                <div className="container">
+                    <span className="user-toggle" onClick={this.showDropdownMenu}>
+                        <h2 id="greeting">Hi, {this.props.currentUser.fname}</h2>
+                        <span className="arrow-down"></span>
+                    </span>
+                    {this.state.userMenu && (
+                        <div className="container">
+                            <ul className="dropdown">
+                                <li>My Profile</li>
+                                <li>My Dining History</li>
+                                <li>My Saved Restaurants</li>
+                                <li onClick={this.props.logout}>Sign Out</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
             </span>
-        );       
+        );    
+
         return (
             <div className="navbar">
                 <span className="nav-left">
@@ -32,7 +68,7 @@ class Greeting extends React.Component {
                     
                     <span className="nav-location-dropdown"> 
                         <span id="pin"></span>
-                        <span id="arrow"></span>
+                        <span className="arrow-down"></span>
                     </span>
                     
                 </span>

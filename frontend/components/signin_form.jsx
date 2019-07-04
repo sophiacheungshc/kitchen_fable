@@ -21,12 +21,12 @@ class SignInForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     demo(e){
         e.preventDefault();
-        this.props.processForm({email: 'guest@welcome.com', password: 'demologin'});
+        this.props.processForm({ email: 'guest@welcome.com', password: 'demologin' }).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -43,6 +43,8 @@ class SignInForm extends React.Component {
 
     render() {
         return (
+            <>
+            <div className="modal-close" onClick={this.props.closeModal}>&times;</div>
             <div className="sigin-form-container">
                 <form onSubmit={this.handleSubmit} className="signin-form-box">
                     <h3>Please sign in</h3>
@@ -63,6 +65,7 @@ class SignInForm extends React.Component {
                     </div>
                 </form>
             </div>
+            </>
         );
     }
 }

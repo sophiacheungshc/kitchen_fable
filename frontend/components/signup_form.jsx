@@ -13,6 +13,7 @@ class SignUpForm extends React.Component {
             lname: '',
             location: ''
         };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
     }
@@ -25,12 +26,12 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     demo(e) {
         e.preventDefault();
-        this.props.login({ email: 'guest@welcome.com', password: 'demologin' });
+        this.props.login({ email: 'guest@welcome.com', password: 'demologin' }).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -47,6 +48,8 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
+            <>
+            <div className="modal-close" onClick={this.props.closeModal}>&times;</div>
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <h3>Welcome to KitchenFable!</h3>
@@ -70,8 +73,10 @@ class SignUpForm extends React.Component {
                         <h3>Don't want to complete the form?</h3>
                         <button onClick={this.demo}>Demo Login</button>
                     </div>
+
                 </form>
             </div>
+            </>
         );
     }
 }
