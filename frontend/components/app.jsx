@@ -17,6 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div className="main-body">
         <Modal />
+        {/* <Route exact path="/" component={SearchContainer} /> */}
         <header>
             <GreetingContainer />
             <Switch>
@@ -25,7 +26,16 @@ const App = () => (
                 {/* <Route exact path="/" component={SearchContainer} /> */}
             </Switch>
         </header>
-        
+        <div className="main-div">
+            <div className='carousel'>
+                <div className='slide1'></div>
+                <div className='slide2'></div>
+                <div className='slide3'></div>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
     </div>
 );
 
