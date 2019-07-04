@@ -31,7 +31,7 @@
     border-right: 0.5px solid lightgray;
  }
  span#logo {
-    background: url('logo.png') 100% 100% no-repeat;
+    background: image-url('logo.png') 100% 100% no-repeat;
     display: block;
     width: 15.75rem;
     height: 3.4rem;
@@ -40,7 +40,7 @@
 
 
  span#pin {
-    background: url('pin.png') 100% 100% no-repeat;
+    background: image-url('pin.png') 100% 100% no-repeat;
     width: 1.75rem;
     height: 2.0rem;
     display: block;
@@ -49,7 +49,7 @@
  }
 
  span#arrow {
-    background: url('arrow.png') 100% 100% no-repeat;
+    background: image-url('arrow.png') 100% 100% no-repeat;
     width: 1.75rem;
     height: 2.1rem;
     display: block;
