@@ -9,7 +9,7 @@ form h3 {
     padding: 2.5rem 0 2rem 0;
 }
 
-.signup-form-box > * {
+.session-form-box > * {
    display: flex;
    flex-direction: column;
    height: 2rem;
@@ -17,7 +17,7 @@ form h3 {
    padding-left: 1rem;
 }
 
-.signup-form input {
+.session-form input {
     -webkit-appearance: none!important;
     outline: 0;
     font-weight: 600;
@@ -44,7 +44,7 @@ form h3 {
     
 }
 
-.signup-form .submit-btn {
+.session-form .submit-btn {
     background-color: #da3743;
     border-color: #b8222d;
     color: white;
@@ -61,7 +61,7 @@ form h3 {
     transition: background-color 300ms ease-out;
 }
 
-.signup-form .demo-btn {
+.session-form .demo-btn {
     color: gray;
     cursor: pointer;
     font-size: 1.3rem;

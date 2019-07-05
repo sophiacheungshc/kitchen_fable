@@ -18,6 +18,10 @@ class SignUpForm extends React.Component {
         this.demo = this.demo.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors;
+    }
+    
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -51,11 +55,11 @@ class SignUpForm extends React.Component {
             <>
             <div className="modal-close" onClick={this.props.closeModal}>&times;</div>
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit} className="signup-form-box">
+                <form onSubmit={this.handleSubmit} className="session-form-box">
                     <h3>Welcome to KitchenFable!</h3>
                     <hr className="session-hr"/>
                     {this.renderErrors()}
-                    <div className="signup-form">
+                    <div className="session-form">
                         <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder='First Name *'/>
         
                         <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder='Last Name *'/>

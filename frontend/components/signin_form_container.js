@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { login } from '../actions/session_actions';
 import SignInForm from './signin_form';
 import { openModal, closeModal } from '../actions/modal_actions';
+import { clearErrors } from '../actions/errors_actions';
 
 const mSP = (state) => {
     return {
@@ -17,7 +18,8 @@ const mDP = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
         closeModal: () => dispatch(closeModal()),
-        openModal: () => dispatch(openModal())
+        openModal: () => dispatch(openModal()),
+        clearErrors: () =>dispatch(clearErrors())
     };
 };
 

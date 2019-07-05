@@ -13,6 +13,9 @@ class SignInForm extends React.Component {
 
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors;
+    }
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -50,7 +53,7 @@ class SignInForm extends React.Component {
 
         await sleep(250);
 
-        document.getElementById('form-submit-btn').click();
+        document.getElementById('submit-btn').click();
         document.getElementById('user-password').blur();
     }
 
@@ -71,21 +74,20 @@ class SignInForm extends React.Component {
             <>
             <div className="modal-close" onClick={this.props.closeModal}>&times;</div>
             <div className="sigin-form-container">
-                <form onSubmit={this.handleSubmit} className="signin-form-box">
+                <form onSubmit={this.handleSubmit} className="session-form-box">
                     <h3>Please sign in</h3>
-                    <br />
+                    <hr className="session-hr"/>
                     {this.renderErrors()}
-                    <br />
-                    <div className="signin-form">
+                    <div className="session-form">
                         <input id="user-email" type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email'/>
-                        <br />
+
                         <input id="user-password" type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
-                        <br />
-                            <input id="form-submit-btn" type="submit" value={this.props.formType} />
-                        <br />
-                        <h3>Don't want to complete the form?</h3>
-                        <button onClick={this.demo}>Demo Login</button>
-                        <br />
+                        
+                            <input id="submit-btn" className="submit-btn" type="submit" value={this.props.formType} />
+                        
+                        <hr className="session-hr" />
+                        <h5>Don't want to complete the form?</h5>
+                            <button className="demo-btn" onClick={this.demo}>Demo Login</button>
                     </div>
                 </form>
             </div>
