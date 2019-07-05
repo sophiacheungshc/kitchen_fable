@@ -24,9 +24,34 @@ class SignInForm extends React.Component {
         this.props.processForm(this.state).then(this.props.closeModal);
     }
 
-    demo(e){
+    async demo(e) {
         e.preventDefault();
-        this.props.processForm({ email: 'guest@welcome.com', password: 'demologin' }).then(this.props.closeModal);
+
+        const demoUser = {
+            email: 'guest@welcome.com',
+            password: 'demologin'
+        };
+
+        const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+        document.getElementById('user-email').focus();
+        for (let i = 1; i <= demoUser.email.length; i++) {
+            this.setState({ email: demoUser.email.substr(0, i) });
+            await sleep(50);
+        }
+
+        await sleep(250);
+
+        document.getElementById('user-password').focus();
+        for (let i = 1; i <= demoUser.password.length; i++) {
+            this.setState({ password: demoUser.password.substr(0, i) });
+            await sleep(50);
+        }
+
+        await sleep(250);
+
+        document.getElementById('form-submit-btn').click();
+        document.getElementById('user-password').blur();
     }
 
     renderErrors() {
@@ -52,11 +77,11 @@ class SignInForm extends React.Component {
                     {this.renderErrors()}
                     <br />
                     <div className="signin-form">
-                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email'/>
+                        <input id="user-email" type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email'/>
                         <br />
-                        <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
+                        <input id="user-password" type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
                         <br />
-                        <input type="submit" value={this.props.formType} />
+                            <input id="form-submit-btn" type="submit" value={this.props.formType} />
                         <br />
                         <h3>Don't want to complete the form?</h3>
                         <button onClick={this.demo}>Demo Login</button>

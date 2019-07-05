@@ -1,0 +1,78 @@
+form h3 {
+    font-weight: lighter;
+    text-rendering: optimizeLegibility;
+    color: #333;
+    margin: 0 0 .2rem;
+    font-size: 1.8rem;
+    line-height: 1.165;
+    position: relative;
+    padding: 2.5rem 0 2rem 0;
+}
+
+.signup-form-box > * {
+   display: flex;
+   flex-direction: column;
+   height: 2rem;
+   width: 90%;
+   padding-left: 1rem;
+}
+
+.signup-form input {
+    -webkit-appearance: none!important;
+    outline: 0;
+    font-weight: 600;
+    display: block;
+    background: #fff;
+    font-size: .875rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 4px;
+    padding: 1rem 0rem 1.5rem 1rem;
+}
+
+.session-hr {
+    border: 1px solid rgba(0,0,0,.12);
+    border-width: 1px 0 0;
+    clear: both;
+    margin: .5rem 1.5rem 5px;
+    width: 85%;
+    height: 0px;
+    
+}
+
+.signup-errors {
+    
+}
+
+.signup-form .submit-btn {
+    background-color: #da3743;
+    border-color: #b8222d;
+    color: white;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1.165;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    height: 3.5rem;
+}
+
+.submit-btn:hover {
+    background-color: #b8222d;;
+    transition: background-color 300ms ease-out;
+}
+
+.signup-form .demo-btn {
+    color: gray;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1.165;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    height: 3.5rem;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+}
+
+.demo-btn:hover {
+    border-color: #da3743;
+}

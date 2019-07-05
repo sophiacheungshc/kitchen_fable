@@ -31,8 +31,8 @@ const App = () => (
         <footer>
                 <h5>Join us on</h5>
                 <div className="external-links">
-                <a href="https://github.com/sophiacheungshc/kitchen_fable"><span id="github"></span></a>
-                <a href="https://github.com/sophiacheungshc/kitchen_fable"><span id="linkedin"></span></a>
+                <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="github"></span></a>
+                <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="linkedin"></span></a>
                 </div>
         </footer>
     </div>

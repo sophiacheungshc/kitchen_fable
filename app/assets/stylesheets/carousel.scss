@@ -1,16 +1,4 @@
-.caro-head {
-  width: inherit;
-  max-height: 416px;
-  margin: 20px auto;
-  position: absolute;
-  opacity: 1;
-  z-index: 1;
-  color: white;
-  font-size: 3rem;
-  font-weight: bolder;
-  padding: 10vh 0 0 20vh;
-  text-shadow: 1px 0px white;
-}
+
 
 .carousel {
   height: 50%; 
@@ -19,7 +7,16 @@
   margin: 20px auto;
   position: relative;
   border-radius: 10px;
-  opacity: 4;
+  display: flex;
+  text-align: center;
+}
+
+.carousel > h1 {
+  padding: 3rem 7rem;
+  z-index: 3;
+  font-size: 55px;
+  text-shadow: 1px 0 white;
+  color: white;
 }
 .slide1,.slide2,.slide3,.slide4,.slide5 {
   position: absolute;

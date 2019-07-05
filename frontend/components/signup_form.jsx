@@ -53,25 +53,26 @@ class SignUpForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <h3>Welcome to KitchenFable!</h3>
-                    <br />
+                    <hr className="session-hr"/>
                     {this.renderErrors()}
                     <div className="signup-form">
                         <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder='First Name *'/>
-                        <br />
+        
                         <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder='Last Name *'/>
-                        <br />
+                        
                         <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Enter email *'/>
-                        <br />
+                        
                         <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Enter password *'/>
-                        <br />
+                        
                         <input type="password" value={this.state.password2} onChange={this.update('password2')} placeholder='Re-enter password *'/>
-                        <br />
+                        
                         <input type="text" value={this.state.location} onChange={this.update('location')} placeholder='Primary Dining Location *' />
-                        <br />
-                        <input type="submit" value={this.props.formType} />
-                        <br />
-                        <h3>Don't want to complete the form?</h3>
-                        <button onClick={this.demo}>Demo Login</button>
+                        
+                        <input className="submit-btn" type="submit" value={this.props.formType} />
+                    
+                        <hr className="session-hr"/>
+                        <h5>Don't want to complete the form?</h5>
+                        <button className="demo-btn" onClick={this.demo}>Demo Login</button>
                     </div>
 
                 </form>
