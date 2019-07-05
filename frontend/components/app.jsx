@@ -11,7 +11,6 @@ import Modal from './modal';
 import GreetingContainer from './greeting_container';
 import SignInFormContainer from './signin_form_container';
 import SignUpFormContainer from './signup_form_container';
-import SearchContainer from './search_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Carousel from './carousel';
 

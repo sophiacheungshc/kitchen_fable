@@ -1,0 +1,38 @@
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    height: 3rem;
+    width: 80%
+}
+
+.search-container > * {
+    width: 80%;
+    background: white;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.search-info {
+    width: 30rem;
+}
+.search-location-name {
+    width: 16rem;
+}
+
+.search-submit {
+    width: 8rem;
+    background-color: #da3743;
+    border-color: #b8222d;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 45px;
+}
+
+.search-submit:hover {
+    background-color: #b8222d;;
+    transition: background-color 300ms ease-out;
+}

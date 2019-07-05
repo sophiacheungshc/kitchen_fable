@@ -9,14 +9,15 @@
   border-radius: 10px;
   display: flex;
   text-align: center;
+  flex-direction: column;
 }
 
 .carousel > h1 {
-  padding: 3rem 7rem;
   z-index: 3;
-  font-size: 55px;
+  font-size: 3rem;
   text-shadow: 1px 0 white;
   color: white;
+  padding-top: 3rem;
 }
 .slide1,.slide2,.slide3,.slide4,.slide5 {
   position: absolute;
