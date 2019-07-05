@@ -1,0 +1,31 @@
+.modal-background {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.4);
+   z-index: 10;
+}
+
+.modal-child {
+   top: 50%;
+   left: 50%;
+   height: 685px;
+   width: 460px;
+   background: #fff;
+   transform: translate(-50%, -50%);
+   font-size: 100%;
+   font-weight: 400;
+   font-style: normal;
+   line-height: 1;
+   position: relative;
+   box-sizing: border-box
+}
+
+.modal-close {
+   position: absolute;
+   right: 1rem;
+   top: 1rem;
+   cursor: pointer;
+}

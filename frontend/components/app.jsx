@@ -13,28 +13,27 @@ import SignInFormContainer from './signin_form_container';
 import SignUpFormContainer from './signup_form_container';
 import SearchContainer from './search_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Carousel from './carousel';
 
 const App = () => (
     <div className="main-body">
         <Modal />
-        {/* <Route exact path="/" component={SearchContainer} /> */}
         <header>
             <GreetingContainer />
             <Switch>
-                <AuthRoute exact path="/signin" component={SignInFormContainer} />
-                <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-                {/* <Route exact path="/" component={SearchContainer} /> */}
+                {/* <AuthRoute exact path="/signin" component={SignInFormContainer} />
+                <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
             </Switch>
         </header>
         <div className="main-div">
-            <div className='carousel'>
-                <div className='slide1'></div>
-                <div className='slide2'></div>
-                <div className='slide3'></div>
-            </div>
+            <Route exact path="/" component={Carousel} />
         </div>
         <footer>
-
+                <h5>Join us on</h5>
+                <div className="external-links">
+                <a href="https://github.com/sophiacheungshc/kitchen_fable"><span id="github"></span></a>
+                <a href="https://github.com/sophiacheungshc/kitchen_fable"><span id="linkedin"></span></a>
+                </div>
         </footer>
     </div>
 );

@@ -1,0 +1,37 @@
+footer {
+   position: relative;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   display: flex;
+   justify-content: flex-end;
+   margin: 0 auto;
+   height: 100px;
+   width: inherit;
+   background-color: #333333;
+}
+
+.external-links {
+   display: flex;
+   position: relative;
+   height:40px;
+   padding: 5px 10vw 0 0;
+}
+
+span#github {
+   background: image-url('github.png') 100% 100% no-repeat;
+   display: block;
+   height: 40px;
+   width: 40px;
+}
+span#linkedin {
+   background: image-url('linkedin.png') 100% 100% no-repeat;
+   display: block;
+   height: 40px;
+   width: 40px;
+}
+
+footer > h5 {
+   color: white;
+   padding-right: 2vw;
+}
