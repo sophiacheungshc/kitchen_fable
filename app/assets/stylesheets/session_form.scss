@@ -6,7 +6,7 @@ form h3 {
     font-size: 1.8rem;
     line-height: 1.165;
     position: relative;
-    padding: 2.5rem 0 2rem 0;
+    padding: 2.5rem 0 0.5rem 0;
 }
 
 .session-form-box > * {
@@ -14,8 +14,9 @@ form h3 {
    flex-direction: column;
    height: 2rem;
    width: 90%;
-   padding-left: 1rem;
+   padding-left: 2rem;
 }
+
 
 .session-form input {
     -webkit-appearance: none!important;
@@ -37,10 +38,6 @@ form h3 {
     margin: .5rem 1.5rem 5px;
     width: 85%;
     height: 0px;
-    
-}
-
-.signup-errors {
     
 }
 
@@ -75,4 +72,15 @@ form h3 {
 
 .demo-btn:hover {
     border-color: #da3743;
+}
+
+.session-error {
+    color: red;
+    font-size: 14px;
+    opacity: 0.8;
+    height: 16px;
+}
+
+.session-form h5 {
+    height: 5px;
 }

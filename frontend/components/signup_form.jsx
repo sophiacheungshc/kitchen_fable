@@ -19,9 +19,9 @@ class SignUpForm extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.clearErrors;
+        this.props.clearErrors();
     }
-    
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -40,13 +40,13 @@ class SignUpForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="signup-errors">
+            <>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className="session-error">
                         {error}
                     </li>
                 ))}
-            </ul>
+            </>
         );
     }
 

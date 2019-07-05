@@ -4,26 +4,36 @@ import { connect } from 'react-redux';
 import SignInFormContainer from './signin_form_container';
 import SignUpFormContainer from './signup_form_container';
 
-function Modal({ modal, closeModal }) {
-    if (!modal) {
-        return null;
+class Modal extends React.Component {
+
+    constructor(props){
+        super(props);
     }
-    let component;
-    switch (modal) {
-        case 'signin':
-            component = <SignInFormContainer />;
-            break;
-        case 'signup':
-            component = <SignUpFormContainer />;
-            break;
-        default:
+
+    render(){
+        let component;
+
+        if (!this.props.modal) {
             return null;
+        }
+
+        switch (this.props.modal) {
+            case 'signin':
+                component = <SignInFormContainer />;
+                break;
+            case 'signup':
+                component = <SignUpFormContainer />;
+                break;
+            default:
+                component = null;
+        }
+
+        return ( 
+            <div className="modal-background">
+                <div className="modal-child">{component}</div>
+            </div>
+        );
     }
-    return (
-        <div className="modal-background">
-            <div className="modal-child">{component}</div>
-        </div>
-    );
 }
 
 const mapStateToProps = state => {

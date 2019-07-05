@@ -13,13 +13,14 @@ class SignInForm extends React.Component {
 
     }
 
-    componentWillUnmount(){
-        this.props.clearErrors;
-    }
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    componentWillUnmount(){
+        this.props.clearErrors();
     }
 
     handleSubmit(e) {
@@ -59,13 +60,13 @@ class SignInForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="signin-errors">
+            <>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className="session-error">
                         {error}
                     </li>
                 ))}
-            </ul>
+            </>
         );
     }
 

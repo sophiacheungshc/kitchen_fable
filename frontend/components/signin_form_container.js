@@ -19,7 +19,7 @@ const mDP = dispatch => {
         processForm: (user) => dispatch(login(user)),
         closeModal: () => dispatch(closeModal()),
         openModal: () => dispatch(openModal()),
-        clearErrors: () =>dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 
