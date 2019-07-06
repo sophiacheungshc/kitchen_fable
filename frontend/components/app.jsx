@@ -10,7 +10,7 @@ import Modal from './modal';
 import GreetingContainer from './greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Carousel from './carousel';
-import RestaurantIndex from './restaurant_index';
+import RestaurantIndexContainer from './restaurant_index_container';
 
 const App = () => (
     <div className="main-body">
@@ -25,7 +25,7 @@ const App = () => (
         <div className="main-div">
             <Switch>
                 <Route exact path="/" component={Carousel} />
-                <Route exact path="/restaurants" component={RestaurantIndex}/>
+                <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
             </Switch>
         </div>
         <footer>
