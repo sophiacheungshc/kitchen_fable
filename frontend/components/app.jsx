@@ -11,6 +11,7 @@ import GreetingContainer from './greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Carousel from './carousel';
 import RestaurantIndexContainer from './restaurant_index_container';
+import RestaurantContainer from './restaurant_container';
 
 const App = () => (
     <div className="main-body">
@@ -26,6 +27,7 @@ const App = () => (
             <Switch>
                 <Route exact path="/" component={Carousel} />
                 <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
+                <Route exact path="/restaurants/:restId" component={RestaurantContainer} />
             </Switch>
         </div>
         <footer>
