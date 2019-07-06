@@ -1,0 +1,20 @@
+import * as RestAPI from '../util/restaurant_api_util';
+
+export const RECEIVE_ALL_RESTAURANTS = 'RECEIVE_ALL_RESTAURANTS';
+export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
+
+export const receiveAllRestaurants = (restaurants) => ({
+    type: RECEIVE_ALL_RESTAURANTS,
+    restaurants
+});
+export const receiveRestaurant = (restaurant) => ({
+    type: RECEIVE_RESTAURANT,
+    restaurant
+});
+
+export const fetchAllRestaurants = () => (dispatch) => (
+    RestAPI.fetchAllRestaurants().then( restaurants => dispatch(receiveAllRestaurants(restaurants)))
+);
+export const fetchRestaurant = (id) => (dispatch) => (
+    RestAPI.fetchRestaurant(id).then( restaurant => dispatch(receiveRestaurant(restaurant)))
+);

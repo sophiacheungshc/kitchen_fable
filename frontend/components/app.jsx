@@ -2,17 +2,15 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import {
     Route,
-    Redirect,
     Switch,
     Link,
     HashRouter
 } from 'react-router-dom';
 import Modal from './modal';
 import GreetingContainer from './greeting_container';
-import SignInFormContainer from './signin_form_container';
-import SignUpFormContainer from './signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Carousel from './carousel';
+import RestaurantIndex from './restaurant_index';
 
 const App = () => (
     <div className="main-body">
@@ -25,7 +23,10 @@ const App = () => (
             </Switch>
         </header>
         <div className="main-div">
-            <Route exact path="/" component={Carousel} />
+            <Switch>
+                <Route exact path="/" component={Carousel} />
+                <Route exact path="/restaurants" component={RestaurantIndex}/>
+            </Switch>
         </div>
         <footer>
                 <h5>Join us on</h5>
