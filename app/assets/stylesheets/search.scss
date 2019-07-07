@@ -105,3 +105,8 @@ input:focus{
     font-size: 18px;
     line-height: 3.8rem;
 }
+
+.index-search-container .search-submit:hover {
+    background-color: #b8222d;;
+    transition: background-color 300ms ease-out;
+}

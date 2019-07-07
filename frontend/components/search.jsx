@@ -25,7 +25,7 @@ class Search extends React.Component {
         //     this.props.history.push('/restaurants');
         // }
         this.props.searchRestaurants(this.state.keyword)
-            .then(() => this.setState({ keyword: '' }))
+            // .then(() => this.setState({ keyword: '' }))
             .then(() => this.props.history.push("/restaurants"));
 
     }
