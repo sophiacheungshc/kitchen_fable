@@ -28,7 +28,7 @@
 .search-icon {
     background: image-url('glass.png') 100% 100% no-repeat;
     width: 3rem;
-    height: 56px;
+    height: 100%;
     background-size: 40%;
     background-position: center;
 }
@@ -62,4 +62,46 @@ input:focus{
 .search-submit:hover {
     background-color: #b8222d;;
     transition: background-color 300ms ease-out;
+}
+
+///////index search
+
+.index-search-bar {
+    background: image-url('search.png') 100% 100%;
+    width: 100%;
+    height: 6rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    min-height: fit-content;
+}
+
+.index-search-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 16px;
+    border-radius: 10px;
+}
+
+.index-search-container > * {
+    background-color: white;
+    margin: 0;
+}
+
+.index-search-container .search-info {
+    border-radius: 5px 0 0 5px;
+    opacity: 0.8;
+}
+.index-search-container .search-type {
+    border-left: 1px solid lightgray;
+    opacity: 0.8;
+}
+
+.index-search-container .search-submit {
+    background: #da3743;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 3.8rem;
 }

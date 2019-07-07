@@ -1,5 +1,6 @@
 import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
+import SearchContainer from './search_container';
 
 class RestaurantIndex extends React.Component {
     constructor(props){
@@ -7,10 +8,6 @@ class RestaurantIndex extends React.Component {
 
         this.restaurants_list = this.restaurants_list.bind(this);
     }
-
-    // componentDidMount(){
-    //     this.props.fetchAllRestaurants();
-    // }
 
     restaurants_list(){
         if (this.props.restaurants.length === 0) {
@@ -29,9 +26,12 @@ class RestaurantIndex extends React.Component {
     }
     render(){
         return(
-            <div className="rest-index-container">
-                {this.restaurants_list()}
-            </div>
+            <>
+                <SearchContainer />
+                <div className="rest-index-container">
+                    {this.restaurants_list()}
+                </div>
+            </>
         )
     }
 }

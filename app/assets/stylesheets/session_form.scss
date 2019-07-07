@@ -30,7 +30,9 @@ form h3 {
     border-radius: 4px;
     padding: 1rem 0rem 1.5rem 1rem;
 }
-
+.session-form input:focus {
+    border: 1px solid gray;
+}
 .session-hr {
     border: 1px solid rgba(0,0,0,.12);
     border-width: 1px 0 0;
@@ -56,6 +58,10 @@ form h3 {
 .submit-btn:hover {
     background-color: #b8222d;;
     transition: background-color 300ms ease-out;
+}
+
+.session-form .submit-btn:focus {
+    border: none;
 }
 
 .session-form .demo-btn {
