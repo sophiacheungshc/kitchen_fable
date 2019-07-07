@@ -73,7 +73,6 @@ class SignInForm extends React.Component {
     render() {
         return (
             <>
-            <div className="modal-close" onClick={this.props.closeModal}>&times;</div>
             <div className="sigin-form-container">
                 <form onSubmit={this.handleSubmit} className="session-form-box">
                     <h3>Please sign in</h3>
