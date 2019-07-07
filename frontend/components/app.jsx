@@ -26,6 +26,7 @@ const App = () => (
         <div className="main-div">
             <Switch>
                 <Route exact path="/" component={Carousel} />
+                <Route exact path="/search" component={Carousel} />
                 <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
                 <Route exact path="/restaurants/:restId" component={RestaurantContainer} />
             </Switch>

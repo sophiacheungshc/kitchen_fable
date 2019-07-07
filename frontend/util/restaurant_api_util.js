@@ -12,3 +12,11 @@ export const fetchRestaurant = (id) => (
         error: (err) => console.log(err)
     })
 );
+
+export const searchRestaurants = keyword => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/restaurants',
+        data: { keyword }
+    })
+);

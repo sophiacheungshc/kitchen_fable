@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Search from './search';
+import SearchContainer from './search_container';
 
 function Carousel() { 
 
@@ -10,7 +10,7 @@ function Carousel() {
             <div className='slide1'></div>
             <div className='slide2'></div>
             <div className='slide3'></div>
-            <Search />
+            <SearchContainer />
         </div>
     );
 

@@ -1,19 +1,18 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { login } from '../actions/session_actions';
+import { searchRestaurants } from '../actions/restaurant_actions';
 import Search from './search';
+import { withRouter } from 'react-router-dom';
 
-const mSP = (state) => {
-    return {
-        errors: state.errors.session
-    };
-};
+const mSP = state => ({
+    restaurants: Object.values(state.entities.restaurants)
+});
+const mDP = dispatch => ({
+    searchRestaurants: keyword => dispatch(searchRestaurants(keyword))
+});
 
-const mDP = dispatch => {
-    return {
-        processForm: (user) => dispatch(login(user)),
-    };
-};
-
-export default connect(mSP, mDP)(Search);
+export default withRouter(connect(mSP, mDP)(Search));
+// debugger
+            // this.props.history.push({
+            //     pathname: '/restaurants',
+            //     state: { newState }
+            // });

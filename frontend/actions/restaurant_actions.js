@@ -13,8 +13,15 @@ export const receiveRestaurant = (restaurant) => ({
 });
 
 export const fetchAllRestaurants = () => (dispatch) => (
-    RestAPI.fetchAllRestaurants().then( restaurants => dispatch(receiveAllRestaurants(restaurants)))
+    RestAPI.fetchAllRestaurants()
+        .then( restaurants => dispatch(receiveAllRestaurants(restaurants)))
 );
 export const fetchRestaurant = (id) => (dispatch) => (
-    RestAPI.fetchRestaurant(id).then( restaurant => dispatch(receiveRestaurant(restaurant)))
+    RestAPI.fetchRestaurant(id)
+        .then( restaurant => dispatch(receiveRestaurant(restaurant)))
+);
+
+export const searchRestaurants = (keyword) => (dispatch) => (
+    RestAPI.searchRestaurants(keyword)
+        .then( searchResult => (dispatch(receiveAllRestaurants(searchResult))))
 );
