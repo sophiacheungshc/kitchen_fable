@@ -1,3 +1,8 @@
+  
+  header {
+    position: relative;
+  }
+
   .navbar {
    position: relative;
    display: flex;
@@ -95,8 +100,10 @@ button#sign-up {
 
  .nav-right {
     padding-right: 50px;
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 1%
 }
 
 

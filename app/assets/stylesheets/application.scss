@@ -24,11 +24,14 @@
    font-weight: 500;
    font-style: normal;
    font-family: 'Noto Sans', sans-serif;
+   display: flex;
+   flex-direction: column;
 }
 
 
 .main-div{
    height: 800px;
    width: inherit;
+   position: relative;
 }
 
