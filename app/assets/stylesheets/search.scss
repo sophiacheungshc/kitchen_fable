@@ -3,33 +3,60 @@
     display: flex;
     justify-content: space-between;
     align-self: center;
-    height: 3rem;
-    width: 80%
+    height: 3.5rem;
+    width: max-content;
 }
 
 .search-container > * {
-    width: 80%;
     background: white;
     border-radius: 5px;
-    margin: 0;
+
 }
 
 .search-info {
-    width: 30rem;
+    width: 27rem;
+    margin: 0 1rem 0 2rem;
 }
-.search-location-name {
-    width: 16rem;
+
+.search-type {
+    width: 22rem;
+    margin: 0 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-icon {
+    background: image-url('glass.png') 100% 100% no-repeat;
+    width: 3rem;
+    height: 56px;
+    background-size: 40%;
+    background-position: center;
+}
+
+.search-type input {
+    font-size: 20px;
+    height: auto;
+    width: 80%;
+    font-weight: 300;
+    -webkit-appearance: none!important;
+    border: 0;
+
+}
+
+input:focus{
+    outline: none;
 }
 
 .search-submit {
-    width: 8rem;
+    width: 12rem;
     background-color: #da3743;
     border-color: #b8222d;
     color: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bolder;
-    line-height: 45px;
+    line-height: 3.25rem;
+    margin: 0 2rem 0 1rem;
 }
 
 .search-submit:hover {

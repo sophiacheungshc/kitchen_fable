@@ -35,8 +35,9 @@ class Search extends React.Component {
             <div className="search-container">
                 <span className="search-info"></span>
                 <span className="search-type">
-                    <input type="text" onChange={this.update('keyword')} placeholder="Search by restaurant name, location, or cuisine..." />
-                    </span>
+                    <div className="search-icon"></div>
+                    <input type="text" onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
+                </span>
                 <span className="search-submit" onClick={this.handleSubmit}>Let's go</span>
             </div>
         )
