@@ -11,9 +11,7 @@ class Search extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount(){
-        this.setState({keyword: ''})
-    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -23,13 +21,13 @@ class Search extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         //check for empty strings
-        if (!this.state.keyword || !this.state.keyword.trim()) {
-            this.props.history.push('/restaurants');
-        } else {
-            this.props.searchRestaurants(this.state.keyword)
-                .then(() => this.setState({keyword: ''}))
-                .then(() => this.props.history.push("/restaurants"));
-        }
+        // if (this.state.keyword.length === 0 || this.state.keyword.trim().length === 0) {
+        //     this.props.history.push('/restaurants');
+        // } else {
+        this.props.searchRestaurants(this.state.keyword)
+            .then(() => this.setState({ keyword: '' }))
+            .then(() => this.props.history.push("/restaurants"));
+    // }
     }
 
     render(){
