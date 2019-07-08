@@ -39,7 +39,7 @@
 .rest-details {
     display: flex;
     flex-direction: column;
-    min-width: 25rem;
+    max-width: 25rem;
     min-height: 40rem;
     border: 1px solid lightgray;
     position: relative;
@@ -57,7 +57,7 @@
     font-size: 14px;
     font-weight: lighter;
     padding-left: 1.5rem;
-
+    opacity: 0.8;
 } 
 i {
     height: 26px;
