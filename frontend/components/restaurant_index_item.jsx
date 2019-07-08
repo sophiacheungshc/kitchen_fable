@@ -14,9 +14,11 @@ class RestaurantIndexItem extends React.Component {
   render() {
     const { name, address, cuisine } = this.props.restaurant;
     return (
-      <div className="rest-index-item" onClick={this.handleClick}>
+      <div className="rest-index-item">
+        <div className="rest-thumb" onClick={this.handleClick}></div>
+
         <div className="index-item-info">
-          <span className="index-item-name">{name}</span>
+            <span className="index-item-name" onClick={this.handleClick}>{name}</span>
           {/* <span className="index-item-review">
             {average_rating || 'No reviews yet'}
           </span> */}
@@ -24,7 +26,6 @@ class RestaurantIndexItem extends React.Component {
           <span className="index-item-cuisine">{cuisine}</span>
         </div>
 
-        <div className="rest-thumb"></div>
       </div>
     );
   }

@@ -1,0 +1,52 @@
+.rest-show {
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.rest-banner {
+    background: image-url('rest_thumb.png') 100% 60%;
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rest-main {
+    width: 45rem;
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: -4rem 0 1rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.rest-main > * {
+    margin: 0 1rem 1rem;
+    opacity: 0.8;
+}
+
+.show-item-name {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.rest-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 25rem;
+    min-height: 40rem;
+    border: 1px solid lightgray;
+    position: relative;
+    margin: 1rem 0 2rem 1rem;
+
+}
+
+.rest-details > * {
+    
+}

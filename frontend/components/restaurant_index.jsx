@@ -6,14 +6,14 @@ class RestaurantIndex extends React.Component {
     constructor(props){
         super(props);
 
-        this.restaurants_list = this.restaurants_list.bind(this);
+        this.restaurant_index = this.restaurant_index.bind(this);
     }
 
-    restaurants_list(){
+    restaurant_index(){
         if (this.props.restaurants.length === 0) {
             return (
                 <div className="restaurant-search-error">
-                    <div>WE DID NOT FIND A MATCH FOR YOUR SEARCH.</div>
+                    <div>WE DID NOT FIND A MATCH FOR YOUR SEARCH</div>
                     <p>Sorry, we couldn't find any results. Try checking your spelling or using less specific keywords.</p>
                 </div>
             );
@@ -29,7 +29,7 @@ class RestaurantIndex extends React.Component {
             <>
                 <SearchContainer />
                 <div className="rest-index-container">
-                    {this.restaurants_list()}
+                    {this.restaurant_index()}
                 </div>
             </>
         )

@@ -25,13 +25,16 @@
    font-style: normal;
    font-family: 'Noto Sans', sans-serif;
    display: flex;
+   position: relative;
+   min-height: 100vh;
    flex-direction: column;
 }
 
 
 .main-div{
-   height: 800px;
+   min-height: fit-content;
    width: inherit;
    position: relative;
+   padding-top: 1rem;
 }
 

@@ -1,9 +1,9 @@
 
 
 .carousel {
-  height: 50%; 
+  height: 63vh; 
   width: inherit;
-  max-height: 416px;
+  min-height: fit-content;
   margin: 20px auto;
   position: relative;
   border-radius: 10px;
@@ -17,7 +17,7 @@
   font-size: 3rem;
   text-shadow: 1px 0 white;
   color: white;
-  padding-top: 3rem;
+  padding-top: 7rem;
 }
 .slide1,.slide2,.slide3,.slide4,.slide5 {
   position: absolute;
