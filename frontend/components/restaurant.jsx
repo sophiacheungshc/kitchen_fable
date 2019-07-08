@@ -35,13 +35,28 @@ class Restaurant extends React.Component {
                 </div>
 
                 <div className="rest-details">
+                    <span className="show-item-location">
+                        <i class="fas fa-city"></i>City
+                        <p>{ location }</p>
+                    </span>
+                    <span className="show-item-hours">
+                        <i class="far fa-clock"></i>Hours of operation
+                        <p>{ hours }</p>
+                    </span>
+                    <span className="show-item-cuisine">
+                        <i class="fas fa-utensils"></i>Cuisine
+                        <p>{ cuisine }</p>
+                    </span>
+                    <span className="show-item-dress">
+                        <i class="fas fa-tshirt"></i>Dress code
+                        <p>{ dress_code }</p>
+                    </span>
+                    <span className="show-item-chef">
+                        <i class="fas fa-user-ninja"></i>Executive chef
+                        <p>{ exec_chef }</p>
+                    </span>
                     <span className="show-item-address">{address}</span>
-                    <span className="show-item-location">{location}</span>
                     <span className="show-item-phone">{phone_number}</span>
-                    <span className="show-item-cuisine">{cuisine}</span>
-                    <span className="show-item-hours">{hours}</span>
-                    <span className="show-item-dress">{dress_code}</span>
-                    <span className="show-item-chef">{exec_chef}</span>
                 </div>
             </div>
             </>
