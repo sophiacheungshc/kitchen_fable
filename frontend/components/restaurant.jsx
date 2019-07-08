@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from './map'
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -39,6 +40,10 @@ class Restaurant extends React.Component {
                 </div>
 
                 <div className="rest-details">
+                    <Map />
+                    <span className="show-item-location">
+                        <i class="fas fa-map-marker-alt"></i>{ address }
+                    </span>
                     <span className="show-item-location">
                         <i className="fas fa-city"></i>City
                         <p>{ location }</p>
@@ -59,8 +64,10 @@ class Restaurant extends React.Component {
                         <i className="fas fa-user-ninja"></i>Executive chef
                         <p>{ exec_chef }</p>
                     </span>
-                    <span className="show-item-address">{address}</span>
-                    <span className="show-item-phone">{phone_number}</span>
+                    <span className="show-item-phone">
+                        <i class="fas fa-phone"></i>Phone number
+                        <p>{ phone_number }</p>
+                    </span>
                 </div>
             </div>
             </>
