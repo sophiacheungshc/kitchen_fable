@@ -33,26 +33,26 @@ class Search extends React.Component {
     render(){
         if (this.props.location.pathname === '/') {
             return (
-                <div className="search-container">
+                <form className="search-container" onSubmit={this.handleSubmit}>
                     <span className="search-info"></span>
                     <span className="search-type">
                         <div className="search-icon"></div>
                         <input type="text" onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
                     </span>
-                    <span className="search-submit" onClick={this.handleSubmit}>Let's go</span>
-                </div>
+                    <button type="submit "className="search-submit">Let's go</button>
+                </form>
             );
         } else {
             return (
                 <div className="index-search-bar">
-                    <div className="index-search-container">
+                    <form className="index-search-container" onSubmit={this.handleSubmit}>
                         <span className="search-info"></span>
                         <span className="search-type">
                             <div className="search-icon"></div>
                             <input type="text" onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
                         </span>
-                        <span className="search-submit" onClick={this.handleSubmit}>Find a Table</span>
-                    </div>
+                        <button type="submit" className="search-submit" >Find a Table</button>
+                    </form>
                 </div>
             );
         }
