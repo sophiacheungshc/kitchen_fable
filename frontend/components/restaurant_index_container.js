@@ -1,4 +1,4 @@
-import { fetchAllRestaurants } from '../actions/restaurant_actions';
+import { fetchAllRestaurants, searchRestaurants } from '../actions/restaurant_actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import RestaurantIndex from './restaurant_index';
@@ -11,7 +11,8 @@ const mSP = (state) => {
 
 const mDP = (dispatch) => {
     return ({
-        fetchAllRestaurants: () => dispatch(fetchAllRestaurants())
+        fetchAllRestaurants: () => dispatch(fetchAllRestaurants()),
+        searchRestaurants: (keyword) => dispatch(searchRestaurants(keyword))
     });
 };
 

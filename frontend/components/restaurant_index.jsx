@@ -9,6 +9,10 @@ class RestaurantIndex extends React.Component {
         this.restaurant_index = this.restaurant_index.bind(this);
     }
 
+    componentDidMount(){
+        this.props.searchRestaurants(this.props.location.search.slice(8));
+    }
+
     restaurant_index(){
         if (this.props.restaurants.length === 0) {
             return (

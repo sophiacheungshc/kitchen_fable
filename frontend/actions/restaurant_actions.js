@@ -18,7 +18,10 @@ export const fetchAllRestaurants = () => (dispatch) => (
 );
 export const fetchRestaurant = (id) => (dispatch) => (
     RestAPI.fetchRestaurant(id)
-        .then( restaurant => dispatch(receiveRestaurant(restaurant)))
+        .then( 
+            restaurant => dispatch(receiveRestaurant(restaurant)), 
+            err => {debugger}
+        )
 );
 
 export const searchRestaurants = (keyword) => (dispatch) => (

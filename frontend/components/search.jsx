@@ -5,7 +5,7 @@ class Search extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            keyword: ''
+            keyword: this.props.location.search.slice(8)
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,15 +25,21 @@ class Search extends React.Component {
         //     this.props.history.push('/restaurants');
         // }
         this.props.searchRestaurants(this.state.keyword)
+            .then(() => this.props.history.push({
+                pathname: '/restaurants',
+                search: `?search=${this.state.keyword}`
+            }))
             // .then(() => this.setState({ keyword: '' }))
-            .then(() => this.props.history.push("/restaurants"));
+            // .then(() => this.props.history.push("/restaurants"));
 
     }
 
+
     render(){
+
         if (this.props.location.pathname === '/') {
             return (
-                <form className="search-container" onSubmit={this.handleSubmit}>
+                <form className="search-container" onSubmit={this.handleSubmit} method="GET">
                     <span className="search-info"></span>
                     <span className="search-type">
                         <div className="search-icon"></div>
@@ -45,11 +51,11 @@ class Search extends React.Component {
         } else {
             return (
                 <div className="index-search-bar">
-                    <form className="index-search-container" onSubmit={this.handleSubmit}>
+                    <form className="index-search-container" onSubmit={this.handleSubmit} method="GET">
                         <span className="search-info"></span>
                         <span className="search-type">
                             <div className="search-icon"></div>
-                            <input type="text" onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
+                            <input type="text" value={this.state.keyword} onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
                         </span>
                         <button type="submit" className="search-submit" >Find a Table</button>
                     </form>

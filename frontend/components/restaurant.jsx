@@ -7,11 +7,11 @@ class Restaurant extends React.Component {
     }
 
     componentDidMount(){
-        if (this.props.restaurant){
-            this.props.fetchRestaurant(this.props.restaurant.id);
-        } else {
-            this.props.history.push(`/restaurants`);
-        }
+        // if (this.props.restaurant){
+            this.props.fetchRestaurant(this.props.match.params.restId);
+        // } else {
+        //     this.props.history.push(`/restaurants`);
+        // }
         
     }
     render(){
