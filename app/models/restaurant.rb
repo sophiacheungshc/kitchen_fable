@@ -19,6 +19,24 @@
 
 class Restaurant < ApplicationRecord
     
+    CUISINES = [
+        "American",
+        "Chinese",
+        "French",
+        "Greek",
+        "Italian",
+        "Indian",
+        "Japanese",
+        "Korean",
+        "Mediterranean",
+        "Mexican",
+        "Soul",
+        "Thai",
+        "Turkish",
+        "Vietnamese",
+        "Cantonese"
+    ]
+
     def self.find_by_keyword(keyword)
         Restaurant.where("lower(name) like ?", "%#{keyword.downcase}%")
                 .or(Restaurant.where("lower(location) like ?", "%#{keyword.downcase}%"))

@@ -20,7 +20,7 @@ user2 = User.create!(
   password: 'password',
   fname: 'Sophia',
   lname: 'Soaps',
-  location: 'San Francisco'
+  location: 'San Diego'
 )
 
 user3 = User.create!(
@@ -44,7 +44,7 @@ user5 = User.create!(
   password: 'pleasehireme',
   fname: 'Jimmy',
   lname: 'Nguyen',
-  location: 'Las Vegas'
+  location: 'Los Angeles'
 )
 user6 = User.create!(
   email: 'kevinla79@aa.io',
@@ -53,6 +53,16 @@ user6 = User.create!(
   lname: 'La',
   location: 'San Francisco'
 )
+
+50.times do
+  User.create(
+    email: Faker::Internet.unique.email,
+    password: "password123",
+    fname: Faker::Name.first_name,
+    lname: Faker::Name.last_name,
+    location: ["San Francisco", "San Diego", "New York", "Los Angeles"].sample
+  )
+end
 
 Restaurant.destroy_all
 
@@ -115,8 +125,27 @@ rest5 = Restaurant.create!(
   cuisine: 'British',
   menu: 'https://thecavaliersf.com/menus/',
   hours: 'Lunch: Monday - Friday: 11:30am - 2:30pm, Sunday: 5:30pm - 9:00pm',
-  dress_code: 'business causal',
+  dress_code: 'Business Causal',
   exec_chef: 'Jennifer Puccio',
   description: 'The Cavalier is an all-day London-inspired brasserie, located adjacent to Hotel Zetta. This is the third property for restaurateur Anna Weinberg and Executive Chef Jennifer Puccio - the same team behind Marlowe and Park Tavern. Award winning San Francisco designer, Ken Fulk, revamped the interior with deep leather banquettes, polished brass, zinc and white marble, lending a posh and sultry feel.'
       
 )
+
+50.times do
+    name = Faker::Restaurant.name
+    next if Restaurant.exists?(name: name)
+    location = ["San Francisco", "San Diego", "New York", "Los Angeles"].sample
+
+    Restaurant.create!({
+      name: name,
+      address: Faker::Address.street_address + ", " + location,
+      location: location,
+      phone_number: Faker::PhoneNumber.cell_phone,
+      cuisine: Restaurant::CUISINES.sample,
+      menu: 'https://thisisafakerestaurant/menus/',
+      hours: "Monday - Friday: 12:00 PM - 11:00 PM, Saturday - Sunday: 5:30 PM - 11:00 PM",
+      dress_code: ['Business Causal','Causal Elegant',"Casual"].sample,
+      exec_chef: Faker::Name.name,
+      description: Faker::Restaurant.description
+    })
+end
