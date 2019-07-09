@@ -1,3 +1,10 @@
+input:focus,
+select:focus,
+text:focus,
+button:focus {
+    outline: none;
+}
+
 .rest-show {
     padding: 0 4rem;
     display: flex;
@@ -69,26 +76,32 @@
 }
 
 .reserve-form-container {
-    display: flex;
-    flex-direction: column;
     max-width: 25rem;
-    min-height: 14rem;
+    min-height: 20rem;
     position: relative;
     margin: 1rem 0 1rem 0;
     padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .reserve-form-container > * {
     padding: 0.5rem 1rem 0 1rem;
     font-weight: bold;
     font-size: 14px;
+    width: 100%;
 }
 
 .reserve-form-container label {
-    border-bottom: 1px solid whitesmoke;
     padding: 0.5rem 0rem 0 0rem;
     font-size: 14px;
     letter-spacing: 0.5px;
+    height: 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .reserve-form-head {
@@ -101,6 +114,21 @@
     margin-bottom: 0.5rem;
 }
 
+.label-time, .label-date {
+    width: 45%
+}
+
+.label-date {
+    width: 45%;
+    margin-right: 2rem;
+}
+
+.fa-chevron-down {
+    position: absolute;
+    top: 58%;
+    right: 0%;
+}
+
 .reserve-form-submit {
     color: white;
     background-color: #da3743;
@@ -109,10 +137,12 @@
     border-radius: 3px;
     font-size: 16px;
     font-weight: bold;
+    padding: 0;
 }
 
 .reserve-form-submit:hover {
-    background-color: pink;
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 select {
@@ -127,6 +157,7 @@ select {
     -moz-appearance: none;
     border: none;
     font-size: 15px;
+    border-radius: 0;
     &::-ms-expand {
         display: none; 
     }
@@ -137,15 +168,7 @@ select {
         opacity: 0.5;
         pointer-events: none;
     }
-}
-      
-
-      
-.fa-chevron-down {
-    position: absolute;
-    right: 1%;
-    top: 6rem;
-}
+}  
 
 .rest-details {
     display: flex;

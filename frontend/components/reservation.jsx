@@ -14,7 +14,6 @@ class Reservation extends React.Component {
             occasion: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.userCheck = this.userCheck.bind(this);
 
         
     }
@@ -67,20 +66,48 @@ class Reservation extends React.Component {
                     <select className="res-input party" onChange={this.update('party')}>
                         {this.letsParty()}
                     </select>
-                    <i className="fas fa-chevron-down"></i>
+                    <i className="fas fa-chevron-down iparty"></i>
                 </label>
-                <label>Date
-                    <input type="text" onChange={this.update('date')}/>
+                <label className="label-date">Date
+                    <select className="res-input date" onChange={this.update('date')}>
+                        {this.letsParty()}
+                    </select>
+                    <i className="fas fa-chevron-down idate"></i>
                 </label>
-                <label>Time
-                    <input type="text" onChange={this.update('time')}/>
+                <label className="label-time">Time
+                    <select className="res-input time" onChange={this.update('time')}>
+                        {this.timeOptions()}
+                    </select>
+                    <i className="fas fa-chevron-down itime"></i>
                 </label>
                 <label>Occasion
-                    <input type="text" onChange={this.update('occasion')}/>
+                    <select className="res-input party" onChange={this.update('occasion')}>
+                        <option value='none'>None</option>
+                        <option value='birthday'>Birthday</option>
+                        <option value='anniversary'>Anniversary</option>
+                        <option value='promotion'>Promotion</option>
+                        <option value='just hired!'>Just hired!</option>
+                        <option value='treat yo self'>Treat yo'self</option>
+                    </select>
+                    <i className="fas fa-chevron-down iocc"></i>
                 </label>
                 {userCheck}
             </div>
         )
+    }
+
+    timeOptions(){
+        let arr = [];
+
+        for (let i = 1; i <= 11; i++) {
+            arr.push(i);
+        }
+
+        return arr.map(num => (
+            <option key={num} value={num}>
+                {num + ":00 PM"}
+            </option>
+        ));
     }
 }
 
