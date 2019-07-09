@@ -13,7 +13,7 @@ class RestaurantIndexItem extends React.Component {
 
   render() {
     const { name, address, cuisine } = this.props.restaurant;
-    const img = Math.floor(Math.random() * 10) + 1;
+    const img = Math.floor(Math.random() * 20) + 1;
     return (
       <div className="rest-index-item">
         <img className="rest-thumb" onClick={this.handleClick} src={`/assets/${img}.jpg`} />
