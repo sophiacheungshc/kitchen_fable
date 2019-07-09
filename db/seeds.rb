@@ -114,7 +114,7 @@ rest4 = Restaurant.create!(
   hours: 'Monday – Tuesday: 8am – 3pm, Wednesday – Saturday: 8am – 10pm, Sunday: 8am – 8pm',
   dress_code: 'Business Causal',
   exec_chef: 'Chef John',
-  description: 'Fresh takes on beignets, po boys & other Big Easy bites draw crowds to this narrow but airy spot.'
+  description: 'Fresh takes on beignets, po boys & other Big Easy bites draw crowds to this narrow but airy spot. Chef-owner Brenda Buenviaje blends New Orleans–style Creole cooking with French technique to invent \'French soul food.\' Expect updated classics like cayenne-spiked crawfish beignets, fluffy cream biscuits, impeccable Hangtown Fry (eggs, bacon and cornmeal-crusted oysters) and fried chicken with collard greens and hot-pepper jelly. Long waits on sketchy sidewalks are unavoidable – but you can order takeout.'
 )
 
 rest5 = Restaurant.create!(

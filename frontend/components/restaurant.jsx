@@ -1,5 +1,6 @@
 import React from 'react';
 import Map from './map';
+import Reservation from './reservation';
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -18,7 +19,7 @@ class Restaurant extends React.Component {
     render(){
         if (this.props.restaurant === undefined) {
             // this.props.history.push(`/restaurants`);
-            return(<div>Cannot find restaurant :( Redirecting...</div>);
+            return(<div></div>);
         }
 
         const { name, address, location, phone_number, cuisine, menu, hours, 
@@ -30,7 +31,13 @@ class Restaurant extends React.Component {
                 <img className="rest-banner" src={`/assets/${img}.jpg`}></img>
                 <div className="rest-show">
                 {/* <div className="rest-banner"></div> */}
+                <Reservation />
                 <div className="rest-main">
+                    <div className="show-tab">
+                        <span className="tab-selected">Overview</span>
+                        <span>Reviews</span>
+                        <span>Leave a Review</span>
+                    </div>
                     <span className="show-item-name">{name}</span>
                     <span className="show-item-desc">{description}</span>
                         <span className="show-item-menu"><a href={menu} target="_blank">Link to menu</a></span>
@@ -62,7 +69,7 @@ class Restaurant extends React.Component {
                         <p>{ exec_chef }</p>
                     </span>
                     <span className="show-item-phone">
-                        <i className="fas fa-phone-alt"></i>Phone number
+                        <i className="fas fa-phone"></i>Phone number
                         <p>{ phone_number }</p>
                     </span>
                 </div>

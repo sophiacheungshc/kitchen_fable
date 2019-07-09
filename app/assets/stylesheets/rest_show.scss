@@ -19,22 +19,51 @@
     width: 45rem;
     border: 1px solid lightgray;
     background-color: white;
-    margin: -4rem 0 1rem 0;
+    margin: -3rem 0 1rem 0;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .rest-main > * {
-    padding: 0rem 1rem 0 1rem;
+    margin: 0 1rem 0 1rem;
     opacity: 0.8;
 }
 
 .show-item-name {
-    font-size: 50px;
+    font-size: 55px;
+    font-family: 'Raleway', sans-serif;
     color: black;
     font-weight: bold;
-    border-bottom: 1px solid whitesmoke;
+    line-height: 6rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.show-item-desc {
+    padding: 1rem 0;
+}
+
+.show-tab {
+    border-bottom: 1px solid lightgray;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-selected {
+    border-bottom: 2px solid red;
+    color: red;
+}
+
+.show-tab > * {
+    padding: 1rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+.show-tab > *:hover {
+    border-bottom: 2px solid red;
+    color: red;
+    cursor: pointer;
 }
 
 .rest-details {
