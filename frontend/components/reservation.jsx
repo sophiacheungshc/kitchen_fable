@@ -38,7 +38,7 @@ class Reservation extends React.Component {
             )
         } else {
             return(
-                <button className="reserve-form-submit" onClick={this.handleSubmit}>Reserve Now</button>
+                <button className="reserve-form-submit" onClick={this.handleSubmit}>Find a Table</button>
             )
         }
     }

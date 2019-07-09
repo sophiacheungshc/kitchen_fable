@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-
+    justify-content: center;
+    position: relative;
 }
+
 .rest-banner {
     // background: image-url('rest_thumb.png') 100% 60%;
     object-fit: cover;
@@ -17,12 +18,13 @@
 
 .rest-main {
     width: 45rem;
-    border: 1px solid lightgray;
+    border: 1px solid whitesmoke;
     background-color: white;
     margin: -3rem 0 1rem 0;
     position: relative;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.10);
 }
 
 .rest-main > * {
@@ -66,14 +68,44 @@
     cursor: pointer;
 }
 
+.reserve-form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    min-height: 14rem;
+    position: relative;
+    margin: 1rem 0 1rem 1rem;
+}
+
+.reserve-form-container > * {
+    padding: 0.5rem 1rem 0 1rem;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.reserve-form-submit {
+    color: white;
+    background-color: #da3743;
+    border-color: #b8222d;
+    height: 3rem;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reserve-form-submit:hover {
+    background-color: pink;
+}
+
 .rest-details {
     display: flex;
     flex-direction: column;
     max-width: 25rem;
-    min-height: 50rem;
-    border: 1px solid lightgray;
+    height: 70rem;
+    border: 1px solid whitesmoke;
     position: relative;
-    margin: 1rem 0 2rem 1rem;
+    margin: 1rem 0 1rem 3rem;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.10);
 
 }
 

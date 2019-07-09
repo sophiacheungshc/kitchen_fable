@@ -31,7 +31,6 @@ class Restaurant extends React.Component {
                 <img className="rest-banner" src={`/assets/${img}.jpg`}></img>
                 <div className="rest-show">
                 {/* <div className="rest-banner"></div> */}
-                <Reservation />
                 <div className="rest-main">
                     <div className="show-tab">
                         <span className="tab-selected">Overview</span>
@@ -44,6 +43,7 @@ class Restaurant extends React.Component {
                 </div>
 
                 <div className="rest-details">
+                    <Reservation />
                     <Map />
                     <span className="show-item-address">
                         <i className="fas fa-map-marker-alt"></i>{address}
