@@ -1,6 +1,6 @@
 import React from 'react';
 import Map from './map';
-import Reservation from './reservation';
+import ReservationContainer from './reservation_container';
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -43,7 +43,7 @@ class Restaurant extends React.Component {
                 </div>
 
                 <div className="rest-details">
-                    <Reservation />
+                    <ReservationContainer />
                     <Map />
                     <span className="show-item-address">
                         <i className="fas fa-map-marker-alt"></i>{address}

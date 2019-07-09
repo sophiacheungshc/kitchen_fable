@@ -14,7 +14,9 @@ class Reservation extends React.Component {
             occasion: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.userCheck = this.userCheck.bind(this);
+        // this.userCheck = this.userCheck.bind(this);
+
+        
     }
 
     update(field) {
@@ -31,19 +33,18 @@ class Reservation extends React.Component {
         });
     }
 
-    userCheck(){
+
+    render(){
+        let userCheck;
         if (this.props.currentUserId === null) {
-            return(
+            userCheck = (
                 <div className="reserve-no-submit">Please sign in to make a reservation</div>
             )
         } else {
-            return(
+            userCheck = (
                 <button className="reserve-form-submit" onClick={this.handleSubmit}>Find a Table</button>
             )
         }
-    }
-
-    render(){
         return(
             <div className="reserve-form-container">
                 <span className="reserve-form-head">Make a reservation</span>
@@ -59,7 +60,7 @@ class Reservation extends React.Component {
                 <label>Occasion
                     <input type="text" onChange={this.update('occasion')}/>
                 </label>
-                {this.userCheck()}
+                {userCheck}
             </div>
         )
     }
