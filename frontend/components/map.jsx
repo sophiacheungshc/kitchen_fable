@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
 const mapOptions = {
@@ -18,7 +17,7 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className="map" id='map-container' ref="map">
+            <div className="map" ref="map">
                 Map
       </div>
         );

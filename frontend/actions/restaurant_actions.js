@@ -2,7 +2,6 @@ import * as RestAPI from '../util/restaurant_api_util';
 
 export const RECEIVE_ALL_RESTAURANTS = 'RECEIVE_ALL_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
-export const RECEIVE_RESTAURANT_ERRORS = 'RECEIVE_RESTAURANT_ERRORS';
 
 export const receiveAllRestaurants = (restaurants) => ({
     type: RECEIVE_ALL_RESTAURANTS,
@@ -13,13 +12,6 @@ export const receiveRestaurant = (restaurant) => ({
     restaurant
 });
 
-export const receiveRestaurantErrors = (errors) => {
-    return {
-        type: RECEIVE_RESTAURANT_ERRORS,
-        errors
-    };
-};
-
 export const fetchAllRestaurants = () => (dispatch) => (
     RestAPI.fetchAllRestaurants()
         .then( restaurants => dispatch(receiveAllRestaurants(restaurants)))
@@ -27,8 +19,8 @@ export const fetchAllRestaurants = () => (dispatch) => (
 export const fetchRestaurant = (id) => (dispatch) => (
     RestAPI.fetchRestaurant(id)
         .then( 
-            restaurant => dispatch(receiveRestaurant(restaurant)),
-            errors => dispatch(receiveRestaurantErrors(errors.responseJSON))
+            restaurant => dispatch(receiveRestaurant(restaurant)), 
+            err => {debugger}
         )
 );
 

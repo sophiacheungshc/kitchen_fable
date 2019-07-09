@@ -5,8 +5,7 @@ import Restaurant from './restaurant';
 
 const mSP = (state, ownProps) => {
     return ({
-        restaurant: state.entities.restaurants[ownProps.match.params.restId],
-        errors: state.errors.restaurant
+        restaurant: state.entities.restaurants[ownProps.match.params.restId]
     });
 };
 
