@@ -74,7 +74,7 @@
     max-width: 25rem;
     min-height: 14rem;
     position: relative;
-    margin: 1rem 0 1rem 1rem;
+    margin: 1rem 0 1rem 0;
     padding-top: 0;
 }
 
@@ -84,8 +84,21 @@
     font-size: 14px;
 }
 
+.reserve-form-container label {
+    border-bottom: 1px solid whitesmoke;
+    padding: 0.5rem 0rem 0 0rem;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
 .reserve-form-head {
     padding: 0 0 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.8;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 0.5rem;
 }
 
 .reserve-form-submit {
@@ -102,10 +115,42 @@
     background-color: pink;
 }
 
+select {
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 3rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    font-size: 15px;
+    &::-ms-expand {
+        display: none; 
+    }
+    &:hover, &:focus {
+        color: black;
+    }
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+      
+
+      
+.fa-chevron-down {
+    position: absolute;
+    right: 1%;
+    top: 6rem;
+}
+
 .rest-details {
     display: flex;
     flex-direction: column;
-    max-width: 25rem;
+    max-width: 22rem;
     height: 70rem;
     border: 1px solid whitesmoke;
     position: relative;

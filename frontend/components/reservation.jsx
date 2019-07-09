@@ -33,6 +33,21 @@ class Reservation extends React.Component {
         });
     }
 
+    letsParty() {
+        let arr = [];
+
+        for (let i = 1; i <= 20; i++) {
+            arr.push(i);
+        }
+
+        return arr.map(num => (
+            <option key={num} value={num}>
+                { "For " + num }
+            </option>
+        ));
+
+    }
+
 
     render(){
         let userCheck;
@@ -49,7 +64,10 @@ class Reservation extends React.Component {
             <div className="reserve-form-container">
                 <span className="reserve-form-head">Make a reservation</span>
                 <label className="party-size">Party Size
-                    <input type="text" onChange={this.update('party')}/>
+                    <select className="res-input party" onChange={this.update('party')}>
+                        {this.letsParty()}
+                    </select>
+                    <i className="fas fa-chevron-down"></i>
                 </label>
                 <label>Date
                     <input type="text" onChange={this.update('date')}/>
