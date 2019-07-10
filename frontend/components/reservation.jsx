@@ -98,7 +98,9 @@ class Reservation extends React.Component {
                             todayButton: 'Today',
                             disabledDays: { before: new Date() }
                         }}
+                        inputProps={{ style: { height: 40, width: 140, border: 'none', fontSize: 16 } }}
                     />
+                    <i className="fas fa-chevron-down idate"></i>
                 </label>
                 <label className="label-time">Time
                     <select className="res-input time" onChange={this.update('time')}>
@@ -131,7 +133,7 @@ class Reservation extends React.Component {
         }
 
         return arr.map(num => (
-            <option key={num} value={num}>
+            <option key={num} value={num + ":00 PM"}>
                 {num + ":00 PM"}
             </option>
         ));
