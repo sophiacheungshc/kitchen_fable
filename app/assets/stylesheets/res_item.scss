@@ -1,27 +1,54 @@
 .reserve-index-item {
-
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid whitesmoke;
+    padding: 1rem;
 }
 
 .res-thumb {
-    
+    object-fit: cover;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 5px;     
+    max-width: 100%;
+    max-height: 100%
+}
+
+.res-thumb:hover {
+    cursor: pointer;
 }
 
 .res-item-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
 
+.res-item-info > * {
+    opacity: 0.6;
 }
 
 .res-item-name {
-    
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.res-item-name:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 .res-item-address {
+    font-size: 12px;
+    margin-bottom: 1rem;
 
 }
 .res-item-datetime {
-
+    font-size: 15px;
 }
 .res-item-party {
-
+    font-size: 15px;
 }
 .res-item-occ {
-
+    font-size: 15px;
 }

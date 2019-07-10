@@ -23,8 +23,8 @@ class ReservationIndexItem extends React.Component {
                     <span className="res-item-name" onClick={this.handleClick}>{name}</span>
                     <span className="res-item-address">{address}</span>
                     <span className="res-item-datetime">{date} at {time}</span>
-                    <span className="res-item-party">For a party of {party}</span>
                     <span className="res-item-occ">Occasion: {occasion}</span>
+                    <span className="res-item-party">For a party of {party}.</span>
                 </div>
 
             </div>
