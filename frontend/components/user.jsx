@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import ReservationIndexItem from './reserve_index_item';
 
 class User extends React.Component {
     constructor(props){
@@ -9,6 +11,11 @@ class User extends React.Component {
     componentDidMount(){
         this.props.fetchAllRes(this.props.currentUserId);
     }
+
+    handleClick() {
+        this.props.history.push(`/restaurants/${this.props.restaurant.id}`);
+    }
+
 
     upcoming(){
 
@@ -22,14 +29,8 @@ class User extends React.Component {
         });
 
         if (all_upcoming.length !== 0){
-            return all_upcoming.map( (res, idx) => (
-                <div key={idx} className="upcoming-res">
-                    <span className="upcoming-res-name">{res.restaurant.name}</span>
-                    <span className="upcoming-res-address">{res.restaurant.address}</span>
-                    <span className="upcoming-res-datetime">{res.date} at {res.time}</span>
-                    <span className="upcoming-res-party">For a party of {res.party}</span>
-                    <span className="upcoming-res-occ">Occasion: {res.occasion}</span>
-                </div>
+            return all_upcoming.map(res => (
+                <ReservationIndexItem restaurant={res.restaurant} reservation={res} key={res.id} />
             ));
         } else {
             return (
@@ -50,14 +51,8 @@ class User extends React.Component {
         });
 
         if (all_past.length !== 0) {
-            return all_past.map((res, idx) => (
-                <div key={idx} className="past-res">
-                    <span className="past-res-name">{res.restaurant.name}</span>
-                    <span className="past-res-address">{res.restaurant.address}</span>
-                    <span className="past-res-datetime">{res.date} at {res.time}</span>
-                    <span className="past-res-party">For a party of {res.party}</span>
-                    <span className="past-res-occ">Occasion: {res.occasion}</span>
-                </div>
+            return all_past.map(res => (
+                <ReservationIndexItem restaurant={res.restaurant} reservation={res} key={res.id} />
             ));
         } else {
             return (
@@ -70,17 +65,24 @@ class User extends React.Component {
     render(){
         return (
             <div className="user-show-container">
-                <div className="upcoming-res-container">
-                    <h1>Upcoming Reservations</h1>
-                    {this.upcoming()}
-                </div> 
-                <div className="past-res-container">
-                    <h1>Past Reservations</h1>
-                    {this.past()}
+                <div className="user-show-sidebar">
+                    <span>Upcoming Reservations</span>
+                    <span>Past Reservations</span>
+                    <span>My Favorites</span>
+                </div>
+                <div className="res-index">
+                    <div className="upcoming-res-container">
+                        <h1>Upcoming Reservations</h1>
+                        {this.upcoming()}
+                    </div>
+                    <div className="past-res-container">
+                        <h1>Past Reservations</h1>
+                        {this.past()}
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default User;
+export default withRouter(User);
