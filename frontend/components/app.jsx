@@ -9,7 +9,7 @@ import {
 import Modal from './modal';
 import GreetingContainer from './greeting_container';
 import { ProtectedRoute } from '../util/route_util';
-import Carousel from './carousel';
+import Home from './home';
 import RestaurantIndexContainer from './restaurant_index_container';
 import RestaurantContainer from './restaurant_container';
 import UserContainer from './user_container';
@@ -19,15 +19,10 @@ const App = () => (
         <Modal />
         <header>
             <GreetingContainer />
-            <Switch>
-                {/* <AuthRoute exact path="/signin" component={SignInFormContainer} />
-                <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-            </Switch>
         </header>
         <div className="main-div">
             <Switch>
-                <Route exact path="/" component={Carousel} />
-                <Route exact path="/search" component={Carousel} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
                 <Route exact path="/restaurants/:restId" component={RestaurantContainer} />
                 <ProtectedRoute exact path="/user" component={UserContainer} />

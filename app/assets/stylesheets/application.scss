@@ -36,5 +36,8 @@
    width: inherit;
    position: relative;
    min-height: -webkit-fill-available;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 

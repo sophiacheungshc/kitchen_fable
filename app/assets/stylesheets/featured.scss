@@ -1,0 +1,43 @@
+.featured-areas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 66rem;
+    height: 22rem;
+    position: relative;
+    position: relative;
+    justify-self: center;
+    background: black;
+}
+
+.featured-areas > * {
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    height: 11rem;
+    position: relative;
+    opacity: 0.8;
+}
+
+.featured-areas > *:hover {
+    opacity: 0.5;
+}
+
+.ny {
+    background: image-url('ny.jpg') 100% 100% no-repeat;
+}
+.chicago {
+    background: image-url('chicago.jpg') 100% 100% no-repeat;
+}
+.la {
+    background: image-url('la.jpg') 100% 100% no-repeat;
+}
+.sf {
+    background: image-url('sf.jpg') 100% 100% no-repeat;
+}
+.sd {
+    background: image-url('sd.jpg') 100% 100% no-repeat;
+}
+.lv {
+    background: image-url('lv.jpg') 100% 100% no-repeat;
+}
