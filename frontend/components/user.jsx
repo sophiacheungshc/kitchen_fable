@@ -38,7 +38,7 @@ class User extends React.Component {
             }
         });
 
-        all_upcoming = this.sortDates(all_upcoming);
+        all_upcoming = this.sortDates(all_upcoming, true);
 
         if (all_upcoming.length !== 0){
             return all_upcoming.map(res => (
@@ -62,7 +62,7 @@ class User extends React.Component {
             }
         });
 
-        all_past = this.sortDates(all_past);
+        all_past = this.sortDates(all_past, false);
 
         if (all_past.length !== 0) {
             return all_past.map(res => (
@@ -76,14 +76,15 @@ class User extends React.Component {
 
     }
 
-    sortDates(arr){
+    sortDates(arr, desc){
         if (arr.length <= 1) return arr;
 
         let mid = Math.floor(arr.length/2);
         let left = arr.slice(0, mid);
         let right = arr.slice(mid);
 
-        return this.merge(this.sortDates(left), this.sortDates(right));
+        return desc ? this.merge(this.sortDates(left, desc), this.sortDates(right, desc)) :
+            this.otherMerge(this.sortDates(left, desc), this.sortDates(right, desc));
     }
 
     merge(left, right){
@@ -91,6 +92,19 @@ class User extends React.Component {
 
         while (left.length && right.length){
             if ((Date.parse(left[0].date) < (Date.parse(right[0].date)))) {
+                result.push(left.shift());
+            } else {
+                result.push(right.shift());
+            }
+        }
+
+        return result.concat(left).concat(right);
+    }
+    otherMerge(left, right){
+        let result = [];
+
+        while (left.length && right.length){
+            if ((Date.parse(left[0].date) > (Date.parse(right[0].date)))) {
                 result.push(left.shift());
             } else {
                 result.push(right.shift());
