@@ -1,5 +1,5 @@
 import React from 'react';
-import DayPicker from 'react-day-picker';
+import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css';
 
 
@@ -12,13 +12,20 @@ class Reservation extends React.Component {
             user_id: this.props.currentUserId,
             rest_id: this.props.restId,
             party: '1',
-            date: '1',
+            date: new Date(),
             time: '12:00 PM',
             occasion: 'none'
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
 
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDayChange = this.handleDayChange.bind(this);
         
+    }
+
+    handleDayChange(selectedDay) {
+        this.setState({
+            date: selectedDay
+        });
     }
 
     update(field) {
@@ -29,7 +36,9 @@ class Reservation extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createRes(this.state).then(() => {
+        let result = Object.assign({}, this.state);
+        result.date = this.state.date.toISOString().substring(0, 10);
+        this.props.createRes(result).then(() => {
             // this.props.history.push(`/users/${this.props.currentUserId}`)
             this.props.history.push(`/`)
         });
@@ -68,6 +77,7 @@ class Reservation extends React.Component {
             )
         }
 
+        const { date } = this.state;
         return(
             <div className="reserve-form-container">
                 <span className="reserve-form-head">Make a reservation</span>
@@ -81,7 +91,17 @@ class Reservation extends React.Component {
                 <label className="label-date">Date
                     {/* <input className="input-date" id="today" type="date" min="2019-07-12" onChange={this.update('date')}/> */}
                     {/* <i className="fas fa-chevron-down idate"></i> */}
-                    <DayPicker />
+                    <DayPickerInput
+                        className="input-date"
+                        value={date}
+                        onDayChange={this.handleDayChange}
+                        dayPickerProps={{
+                            selectedDays: date,
+                            disabledDays: {
+                                daysOfWeek: [0, 6],
+                            },
+                        }}
+                    />
                 </label>
                 <label className="label-time">Time
                     <select className="res-input time" onChange={this.update('time')}>
