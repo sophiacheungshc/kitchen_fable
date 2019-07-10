@@ -6,6 +6,7 @@ class User extends React.Component {
     constructor(props){
         super(props);
 
+        this.scrollTo = this.scrollTo.bind(this);
     }
 
     componentDidMount(){
@@ -14,6 +15,15 @@ class User extends React.Component {
 
     handleClick() {
         this.props.history.push(`/restaurants/${this.props.restaurant.id}`);
+    }
+
+    scrollTo(el) {
+        return () => {
+            el.scrollIntoView({
+                behavior: 'smooth',
+                block: "start"
+            });
+        };
     }
 
 
@@ -66,16 +76,16 @@ class User extends React.Component {
         return (
             <div className="user-show-container">
                 <div className="user-show-sidebar">
-                    <span>Upcoming Reservations</span>
-                    <span>Past Reservations</span>
+                    <span onClick={this.scrollTo(this.upcomingSection)}>Upcoming Reservations</span>
+                    <span onClick={this.scrollTo(this.pastSection)}>Past Reservations</span>
                     <span>My Favorites</span>
                 </div>
                 <div className="res-index">
-                    <div className="upcoming-res-container">
+                    <div className="upcoming-res-container" ref={el => this.upcomingSection = el}>
                         <h1>Upcoming Reservations</h1>
                         {this.upcoming()}
                     </div>
-                    <div className="past-res-container">
+                    <div className="past-res-container" ref={el => this.pastSection = el}>
                         <h1>Past Reservations</h1>
                         {this.past()}
                     </div>
