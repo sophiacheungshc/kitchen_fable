@@ -89,17 +89,14 @@ class Reservation extends React.Component {
                     <i className="fas fa-chevron-down iparty"></i>
                 </label>
                 <label className="label-date">Date
-                    {/* <input className="input-date" id="today" type="date" min="2019-07-12" onChange={this.update('date')}/> */}
-                    {/* <i className="fas fa-chevron-down idate"></i> */}
                     <DayPickerInput
                         className="input-date"
                         value={date}
                         onDayChange={this.handleDayChange}
                         dayPickerProps={{
                             selectedDays: date,
-                            disabledDays: {
-                                daysOfWeek: [0, 6],
-                            },
+                            todayButton: 'Today',
+                            disabledDays: { before: new Date() }
                         }}
                     />
                 </label>
