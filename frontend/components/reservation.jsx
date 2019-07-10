@@ -39,7 +39,7 @@ class Reservation extends React.Component {
         let result = Object.assign({}, this.state);
         result.date = this.state.date.toISOString().substring(0, 10);
         this.props.createRes(result).then(() => {
-            this.props.history.push(`/`)
+            this.props.history.push(`/user`)
         });
     }
 
@@ -57,12 +57,6 @@ class Reservation extends React.Component {
         ));
 
     }
-
-    // componentDidMount(){
-    //     const today = new Date();
-    //     document.querySelector("#today").valueAsDate = today;
-    //     document.getElementById("today").min = today;
-    // }
 
     render(){
         let userCheck;
