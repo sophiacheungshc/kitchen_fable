@@ -4,7 +4,7 @@ import { fetchAllRes, cancelRes } from '../actions/reservation_actions';
 
 const mSP = (state) => ({
     currentUserId: state.session.id,
-    reservations: state.entities.reservations
+    reservations: Object.values(state.entities.reservations)
 });
 
 const mDP = (dispatch) => ({

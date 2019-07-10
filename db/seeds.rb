@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.delete_all
+User.destroy_all
+Restaurant.destroy_all
+Reservation.destroy_all
+
 
 user1 = User.create!(
   email: 'guest@welcome.com',
@@ -63,8 +66,6 @@ user6 = User.create!(
     location: ["San Francisco", "San Diego", "New York", "Los Angeles"].sample
   )
 end
-
-Restaurant.destroy_all
 
 rest1 = Restaurant.create!(
   name: "Marta",
@@ -148,4 +149,18 @@ rest5 = Restaurant.create!(
       exec_chef: Faker::Name.name,
       description: Faker::Restaurant.description
     })
+end
+
+10.times do
+  min_date = Time.now - 1.years
+  max_date = Time.now + 3.year
+  
+  Reservation.create!({
+    user_id: 1,
+    rest_id: (1..50).to_a.sample,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
 end

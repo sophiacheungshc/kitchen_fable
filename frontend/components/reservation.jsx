@@ -39,7 +39,6 @@ class Reservation extends React.Component {
         let result = Object.assign({}, this.state);
         result.date = this.state.date.toISOString().substring(0, 10);
         this.props.createRes(result).then(() => {
-            // this.props.history.push(`/users/${this.props.currentUserId}`)
             this.props.history.push(`/`)
         });
     }
