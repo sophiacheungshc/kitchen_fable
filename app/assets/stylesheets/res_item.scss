@@ -52,3 +52,20 @@
 .res-item-occ {
     font-size: 15px;
 }
+
+.res-cancel-btn {
+    color: red;
+    position: relative;
+    border: none;
+    font-size: 16px;
+    left: 30rem;
+    width: 10rem;
+    bottom: 18px;
+    background: none;
+    opacity: 0.8;
+}
+
+.res-cancel-btn:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

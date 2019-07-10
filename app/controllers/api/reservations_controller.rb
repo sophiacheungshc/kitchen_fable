@@ -28,7 +28,7 @@ class Api::ReservationsController < ApplicationController
 
         if @reservation
             @reservation.destroy
-            render json: reservation
+            render json: @reservation
         else
             render json: ["Reservation doesn't exist"], status: 404
         end

@@ -26,9 +26,11 @@ class User extends React.Component {
         };
     }
 
+    cancelRes(){
+
+    }
 
     upcoming(){
-
         let all = this.props.reservations;
         let all_upcoming = [];
         let today = new Date();
@@ -42,7 +44,7 @@ class User extends React.Component {
 
         if (all_upcoming.length !== 0){
             return all_upcoming.map(res => (
-                <ReservationIndexItem restaurant={res.restaurant} reservation={res} key={res.id} />
+                <ReservationIndexItem restaurant={res.restaurant} reservation={res} cancel={true} key={res.id} />
             ));
         } else {
             return (
@@ -66,7 +68,7 @@ class User extends React.Component {
 
         if (all_past.length !== 0) {
             return all_past.map(res => (
-                <ReservationIndexItem restaurant={res.restaurant} reservation={res} key={res.id} />
+                <ReservationIndexItem restaurant={res.restaurant} reservation={res} cancel={false} key={res.id} />
             ));
         } else {
             return (

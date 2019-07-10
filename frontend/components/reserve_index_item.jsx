@@ -1,14 +1,29 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { cancelRes } from '../actions/reservation_actions';
+
+const mDP = (dispatch) => ({
+    cancelRes: (id) => dispatch(cancelRes(id))
+});
 
 class ReservationIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.cancel = this.cancel.bind(this);
     }
 
     handleClick() {
         this.props.history.push(`/restaurants/${this.props.restaurant.id}`);
+    }
+
+    cancel(e){
+        e.preventDefault();
+        this.props.cancelRes(this.props.reservation.id);
+    }
+    checkCancel(){
+        return this.props.cancel ? (<button className="res-cancel-btn"onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
     }
 
     render() {
@@ -25,6 +40,7 @@ class ReservationIndexItem extends React.Component {
                     <span className="res-item-datetime">{date} at {time}</span>
                     <span className="res-item-occ">Occasion: {occasion}</span>
                     <span className="res-item-party">For a party of {party}.</span>
+                    {this.checkCancel()}
                 </div>
 
             </div>
@@ -32,4 +48,4 @@ class ReservationIndexItem extends React.Component {
     }
 }
 
-export default withRouter(ReservationIndexItem);
+export default withRouter(connect(null, mDP)(ReservationIndexItem));
