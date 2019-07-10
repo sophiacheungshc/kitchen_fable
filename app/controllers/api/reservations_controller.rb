@@ -10,7 +10,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def index
-        @user = User.find_by(params[:userId])
+        @user = User.find(params[:userId])
         if @user
             @reservations = @user.reservations.order(:date)
         else

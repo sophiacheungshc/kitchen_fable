@@ -8,10 +8,11 @@ import {
 } from 'react-router-dom';
 import Modal from './modal';
 import GreetingContainer from './greeting_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 import Carousel from './carousel';
 import RestaurantIndexContainer from './restaurant_index_container';
 import RestaurantContainer from './restaurant_container';
+import UserContainer from './user_container';
 
 const App = () => (
     <div className="main-body">
@@ -29,6 +30,7 @@ const App = () => (
                 <Route exact path="/search" component={Carousel} />
                 <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
                 <Route exact path="/restaurants/:restId" component={RestaurantContainer} />
+                <ProtectedRoute exact path="/user" component={UserContainer} />
             </Switch>
         </div>
         <footer>
