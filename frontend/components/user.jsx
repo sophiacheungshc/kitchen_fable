@@ -48,7 +48,7 @@ class User extends React.Component {
             ));
         } else {
             return (
-                <div className="no-upcoming">No upcoming reservations.</div>
+                <div className="no-res">No upcoming reservations.</div>
             )
         }
     }
@@ -72,7 +72,7 @@ class User extends React.Component {
             ));
         } else {
             return (
-                <div className="no-past">No past reservations.</div>
+                <div className="no-res">No past reservations.</div>
             )
         }
 
