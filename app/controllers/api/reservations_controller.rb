@@ -12,7 +12,7 @@ class Api::ReservationsController < ApplicationController
     def index
         @user = User.find_by(params[:userId])
         if @user
-            @reservations = user.reservations.order(:date)
+            @reservations = @user.reservations.order(:date)
         else
             render json: ["User not found"], status: 404
         end

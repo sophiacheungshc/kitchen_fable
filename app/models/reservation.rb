@@ -15,7 +15,7 @@
 
 
 class Reservation < ApplicationRecord
-    validates :user_id, :rest_id, :party, :date, :time, presence: true
+    validates :user_id, :rest_id, :party, :date, :time, :occasion, presence: true
 
     belongs_to :user,
         foreign_key: :user_id,
