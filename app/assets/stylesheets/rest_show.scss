@@ -211,9 +211,18 @@ select {
 }
 
 .rest-details > * {
-    padding: 0.5rem 1rem 0 1rem;
+    padding: 1rem;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 12px;
+}
+.show-item-address {
+    padding-top: 2rem;
+    padding-bottom: 0;
+}
+
+.show-item-phone {
+    padding-bottom: 2rem;
 }
 
 .rest-details p {
@@ -221,6 +230,7 @@ select {
     font-weight: lighter;
     padding-left: 1.5rem;
     opacity: 0.8;
+    margin: 0;
 } 
 i {
     height: 26px;
