@@ -151,9 +151,23 @@ rest5 = Restaurant.create!(
     })
 end
 
-10.times do
-  min_date = Time.now - 1.years
+5.times do
+  min_date = Time.now 
   max_date = Time.now + 3.year
+  
+  Reservation.create!({
+    user_id: 1,
+    rest_id: (1..50).to_a.sample,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+end
+
+5.times do
+  min_date = Time.now - 3.years
+  max_date = Time.now 
   
   Reservation.create!({
     user_id: 1,
