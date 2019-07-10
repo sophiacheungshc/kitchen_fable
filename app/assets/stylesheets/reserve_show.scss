@@ -2,13 +2,29 @@
     display: flex;
     flex-direction: row;
     background-color: whitesmoke;
+    position: relative;
 }
 
 .user-show-sidebar {
-    height: 100%;
-    width: 30%;
+    height: fit-content;
+    width: 12%;
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 11rem;
+    left: 3rem;
+    margin: 4rem 3rem 1rem 12%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.user-show-sidebar > * {
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+.user-show-sidebar > *:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .res-index {
@@ -17,6 +33,7 @@
     width: 60%;
     height: 100%;
     margin: 1rem 0;
+    position: relative;
 }
 
 .res-index > * {
