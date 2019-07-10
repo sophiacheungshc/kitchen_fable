@@ -8,19 +8,36 @@
     position: relative;
     justify-self: center;
     background: black;
+    margin-bottom: 4rem;
 }
 
-.featured-areas > * {
+.featured-areas .area-name {
+    opacity: 1;
+}
+
+.featured-areas div {
     display: flex;
     flex-direction: column;
     width: 22rem;
     height: 11rem;
     position: relative;
-    opacity: 0.8;
-}
-
-.featured-areas > *:hover {
     opacity: 0.5;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+}
+.featured-head {
+    width: 80%;
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+    font-size: 24px;
+    font-family: 'ABeeZee', sans-serif;
+}
+.featured-areas > *:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .ny {
