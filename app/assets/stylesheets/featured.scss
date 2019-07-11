@@ -11,8 +11,26 @@
     margin-bottom: 4rem;
 }
 
+
 .featured-areas .area-name {
     opacity: 1;
+    z-index: 1;
+}
+
+// .area-name::after {
+//     opacity: 0.5;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     content: "";
+//     z-index: -1;
+// }
+
+.area-name:hover::after {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .featured-areas div {
@@ -35,26 +53,70 @@
     font-size: 24px;
     font-family: 'ABeeZee', sans-serif;
 }
-.featured-areas > *:hover {
-    opacity: 1;
-    cursor: pointer;
-}
 
-.ny {
+.ny::after {
     background: image-url('ny.jpg') 100% 100% no-repeat;
-}
-.chicago {
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
+} 
+.chic::after {
     background: image-url('chicago.jpg') 100% 100% no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
 }
-.la {
+.la::after {
     background: image-url('la.jpg') 100% 100% no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
 }
-.sf {
+.sf::after {
     background: image-url('sf.jpg') 100% 100% no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
 }
-.sd {
+.sd::after {
     background: image-url('sd.jpg') 100% 100% no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
 }
-.lv {
+.lv::after {
     background: image-url('lv.jpg') 100% 100% no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    z-index: -1;
 }

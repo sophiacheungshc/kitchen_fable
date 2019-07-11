@@ -132,10 +132,10 @@ rest5 = Restaurant.create!(
       
 )
 
-50.times do
+100.times do
     name = Faker::Restaurant.name
     next if Restaurant.exists?(name: name)
-    location = ["San Francisco", "San Diego", "New York", "Los Angeles"].sample
+    location = ["San Francisco", "San Diego", "New York", "Los Angeles", "Chicago", "Las Vegas"].sample
 
     Restaurant.create!({
       name: name,

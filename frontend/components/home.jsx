@@ -35,24 +35,12 @@ class Home extends React.Component {
                 </div>
                 <h3 className="featured-head">Featured Areas</h3>
                 <div className="featured-areas">
-                    <div className="ny" onClick={() => this.searchFeatured('new york')}>
-                        <span className="area-name">New York Area</span>
-                    </div>
-                    <div className="chicago" onClick={() => this.searchFeatured('chicago')}>
-                        <span className="area-name">Chicago</span>
-                    </div>
-                    <div className="la" onClick={() => this.searchFeatured('los angeles')}>
-                        <span className="area-name">Los Angeles</span>
-                    </div>
-                    <div className="sf" onClick={() => this.searchFeatured('san fran')}>
-                        <span className="area-name">San Francisco</span>
-                    </div>
-                    <div className="sd" onClick={() => this.searchFeatured('san diego')}>
-                        <span className="area-name">San Diego</span>
-                    </div>
-                    <div className="lv" onClick={() => this.searchFeatured('las vegas')}>
-                        <span className="area-name">Las Vegas</span>
-                    </div>
+                    <div className="area-name ny" onClick={() => this.searchFeatured('new york')}>New York Area</div>
+                    <div className="area-name chic" onClick={() => this.searchFeatured('chicago')}>Chicago</div>
+                    <div className="area-name la" onClick={() => this.searchFeatured('los angeles')}>Los Angeles</div>
+                    <div className="area-name sf" onClick={() => this.searchFeatured('san francisco')}>San Francisco</div>
+                    <div className="area-name sd" onClick={() => this.searchFeatured('san diego')}>San Diego</div>
+                    <div className="area-name lv" onClick={() => this.searchFeatured('las vegas')}>Las Vegas</div>
                 </div>
             </>
         );
