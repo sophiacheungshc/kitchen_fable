@@ -203,7 +203,7 @@ select {
     display: flex;
     flex-direction: column;
     max-width: 22rem;
-    height: 75rem;
+    height: 70rem;
     border: 1px solid whitesmoke;
     position: relative;
     margin: 1rem 0 1rem 3rem;
@@ -212,18 +212,17 @@ select {
 }
 
 .rest-details > * {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-weight: bold;
     font-size: 13px;
-    line-height: 12px;
 }
 .show-item-address {
-    padding-top: 2rem;
-    padding-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
 }
 
 .show-item-phone {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .rest-details p {
@@ -258,4 +257,26 @@ i {
 .notfounderror > * {
     color: black;
     font-weight: bold;
+}
+
+.unsave-res, .save-res {
+    position: absolute;
+    right: 2.5%;
+    top: 4%;
+    background-color: white;
+    width: 16rem;
+    height: 3.5rem;
+    text-align: center;
+    line-height: 3.5rem;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: dimgray;
+    border: 1px solid #d8d9db;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.10);
+}
+
+.unsave-res:hover, .save-res:hover {
+    cursor: pointer;
+    border: 2px solid #da3743;
 }

@@ -1,5 +1,6 @@
 import { fetchRestaurant } from '../actions/restaurant_actions';
 import { fetchFav, deleteFav, createFav } from '../actions/favorite_actions';
+import { openModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Restaurant from './restaurant';
@@ -16,7 +17,8 @@ const mDP = (dispatch) => {
         fetchRestaurant: (id) => dispatch(fetchRestaurant(id)),
         fetchFav: (id) => dispatch(fetchFav(id)),
         deleteFav: (restId) => dispatch(deleteFav(restId)),
-        createFav: (restId) => dispatch(createFav(restId))
+        createFav: (restId) => dispatch(createFav(restId)),
+        openModal: (modal) => dispatch(openModal(modal))
 
     });
 };
