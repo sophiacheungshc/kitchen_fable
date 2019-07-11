@@ -1,0 +1,75 @@
+.fav-item {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid whitesmoke;
+    padding: 1rem;
+}
+
+.fav-thumb {
+    object-fit: cover;
+    height: 8rem;
+    width: 9rem;
+    border-radius: 5px;     
+    max-width: 100%;
+    max-height: 100%
+}
+
+.fav-thumb:hover {
+    cursor: pointer;
+}
+
+.fav-item-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+}
+
+.fav-item-info > * {
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.fav-item-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    padding-bottom: 0.5rem;
+}
+
+.fav-item-name:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.reserve-now {
+    opacity: 1;
+    color: white;
+    position: relative;
+    border: none;
+    left: 30rem;
+    width: 10rem;
+    bottom: 18px;
+    background-color: #da3743;
+    border-color: #b8222d;
+    border-radius: 3px;
+    font-weight: lighter;
+    font-size: 14px;
+    text-align: center;
+    height: 2.5rem;
+    line-height: 37px;
+}
+
+.reserve-now:hover {
+    background-color: #b8222d;;
+    transition: background-color 300ms ease-out;
+    cursor: pointer;
+}
+
+.unsave-rest:hover {
+    cursor: pointer;
+}
+
+.unsave-rest .fas {
+    color:  #da3743;
+    opacity: 1;
+}

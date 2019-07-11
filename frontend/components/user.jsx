@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReservationIndexItem from './reserve_index_item';
-import RestaurantIndexItem from './restaurant_index_item';
+import FavoriteIndexItem from './favorite_index_item';
 
 class User extends React.Component {
     constructor(props){
@@ -38,7 +38,7 @@ class User extends React.Component {
             );
         } else {
             return Object.values(favs).map((fav, idx) => (
-                <RestaurantIndexItem restaurant={fav.restaurant} key={idx} />
+                <FavoriteIndexItem restaurant={fav.restaurant} key={idx} />
             ));
         }
     }

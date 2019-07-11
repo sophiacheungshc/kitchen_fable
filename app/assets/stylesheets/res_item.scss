@@ -3,6 +3,7 @@
     flex-direction: row;
     border-bottom: 1px solid whitesmoke;
     padding: 1rem;
+    max-height: 8rem;
 }
 
 .res-thumb {
@@ -21,7 +22,7 @@
 .res-item-info {
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 12px;
 }
 
 .res-item-info > * {
@@ -39,7 +40,7 @@
     opacity: 1;
 }
 .res-item-address {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 1rem;
 
 }
