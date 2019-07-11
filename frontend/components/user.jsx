@@ -1,16 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReservationIndexItem from './reserve_index_item';
+import RestaurantIndexItem from './restaurant_index_item';
 
 class User extends React.Component {
     constructor(props){
         super(props);
 
         this.scrollTo = this.scrollTo.bind(this);
+        this.all_saved = this.all_saved.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchAllRes(this.props.currentUserId);
+        this.props.fetchFavs(this.props.currentUserId);
     }
 
     handleClick() {
@@ -27,7 +30,17 @@ class User extends React.Component {
     }
 
     all_saved(){
+        let favs = this.props.favorites;
 
+        if (Object.keys(favs).length === 0) {
+            return (
+                <div className="no-res">No saved restaurants.</div>
+            );
+        } else {
+            return Object.values(favs).map((fav, idx) => (
+                <RestaurantIndexItem restaurant={fav.restaurant} key={idx} />
+            ));
+        }
     }
 
     upcoming(){

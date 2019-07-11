@@ -6,10 +6,6 @@ class Restaurant extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            saved: undefined
-        }
-
         this.checkFav = this.checkFav.bind(this);
         this.deleteFav = this.deleteFav.bind(this);
         this.createFav = this.createFav.bind(this);
@@ -18,14 +14,12 @@ class Restaurant extends React.Component {
 
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restId);
-        
     }
 
     deleteFav(id) {
         return (e) => {
             e.preventDefault();
             this.props.deleteFav(id);
-            this.forceUpdate();
         };
     }
 
@@ -33,7 +27,6 @@ class Restaurant extends React.Component {
         return (e) => {
             e.preventDefault();
             this.props.createFav(id);
-            this.forceUpdate();
         };
     }
 

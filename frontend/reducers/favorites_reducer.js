@@ -7,8 +7,8 @@ const FavoritesReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_FAV:
             return action.favorites;
-        case RECEIVE_FAV:
-          return merge({}, state, {[action.favorite.id]: action.favorite});
+        // case RECEIVE_FAV:
+        //   return merge({}, state, action.favorite);
         case DESTROY_FAV:
             let newState = merge({}, state);
             delete newState[action.favorite.id];

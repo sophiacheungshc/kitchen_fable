@@ -1,15 +1,13 @@
 export const fetchAllRestaurants = () => (
     $.ajax({
         method: 'GET',
-        url: 'api/restaurants',
-        error: (err) => console.log(err)
+        url: 'api/restaurants'
     })
 );
 export const fetchRestaurant = (id) => (
     $.ajax({
         method: 'GET',
-        url: `api/restaurants/${id}`,
-        error: (err) => console.log(err)
+        url: `api/restaurants/${id}`
     })
 );
 
