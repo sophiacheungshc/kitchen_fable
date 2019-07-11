@@ -6,19 +6,56 @@ class Restaurant extends React.Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            saved: undefined
+        }
+
+        this.checkFav = this.checkFav.bind(this);
+        this.deleteFav = this.deleteFav.bind(this);
+        this.createFav = this.createFav.bind(this);
+
     }
 
     componentDidMount(){
-        // if (this.props.restaurant){
-            this.props.fetchRestaurant(this.props.match.params.restId);
-        // } else {
-        //     this.props.history.push(`/restaurants`);
-        // }
+        this.props.fetchRestaurant(this.props.match.params.restId);
         
     }
+
+    deleteFav(id) {
+        return (e) => {
+            e.preventDefault();
+            this.props.deleteFav(id);
+            this.forceUpdate();
+        };
+    }
+
+    createFav(id) {
+        return (e) => {
+            e.preventDefault();
+            this.props.createFav(id);
+            this.forceUpdate();
+        };
+    }
+
+    checkFav(){
+
+        if (!this.props.currentUserId) { return <div className="unsave-res"><i className="fas fa-bookmark"></i>Sign in to save</div>}
+
+        const { restaurant } = this.props;
+
+        if (restaurant.userSaved) {
+            return (
+            <div className="unsave-res" onClick={this.deleteFav(restaurant.id)}><i className="fas fa-bookmark"></i>Unsave this restaurant</div>
+            )
+        } else {
+            return (
+            <div className="save-res" onClick={this.createFav(restaurant.id)}><i className="far fa-bookmark"></i>Save this restaurant</div>
+            )
+        }
+    }
+
     render(){
         if (this.props.restaurant === undefined) {
-            // this.props.history.push(`/restaurants`);
             return(<div></div>);
         }
 
@@ -28,9 +65,9 @@ class Restaurant extends React.Component {
 
         return(
             <>
+                {this.checkFav()}
                 <img className="rest-banner" src={`/assets/${img}.jpg`}></img>
                 <div className="rest-show">
-                {/* <div className="rest-banner"></div> */}
                 <div className="rest-main">
                     <div className="show-tab">
                         <span className="tab-selected">Overview</span>

@@ -33,6 +33,7 @@ class Home extends React.Component {
                     <div className='slide3'></div>
                     <SearchContainer />
                 </div>
+                
                 <h3 className="featured-head">Featured Areas</h3>
                 <div className="featured-areas">
                     <div className="area-name ny" onClick={() => this.searchFeatured('new york')}>New York Area</div>

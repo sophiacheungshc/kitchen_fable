@@ -26,7 +26,7 @@ class User extends React.Component {
         };
     }
 
-    cancelRes(){
+    all_saved(){
 
     }
 
@@ -122,7 +122,7 @@ class User extends React.Component {
                 <div className="user-show-sidebar">
                     <span onClick={this.scrollTo(this.upcomingSection)}>Upcoming Reservations</span>
                     <span onClick={this.scrollTo(this.pastSection)}>Past Reservations</span>
-                    <span>My Favorites</span>
+                    <span onClick={this.scrollTo(this.savedSection)}>Saved Restaurants</span>
                 </div>
                 <div className="res-index">
                     <div className="upcoming-res-container" ref={el => this.upcomingSection = el}>
@@ -133,7 +133,12 @@ class User extends React.Component {
                         <h1>Past Reservations</h1>
                         {this.past()}
                     </div>
+                    <div className="saved-container" ref={el => this.savedSection = el}>
+                        <h1>Saved Restaurants</h1>
+                        {this.all_saved()}
+                    </div>
                 </div>
+                
             </div>
         )
     }

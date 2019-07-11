@@ -23,6 +23,10 @@ class Restaurant < ApplicationRecord
     foreign_key: :rest_id,
     class_name: :Reservation
 
+    has_many :favorites,
+    foreign_key: :rest_id,
+    class_name: :Favorite
+
     CUISINES = [
         "American",
         "Chinese",
