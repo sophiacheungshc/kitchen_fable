@@ -154,7 +154,7 @@ rest5 = Restaurant.create!(
       hours: "Monday - Friday: 12:00 PM - 11:00 PM, Saturday - Sunday: 5:30 PM - 11:00 PM",
       dress_code: ['Business Causal','Causal Elegant',"Casual"].sample,
       exec_chef: Faker::Name.name,
-      description: Faker::Restaurant.description
+      description: Faker::Restaurant.description + Faker::Restaurant.description
     })
 end
 
