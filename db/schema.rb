@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 2019_07_11_004142) do
     t.string "dress_code", null: false
     t.string "exec_chef", null: false
     t.text "description", null: false
+    t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["image"], name: "index_restaurants_on_image"
     t.index ["location"], name: "index_restaurants_on_location"
     t.index ["name"], name: "index_restaurants_on_name"
   end

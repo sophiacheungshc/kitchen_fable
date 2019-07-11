@@ -53,13 +53,12 @@ class Restaurant extends React.Component {
         }
 
         const { name, address, location, phone_number, cuisine, menu, hours, 
-            dress_code, exec_chef, description } = this.props.restaurant;
-        const img = Math.floor(Math.random() * (23 - 21 + 1)) + 21;
+            dress_code, exec_chef, description, image } = this.props.restaurant;
 
         return(
             <>
                 {this.checkFav()}
-                <img className="rest-banner" src={`/assets/${img}.jpg`}></img>
+                <img className="rest-banner" src={image}></img>
                 <div className="rest-show">
                 <div className="rest-main">
                     <div className="show-tab">

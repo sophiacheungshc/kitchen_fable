@@ -1,5 +1,5 @@
 json.extract! restaurant, :id, :name, :address, :location, :phone_number, 
-    :cuisine, :menu, :hours, :dress_code, :exec_chef, :description
+    :cuisine, :menu, :hours, :dress_code, :exec_chef, :description, :image
 
 # json.favorites do    
 #     restaurant.favorites.each do |fav| 

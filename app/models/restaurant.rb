@@ -13,9 +13,11 @@
 #  dress_code   :string           not null
 #  exec_chef    :string           not null
 #  description  :text             not null
+#  image        :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+
 
 class Restaurant < ApplicationRecord
     

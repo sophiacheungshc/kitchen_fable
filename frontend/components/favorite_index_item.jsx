@@ -23,12 +23,12 @@ class FavoriteIndexItem extends React.Component {
     // }
 
     render() {
-        const { name, cuisine, location } = this.props.restaurant;
-        const img = Math.floor(Math.random() * 20) + 1;
+        const { name, cuisine, location, image } = this.props.restaurant;
+        // const img = Math.floor(Math.random() * 20) + 1;
 
         return (
             <div className="fav-item">
-                <img className="fav-thumb" onClick={this.handleClick} src={`/assets/${img}.jpg`} />
+                <img className="fav-thumb" onClick={this.handleClick} src={image} />
 
                 <div className="fav-item-info">
                     <span className="fav-item-name" onClick={this.handleClick}>{name}</span>
