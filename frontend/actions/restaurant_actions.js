@@ -19,8 +19,7 @@ export const fetchAllRestaurants = () => (dispatch) => (
 export const fetchRestaurant = (id) => (dispatch) => (
     RestAPI.fetchRestaurant(id)
         .then( 
-            restaurant => dispatch(receiveRestaurant(restaurant)), 
-            err => {debugger}
+            restaurant => dispatch(receiveRestaurant(restaurant))
         )
 );
 

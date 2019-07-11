@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'faker'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -51,7 +52,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
-  gem 'faker'
 end
 
 group :test do
