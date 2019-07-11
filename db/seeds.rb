@@ -68,7 +68,7 @@ user6 = User.create!(
 end
 
 rest1 = Restaurant.create!(
-  image: "/assets/5.jpg",
+  image: "5",
   name: "Marta",
   address: "29 East 29th Street, New York, NY 10016",
   location: "New York",
@@ -81,7 +81,7 @@ rest1 = Restaurant.create!(
   description: "Marta is a lively Italian restaurant helmed by Executive Chef Joe Tarasco. Inspired by the rustic tradition of Roman pizzerie, local haunts that churn out thin, crackly-crusted pizzas, Marta features an energetic open kitchen with two wood-burning ovens and an open-fire grill taking center stage."
 )
 rest2 = Restaurant.create!(
-  image: "/assets/6.jpg",
+  image: "6",
   name: "Gramercy Tavern",
   address: "42 E. 20th St, New York, NY 10003",
   location: "New York",
@@ -95,7 +95,7 @@ rest2 = Restaurant.create!(
 )
 
 rest3 = Restaurant.create!(
-  image: "/assets/7.jpg",
+  image: "7",
   name: 'Kusakabe',
   address: '584 Washington Street, San Francisco, CA 94111',
   location: 'San Francisco',
@@ -109,7 +109,7 @@ rest3 = Restaurant.create!(
 )
 
 rest4 = Restaurant.create!(
-  image: "/assets/8.jpg",
+  image: "8",
   name: 'Brenda\'s French Soul Food',
   address: '652 Polk St San Francisco, CA 94102',
   location: 'San Francisco',
@@ -123,7 +123,7 @@ rest4 = Restaurant.create!(
 )
 
 rest5 = Restaurant.create!(
-  image: "/assets/9.jpg",
+  image: "9",
   name: 'The Cavalier',
   address: '360 Jessie Street San Francisco, CA 94103',
   location: 'San Francisco',
@@ -143,7 +143,7 @@ rest5 = Restaurant.create!(
     location = ["San Francisco", "San Diego", "New York", "Los Angeles", "Chicago", "Las Vegas"].sample
 
     Restaurant.create!({
-      image: "/assets/#{("1".."23").to_a.sample}.jpg",
+      image: ("1".."23").to_a.sample,
       name: name,
       address: Faker::Address.street_address + ", " + location,
       location: location,

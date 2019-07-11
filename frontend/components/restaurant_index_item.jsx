@@ -13,9 +13,13 @@ class RestaurantIndexItem extends React.Component {
 
   render() {
     const { name, address, cuisine, image } = this.props.restaurant;
+    const style = {
+      backgroundImage: 'url(assets/' + image + '.jpg)',
+    };
+
     return (
       <div className="rest-index-item">
-        <img className="rest-thumb" onClick={this.handleClick} src={image} />
+        <div className="rest-thumb" onClick={this.handleClick} style={style}></div>
 
         <div className="index-item-info">
             <span className="index-item-name" onClick={this.handleClick}>{name}</span>
