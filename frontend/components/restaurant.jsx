@@ -55,12 +55,15 @@ class Restaurant extends React.Component {
         const { name, address, location, phone_number, cuisine, menu, hours, 
             dress_code, exec_chef, description, image } = this.props.restaurant;
 
-        // const style = {
-        //     backgroundImage: 'url(assets/' + image + '.jpg)',
-        // };
         const style = {
-            background: 'image-url(' + image + '.jpg)',
+            backgroundImage: 'url(assets/' + image + '.jpg)',
         };
+        // const style = {
+        //     background: 'image-url(' + image + '.jpg)',
+        // };
+        // const style = {
+        //     background: 'black',
+        // };
         return(
             <>
                 {this.checkFav()}
