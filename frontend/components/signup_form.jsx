@@ -73,7 +73,6 @@ class SignUpForm extends React.Component {
                         
                         <input className="submit-btn" type="submit" value={this.props.formType} />
                     
-                        <hr className="session-hr"/>
                         <h5>Don't want to complete the form?</h5>
                         <button className="demo-btn" onClick={this.demo}>Demo Login</button>
                     </div>
