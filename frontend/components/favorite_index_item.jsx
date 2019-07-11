@@ -11,16 +11,16 @@ class FavoriteIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.unsave = this.unsave.bind(this);
+        // this.unsave = this.unsave.bind(this);
     }
 
     handleClick() {
         this.props.history.push(`/restaurants/${this.props.restaurant.id}`);
     }
 
-    unsave() {
-        this.props.deleteFav(this.props.restaurant.id);
-    }
+    // unsave() {
+    //     this.props.deleteFav(this.props.restaurant.id);
+    // }
 
     render() {
         const { name, cuisine, location } = this.props.restaurant;
@@ -32,7 +32,7 @@ class FavoriteIndexItem extends React.Component {
 
                 <div className="fav-item-info">
                     <span className="fav-item-name" onClick={this.handleClick}>{name}</span>
-                    <span className="unsave-rest" onClick={this.unsave}><i className="fas fa-bookmark"></i>Remove from saved restaurants</span>
+                    {/* <span className="unsave-rest" onClick={this.unsave}><i className="fas fa-bookmark"></i>Remove from saved restaurants</span> */}
                     <span className="fav-location">{cuisine} | {location}</span>
                     <span className="reserve-now" onClick={this.handleClick}>Reserve Now</span>
                 </div>
