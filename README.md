@@ -18,7 +18,7 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 
 ### Search Homepage
 No user log in is required to search and look up restaurants. Just type in a keyword for either name, city, or cuisine in the search bar.
-![Homepage](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/readme.jpg)
+![Homepage](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/home.jpg)
 
 ### Sign up/Sign in
 User may sign up or sign in on a modal styled form. Demo log in provides a quick way to experience the site.
