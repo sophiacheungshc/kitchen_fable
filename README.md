@@ -16,14 +16,12 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 * Signed in users may make reservations for restaurants, specifying the time, date, party size and occasion.
 * Profile page shows history of reservations and saved restaurants.
 
-### Search Homepage
-No user log in is required to search and look up restaurants. Just type in a keyword for either name, city, or cuisine in the search bar.
+## Search, Sign up/Sign in, Restaurants
+* No user log in is required to search and look up restaurants. Just type in a keyword for either name, city, or cuisine in the search bar.
+* User may sign up or sign in on a modal styled form. Demo log in provides a quick way to experience the site.
+* Search returns a list of restaurants relevant to the keyword entered. Click on the thumbnail or name to view restaurant.
 
-### Sign up/Sign in
-User may sign up or sign in on a modal styled form. Demo log in provides a quick way to experience the site.
-
-### Restaurants
-Search returns a list of restaurants relevant to the keyword entered. Click on the thumbnail or name to view restaurant.
-
-![](https://media.giphy.com/media/lnmFlNRzZRDOl5VNcW/giphy.gif)
+<p align="center">
+  <img width="460" height="300" src="https://media.giphy.com/media/lnmFlNRzZRDOl5VNcW/giphy.gif">
+</p>
 
