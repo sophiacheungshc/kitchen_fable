@@ -25,12 +25,12 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 </p>
 
 ## Restaurant, Reservation, Save/Unsave
-* Restaurant show page displays details about the restaurant.
+* Restaurant show page displays details about the restaurant. Click on bookmark icon to save or unsave.
 <p align="center">
   <img width="600" height="375" src="https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/seconddemo.gif">
 </p>
 
-* Sign in to make a reservation. Choose a date (only future dates permitted), time, party size, and occasion. Click on bookmark icon to save or unsave.
+* Sign in to make a reservation. Choose a date (only future dates permitted), time, party size, and occasion.
 <p align="center">
   <img width="600" height="375" src="https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/thirddemo.gif">
 </p>
