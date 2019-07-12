@@ -24,6 +24,25 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
   <img width="600" height="350" src="https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/firstdemo.gif">
 </p>
 
+##### Code Snippet - Searching by Keyword
+```js
+    searchFeatured(keyword){
+        this.props.searchRestaurants(keyword)
+            .then(() => this.props.history.push({
+                pathname: '/restaurants',
+                search: `?search=${keyword}`
+            })); 
+    }
+```
+
+```ruby
+    def self.find_by_keyword(keyword)
+        Restaurant.where("lower(name) like ?", "%#{keyword.downcase}%")
+                .or(Restaurant.where("lower(location) like ?", "%#{keyword.downcase}%"))
+                .or(Restaurant.where("lower(cuisine) like ?", "%#{keyword.downcase}%"))
+    end
+```
+
 ## Restaurant, Reservation, Save/Unsave
 * Restaurant show page displays details about the restaurant. Click on bookmark icon to save or unsave.
 * Sign in to make a reservation. Choose a date (only future dates permitted), time, party size, and occasion.
@@ -38,6 +57,33 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 <p align="center">
   <img width="600" height="375" src="https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/fourthdemo.gif">
 </p>
+
+##### Code Snippet - Merge sorting reservation dates
+```js
+  sortDates(arr){
+      if (arr.length <= 1) return arr;
+
+      let mid = Math.floor(arr.length / 2);
+      let left = arr.slice(0, mid);
+      let right = arr.slice(mid);
+
+      return this.merge(this.sortDates(left, desc), this.sortDates(right))
+  }
+
+  merge(left, right){
+      let result = [];
+
+      while (left.length && right.length) {
+          if ((Date.parse(left[0].date) < (Date.parse(right[0].date)))) {
+              result.push(left.shift());
+          } else {
+              result.push(right.shift());
+          }
+      }
+
+      return result.concat(left).concat(right);
+  }
+```
 
 
 
