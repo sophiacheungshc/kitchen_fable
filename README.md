@@ -1,11 +1,8 @@
 # README
+## Kitchen Fable
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+[Kitchen Fable Live!](https://kitchenfable.herokuapp.com/)
+Kitchen Fable is a single page app inspired by Open Table, which allows users to search for restaurants in 6 different cities, make reservations and save specific restaurants as they wish. This app was built with Ruby on Rails for the backend and React-Redux for the frontend, using PostgreSQL to manage the database.
 
 * System dependencies
 
