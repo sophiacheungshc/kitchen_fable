@@ -1,5 +1,12 @@
 json.extract! restaurant, :id, :name, :address, :location, :phone_number, 
-    :cuisine, :menu, :hours, :dress_code, :exec_chef, :description, :image
+    :cuisine, :menu, :hours, :dress_code, :exec_chef, :description
+
+  if restaurant.photo.attached?
+    json.photo url_for(restaurant.photo)
+  else
+    json.photo ''
+  end
+
 
 # json.favorites do    
 #     restaurant.favorites.each do |fav| 

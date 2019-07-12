@@ -11,12 +11,10 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :dress_code, null: false      
       t.string :exec_chef, null: false
       t.text :description, null: false
-      t.string :image, null: false
 
       t.timestamps
     end
     add_index :restaurants, :name
     add_index :restaurants, :location
-    add_index :restaurants, :image
   end
 end

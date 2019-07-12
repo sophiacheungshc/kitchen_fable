@@ -23,10 +23,10 @@ class FavoriteIndexItem extends React.Component {
     // }
 
     render() {
-        const { name, cuisine, location, image } = this.props.restaurant;
-        // const img = Math.floor(Math.random() * 20) + 1;
+        const { name, cuisine, location } = this.props.restaurant;
+
         const style = {
-            backgroundImage: 'url(assets/' + image + '.jpg)',
+            backgroundImage: 'url(' + this.props.restaurant.photo + ')',
         };
 
         return (

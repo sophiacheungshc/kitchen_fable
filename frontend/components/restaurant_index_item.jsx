@@ -12,9 +12,9 @@ class RestaurantIndexItem extends React.Component {
   }
 
   render() {
-    const { name, address, cuisine, image } = this.props.restaurant;
+    const { name, address, cuisine } = this.props.restaurant;
     const style = {
-      backgroundImage: 'url(assets/' + image + '.jpg)',
+      backgroundImage: 'url(' + this.props.restaurant.photo + ')',
     };
 
     return (

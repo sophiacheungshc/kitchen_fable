@@ -13,7 +13,6 @@
 #  dress_code   :string           not null
 #  exec_chef    :string           not null
 #  description  :text             not null
-#  image        :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -28,6 +27,8 @@ class Restaurant < ApplicationRecord
     has_many :favorites,
     foreign_key: :rest_id,
     class_name: :Favorite
+
+    has_one_attached :photo
 
     CUISINES = [
         "American",
