@@ -67,7 +67,7 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
       let left = arr.slice(0, mid);
       let right = arr.slice(mid);
 
-      return this.merge(this.sortDates(left, desc), this.sortDates(right))
+      return this.merge(this.sortDates(left), this.sortDates(right))
   }
 
   merge(left, right){
