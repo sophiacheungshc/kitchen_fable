@@ -24,13 +24,11 @@ class FavoriteIndexItem extends React.Component {
 
     render() {
         const { name, cuisine, location } = this.props.restaurant;
-        debugger
 
         const style = {
             
             backgroundImage: 'url(' + this.props.fav.photo + ')',
         };
-        debugger
         return (
             <div className="fav-item">
                 <div className="fav-thumb" onClick={this.handleClick} style={style} ></div>

@@ -11,8 +11,3 @@ const mDP = dispatch => ({
 });
 
 export default withRouter(connect(mSP, mDP)(Search));
-// debugger
-            // this.props.history.push({
-            //     pathname: '/restaurants',
-            //     state: { newState }
-            // });
