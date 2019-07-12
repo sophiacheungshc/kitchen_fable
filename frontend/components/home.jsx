@@ -33,6 +33,54 @@ class Home extends React.Component {
                     <div className='slide3'></div>
                     <SearchContainer />
                 </div>
+
+                <h3 className="featured-head">Top Cuisines</h3>
+                {/* <div class="top-cuisines" data-flickity='{ "cellAlign": "left", "contain": true }'>
+                    <div class="featured-cuisine american">American</div>
+                    <div class="featured-cuisine italian">Italian</div>
+                    <div class="featured-cuisine chinese">Chinese</div>
+                    <div class="featured-cuisine jap">Japanese</div>
+                </div> */}
+
+                <div class="accordion">
+                    <ul>
+                        <li>
+                            <div class="caption am">American</div>
+                            <a href="#" >
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/american.jpg' onClick={() => this.searchFeatured('american')}/></a>
+                        </li>
+
+                        <li>
+                            <div class="caption">Cantonese</div>
+                            <a href="#">
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/canto.jpg' onClick={() => this.searchFeatured('cantonese')}/></a>
+                        </li>
+
+                        <li>
+                            <div class="caption">French</div>
+                            <a href="#">
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/french.jpg' onClick={() => this.searchFeatured('french')} /></a>
+                        </li>
+
+                        <li>
+                            <div class="caption">Indian</div>
+                            <a href="#">
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/indian.jpg' onClick={() => this.searchFeatured('indian')} /></a>
+                        </li>
+
+                        <li>
+                            <div class="caption">Italian</div>
+                            <a href="#">
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/italian.jpg' onClick={() => this.searchFeatured('italian')}/></a>
+                        </li>
+
+                        <li>
+                            <div class="caption">Japanese</div>
+                            <a href="#">
+                                <img src='https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/jap.jpg' onClick={() => this.searchFeatured('japanese')}/></a>
+                        </li>
+                    </ul>
+                </div>
                 
                 <h3 className="featured-head">Featured Areas</h3>
                 <div className="featured-areas">
