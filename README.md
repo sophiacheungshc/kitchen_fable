@@ -24,5 +24,5 @@ User may sign up or sign in on a modal styled form. Demo log in provides a quick
 
 ### Restaurants
 Search returns a list of restaurants relevant to the keyword entered. Click on the thumbnail or name to view restaurant.
-![Index](https://gph.is/g/EBnYo7D)
+![](https://media.giphy.com/media/lnmFlNRzZRDOl5VNcW/giphy.gif)
 
