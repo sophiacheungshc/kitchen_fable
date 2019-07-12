@@ -22,5 +22,10 @@ No user log in is required to search and look up restaurants. Just type in a key
 
 ### Sign up/Sign in
 User may sign up or sign in on a modal styled form. Demo log in provides a quick way to experience the site.
-![Sign Up](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/signup.jpg)
-![Sign Up](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/signin.jpg)
+![Sign Up](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/signup.png)
+![Sign Up](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/signin.png)
+
+### Restaurants
+Search returns a list of restaurants relevant to the keyword entered. Click on the thumbnail or name to view restaurant.
+![Index](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/index.jpg)
+![Show](https://github.com/sophiacheungshc/kitchen_fable/blob/master/app/assets/images/restaurant.jpg)
