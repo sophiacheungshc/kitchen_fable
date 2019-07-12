@@ -113,10 +113,10 @@
 ////////////
 .accordion {
     width: 750px;
-    height: 320px;
-	overflow: hidden;
-  box-shadow: 0 10px 6px -6px #111;
-  margin: 20px auto
+    height: 230px;
+    overflow: hidden;
+    box-shadow: 0 10px 6px -6px #111;
+    margin: 20px auto;
 }
 .accordion ul { width: 200% }
 
@@ -143,8 +143,8 @@
 }
 
 .accordion img {
-    height: 20rem;
-    object-fit: scale-down;
+    height: 15rem;
+    width: 25rem;
 }
 
 .caption:hover {

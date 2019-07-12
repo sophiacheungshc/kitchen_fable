@@ -22,7 +22,7 @@
 }
 
 .search-type {
-    width: 22rem;
+    width: 36rem;
     display: flex;
     flex-direction: row;
 }
@@ -112,4 +112,9 @@ input:focus{
 .index-search-container .search-submit:hover {
     background-color: #b8222d;;
     transition: background-color 300ms ease-out;
+}
+
+.searched-for {
+    font-size: 16px;
+    
 }

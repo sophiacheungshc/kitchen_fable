@@ -21,12 +21,16 @@
 class Restaurant < ApplicationRecord
     
     has_many :reservations,
-    foreign_key: :rest_id,
-    class_name: :Reservation
+        foreign_key: :rest_id,
+        class_name: :Reservation
 
     has_many :favorites,
-    foreign_key: :rest_id,
-    class_name: :Favorite
+        foreign_key: :rest_id,
+        class_name: :Favorite
+
+    has_many :reviews,
+        foreign_key: :rest_id,
+        class_name: :Review
 
     has_one_attached :photo
 

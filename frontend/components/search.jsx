@@ -40,7 +40,7 @@ class Search extends React.Component {
         if (this.props.location.pathname === '/') {
             return (
                 <form className="search-container" onSubmit={this.handleSubmit} method="GET">
-                    <span className="search-info"></span>
+          
                     <span className="search-type">
                         <div className="search-icon"></div>
                         <input type="text" onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
@@ -52,7 +52,7 @@ class Search extends React.Component {
             return (
                 <div className="index-search-bar">
                     <form className="index-search-container" onSubmit={this.handleSubmit} method="GET">
-                        <span className="search-info"></span>
+                   
                         <span className="search-type">
                             <div className="search-icon"></div>
                             <input type="text" value={this.state.keyword} onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />

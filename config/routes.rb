@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:index, :show]
     resources :reservations, only: [:index, :show, :create, :destroy]
     resources :favorites, only: [:create, :index, :show, :destroy]
+    resources :reviews, only: [:create, :index, :show]
   end
 
   root "static_pages#root"

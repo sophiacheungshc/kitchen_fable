@@ -8,3 +8,9 @@ json.extract! favorite,
     :user_id,
     :rest_id,
     :restaurant
+
+    if favorite.restaurant.photo.attached?
+        json.photo url_for(favorite.restaurant.photo)
+    else
+        json.photo ''
+    end

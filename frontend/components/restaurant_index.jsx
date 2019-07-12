@@ -24,6 +24,7 @@ class RestaurantIndex extends React.Component {
 
         } else {
             return this.props.restaurants.map(rest => (
+                
                 <RestaurantIndexItem restaurant={rest} key={rest.id} />
             ));
         }
@@ -33,6 +34,7 @@ class RestaurantIndex extends React.Component {
             <>
                 <SearchContainer />
                 <div className="rest-index-container">
+                    {/* <div className="searched-for">You searched for "{this.props.location.search.slice(8)}"</div> */}
                     {this.restaurant_index()}
                 </div>
             </>

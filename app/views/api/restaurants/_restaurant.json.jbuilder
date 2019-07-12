@@ -7,15 +7,9 @@ json.extract! restaurant, :id, :name, :address, :location, :phone_number,
     json.photo ''
   end
 
+  # json.rating_arr restaurant.rating_arr
 
-# json.favorites do    
-#     restaurant.favorites.each do |fav| 
-#         json.set! fav.id do 
-#             json.extract! fav, :id, :user_id, :rest_id
-#         end
-#     end
-
-# end
+  # json.countReview restaurant.reviews.pluck(:user_id).length
 
 if current_user
   json.userSaved !!restaurant.favorites.find_by(user_id: current_user.id)

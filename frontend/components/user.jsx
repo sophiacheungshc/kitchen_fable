@@ -38,7 +38,7 @@ class User extends React.Component {
             );
         } else {
             return Object.values(favs).map((fav, idx) => (
-                <FavoriteIndexItem restaurant={fav.restaurant} key={idx} />
+                <FavoriteIndexItem restaurant={fav.restaurant} fav={fav} key={idx} />
             ));
         }
     }

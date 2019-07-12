@@ -27,12 +27,16 @@ class ReservationIndexItem extends React.Component {
     }
 
     render() {
-        const { name, address, image } = this.props.restaurant;
-        const { date, time, party, occasion } = this.props.reservation;
-        // const img = Math.floor(Math.random() * 20) + 1;
+        const { name, address } = this.props.restaurant;
+        const { date, time, party, occasion, photo } = this.props.reservation;
+        
+        const style = {
+            backgroundImage: 'url(' + photo + ')',
+        };
+
         return (
             <div className="reserve-index-item">
-                <img className="res-thumb" onClick={this.handleClick} src={image} />
+                <div className="fav-thumb" onClick={this.handleClick} style={style}></div>
 
                 <div className="res-item-info">
                     <span className="res-item-name" onClick={this.handleClick}>{name}</span>
