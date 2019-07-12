@@ -1,11 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import {
-    Route,
-    Switch,
-    Link,
-    HashRouter
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Modal from './modal';
 import GreetingContainer from './greeting_container';
 import { ProtectedRoute } from '../util/route_util';
@@ -29,7 +23,7 @@ const App = () => (
             </Switch>
         </div>
         <footer>
-                <h5>Join us on</h5>
+                <h5>Join me on</h5>
                 <div className="external-links">
                 <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="github"></span></a>
                 <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="linkedin"></span></a>
