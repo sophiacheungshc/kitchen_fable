@@ -19,7 +19,6 @@ class Restaurant extends React.Component {
     }
 
     scrollTo(el) {
-        console.log(el);
         return () => {
             el.scrollIntoView({
                 behavior: 'smooth',
