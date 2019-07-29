@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Map from './map';
 import ReservationContainer from './reservation_container';
 
@@ -9,11 +10,22 @@ class Restaurant extends React.Component {
         this.checkFav = this.checkFav.bind(this);
         this.deleteFav = this.deleteFav.bind(this);
         this.createFav = this.createFav.bind(this);
+        this.scrollTo = this.scrollTo.bind(this);
 
     }
 
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restId);
+    }
+
+    scrollTo(el) {
+        console.log(el);
+        return () => {
+            el.scrollIntoView({
+                behavior: 'smooth',
+                block: "start"
+            });
+        };
     }
 
     deleteFav(id) {
@@ -66,11 +78,11 @@ class Restaurant extends React.Component {
                 <div className="rest-show">
                 <div className="rest-main">
                     <div className="show-tab">
-                        <span className="tab-selected">Overview</span>
+                        <span className="tab-selected" onClick={this.scrollTo(this.overviewSection)}>Overview</span>
                         <span>Reviews</span>
                         <span>Leave a Review</span>
                     </div>
-                    <span className="show-item-name">{name}</span>
+                        <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
                     <span className="show-item-desc">{description}</span>
                         <span className="show-item-menu"><a href={menu} target="_blank">Link to menu</a></span>
                 </div>
@@ -112,4 +124,4 @@ class Restaurant extends React.Component {
     }
 }
 
-export default Restaurant;
+export default withRouter(Restaurant);
