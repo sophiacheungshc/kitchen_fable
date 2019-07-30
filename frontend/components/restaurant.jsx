@@ -84,7 +84,7 @@ class Restaurant extends React.Component {
                     </div>
                     <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
                     <span className="show-item-desc">{description}</span>
-                    <span className="show-item-menu"><a href={menu} target="_blank">Link to menu</a></span>
+                    <span className="show-item-menu"><a href={menu} target="_blank">View menu on restaurant's website</a></span>
                     <div className="revs-container">
                         <ReviewIndexContainer />
                     </div>
