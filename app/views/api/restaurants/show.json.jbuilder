@@ -15,7 +15,7 @@ end
 @restaurant.reviews.each do |review|
     json.users do
         json.set! review.user_id do
-            json.partial! 'api/users/user', user: review.user
+            json.extract! review.user, :id, :fname, :location
         end
     end
 end
