@@ -14,7 +14,7 @@
 #
 
 class Review < ApplicationRecord
-    validates :res_id, presence: true
+    validates :res_id, :user_id, presence: true
     validates :overall, :food, :service , :ambience, inclusion: { in: [1, 2, 3, 4, 5] }, presence: true
     validates :comment, length: { maximum: 500 }
 
@@ -22,12 +22,6 @@ class Review < ApplicationRecord
         foreign_key: :res_id,
         class_name: :Reservation
 
-    has_one :restaurant,
-        through: :reservation,
-        source: :restaurant
-
-    has_one :user,
-        through: :reservation,
-        source: :user
+    belongs_to :user
 
 end

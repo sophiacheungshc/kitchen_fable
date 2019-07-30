@@ -201,6 +201,7 @@ ActiveRecord::Base.transaction do
 
     Review.create(
       res_id: res.id,
+      user_id: user1.id,
       comment: Faker::Restaurant.review,
       overall: (1..5).to_a.sample,
       food: (1..5).to_a.sample,
@@ -224,6 +225,7 @@ ActiveRecord::Base.transaction do
 
     Review.create(
       res_id: res.id,
+      user_id: res.user_id,
       comment: Faker::Restaurant.review,
       overall: (1..5).to_a.sample,
       food: (1..5).to_a.sample,

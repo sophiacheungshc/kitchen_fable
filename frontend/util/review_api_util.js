@@ -6,19 +6,17 @@ export const createReview = review => (
     })
 );
 
-
-export const fetchReview = reviewId => (
+export const updateReview = review => (
     $.ajax({
-        method: 'GET',
-        url: `/api/reviews/${reviewId}`
+        method: 'PATCH',
+        url: `/api/reviews/${review.id}`,
+        data: { review }
     })
 );
 
-
-export const fetchReviews = (restId) => (
+export const deleteReview = review => (
     $.ajax({
-        method: 'GET',
-        url: '/api/reviews',
-        data: { restId }
+        method: 'DELETE',
+        url: `/api/reviews/${review.id}`
     })
 );

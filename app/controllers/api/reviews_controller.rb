@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.includes(:author).find(params[:id])
+        @review = Review.includes(:user).find(params[:id])
         if @review.update(review_params)
             render "api/restaurants/show"
         else
@@ -29,6 +29,7 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    private
     def review_params
         params.require(:review).permit(:res_id, :overall, :food, :service, :ambience, :comment)
     end

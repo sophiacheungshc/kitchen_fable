@@ -1,6 +1,7 @@
 class CreateReviews < ActiveRecord::Migration[5.2]
   def change
     create_table :reviews do |t|
+      t.integer :user_id, null: false, index: true
       t.integer :res_id, null: false, index: true
       t.integer :overall, null: false
       t.integer :food, null: false

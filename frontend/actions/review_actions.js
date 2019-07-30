@@ -1,15 +1,15 @@
 import * as ReviewAPI from '../util/review_api_util';
 
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
-export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
-
-const receiveReviews = reviews => ({
-    type: RECEIVE_REVIEWS,
-    reviews
-});
+export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 
 const receiveReview = review => ({
     type: RECEIVE_REVIEW,
+    review
+});
+
+const removeReview = (review) => ({
+    type: REMOVE_REVIEW,
     review
 });
 
@@ -18,18 +18,17 @@ const receiveReview = review => ({
 //     errors
 // });
 
-
-export const createReview = review => dispatch => (
+export const createReview = (review) => dispatch => (
     ReviewAPI.createReview(review)
         .then((review) => dispatch(receiveReview(review)))
 );
 
-export const fetchReview = reviewId => dispatch => (
-    ReviewAPI.fetchReview(reviewId)
+export const updateReview = (review) => dispatch => (
+    ReviewAPI.updateReview(review)
         .then(review => dispatch(receiveReview(review)))
 );
 
-export const fetchReviews = (restId) => dispatch => (
-    ReviewAPI.fetchReviews(restId)
-        .then(reviews => (dispatch(receiveReviews(reviews))))
+export const deleteReview = (reviewId) => dispatch => (
+    ReviewAPI.deleteReview(reviewId)
+        .then(review => (dispatch(removeReview(review))))
 );

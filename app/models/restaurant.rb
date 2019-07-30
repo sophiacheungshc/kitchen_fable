@@ -29,8 +29,8 @@ class Restaurant < ApplicationRecord
         class_name: :Favorite
 
     has_many :reviews,
-        foreign_key: :rest_id,
-        class_name: :Review
+        through: :reservations,
+        source: :review
 
     has_one_attached :photo
 
