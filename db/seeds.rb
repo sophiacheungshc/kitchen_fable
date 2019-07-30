@@ -12,6 +12,7 @@ ActiveRecord::Base.transaction do
   User.destroy_all
   Restaurant.destroy_all
   Reservation.destroy_all
+  Review.destroy_all
 
 
   user1 = User.create!(
@@ -182,13 +183,14 @@ ActiveRecord::Base.transaction do
       party: (1..20).to_a.sample,
       occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
     })
+    
   end
 
   10.times do
     min_date = Time.now - 3.years
     max_date = Time.now 
     
-    Reservation.create!({
+    res = Reservation.create!({
       user_id: user1.id,
       rest_id: [rest1.id, rest2.id, rest3.id, rest4.id, rest5.id].sample,
       time: "#{("1".."12").to_a.sample}:00 PM",
@@ -196,5 +198,38 @@ ActiveRecord::Base.transaction do
       party: (1..20).to_a.sample,
       occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
     })
+
+    Review.create(
+      res_id: res.id,
+      comment: Faker::Restaurant.review,
+      overall: (1..5).to_a.sample,
+      food: (1..5).to_a.sample,
+      service: (1..5).to_a.sample,
+      ambience: (1..5).to_a.sample,
+    )
   end
+
+  100.times do
+    min_date = Time.now - 3.years
+    max_date = Time.now 
+    
+    res = Reservation.create!({
+      user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+      rest_id: Restaurant.all.sample.id,
+      time: "#{("1".."12").to_a.sample}:00 PM",
+      date: rand(min_date..max_date).to_s[0..9],
+      party: (1..20).to_a.sample,
+      occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+    })
+
+    Review.create(
+      res_id: res.id,
+      comment: Faker::Restaurant.review,
+      overall: (1..5).to_a.sample,
+      food: (1..5).to_a.sample,
+      service: (1..5).to_a.sample,
+      ambience: (1..5).to_a.sample,
+    )
+  end
+
 end

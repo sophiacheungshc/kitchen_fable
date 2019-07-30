@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Map from './map';
 import ReservationContainer from './reservation_container';
+import ReviewIndexContainer from './review_index_container';
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -81,9 +82,12 @@ class Restaurant extends React.Component {
                         <span>Reviews</span>
                         <span>Leave a Review</span>
                     </div>
-                        <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
+                    <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
                     <span className="show-item-desc">{description}</span>
-                        <span className="show-item-menu"><a href={menu} target="_blank">Link to menu</a></span>
+                    <span className="show-item-menu"><a href={menu} target="_blank">Link to menu</a></span>
+                    <div className="revs-container">
+                        <ReviewIndexContainer />
+                    </div>
                 </div>
 
                 <div className="rest-details">

@@ -24,4 +24,8 @@ class Reservation < ApplicationRecord
     belongs_to :restaurant,
         foreign_key: :rest_id,
         class_name: :Restaurant
+
+    has_one :review,
+        foreign_key: :res_id,
+        class_name: :Review
 end

@@ -76,14 +76,15 @@ ActiveRecord::Schema.define(version: 2019_07_12_055315) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "rest_id", null: false
-    t.integer "rating", null: false
+    t.integer "res_id", null: false
+    t.integer "overall", null: false
+    t.integer "food", null: false
+    t.integer "service", null: false
+    t.integer "ambience", null: false
     t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["rest_id"], name: "index_reviews_on_rest_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["res_id"], name: "index_reviews_on_res_id"
   end
 
   create_table "users", force: :cascade do |t|
