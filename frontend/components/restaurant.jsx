@@ -87,7 +87,7 @@ class Restaurant extends React.Component {
                     <span className="show-item-desc">{description}</span>
                     <span className="show-item-menu"><a href={menu} target="_blank">View menu on restaurant's website</a></span>
                     <div className="revs-container">
-                        {/* <ReviewIndex reviews={this.props.reviews} users={this.props.users}/> */}
+                        <ReviewIndex reviews={this.props.reviews} users={this.props.users} reservations={this.props.reservations}/>
                     </div>
                 </div>
 
