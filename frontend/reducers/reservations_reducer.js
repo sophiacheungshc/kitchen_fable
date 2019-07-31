@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_RES, RECEIVE_RES, DELETE_RES } from '../actions/reservation_actions';
+import { RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 import merge from 'lodash/merge';
 
 const ReservationsReducer = (oldState = {}, action) => {
@@ -12,6 +13,8 @@ const ReservationsReducer = (oldState = {}, action) => {
             let newState = merge({}, oldState);
             delete newState[action.reservation.id];
             return newState;
+        case RECEIVE_RESTAURANT:
+            return merge({}, oldState, action.payload.reservations);
         default:
             return oldState;
     }

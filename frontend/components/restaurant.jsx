@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Map from './map';
 import ReservationContainer from './reservation_container';
-import ReviewIndexContainer from './review_index_container';
+import ReviewIndex from './review_index';
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -16,6 +16,7 @@ class Restaurant extends React.Component {
     }
 
     componentDidMount(){
+        console.log('yees')
         this.props.fetchRestaurant(this.props.match.params.restId);
     }
 
@@ -86,7 +87,7 @@ class Restaurant extends React.Component {
                     <span className="show-item-desc">{description}</span>
                     <span className="show-item-menu"><a href={menu} target="_blank">View menu on restaurant's website</a></span>
                     <div className="revs-container">
-                        <ReviewIndexContainer />
+                        {/* <ReviewIndex reviews={this.props.reviews} users={this.props.users}/> */}
                     </div>
                 </div>
 

@@ -4,11 +4,12 @@ import merge from 'lodash/merge';
 
 const RestaurantsReducer  = (oldState = {}, action) => {
     Object.freeze(oldState);
+    console.log(action.payload);
     switch(action.type) {
         case RECEIVE_ALL_RESTAURANTS:
             return merge({}, action.restaurants);
         case RECEIVE_RESTAURANT:
-            return merge({}, oldState, { [action.restaurant.id]: action.restaurant });
+            return merge({}, oldState, { [action.payload.restaurant.id]: action.payload.restaurant });
         case RECEIVE_FAV:
             return merge({}, oldState, { [action.favorite.id]: action.favorite });
         case DESTROY_FAV:

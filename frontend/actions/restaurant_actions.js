@@ -7,9 +7,9 @@ export const receiveAllRestaurants = (restaurants) => ({
     type: RECEIVE_ALL_RESTAURANTS,
     restaurants
 });
-export const receiveRestaurant = (restaurant) => ({
+export const receiveRestaurant = (payload) => ({
     type: RECEIVE_RESTAURANT,
-    restaurant
+    payload
 });
 
 export const fetchAllRestaurants = () => (dispatch) => (

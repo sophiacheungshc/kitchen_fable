@@ -1,17 +1,14 @@
 import merge from 'lodash/merge';
+import { RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 
-import { RECEIVE_REVIEW, RECEIVE_REVIEWS } from '../actions/review_actions';
 
-
-const ReviewsReducer = (state = {}, action) => {
-    Object.freeze(state);
+const ReviewsReducer = (oldState = {}, action) => {
+    Object.freeze(oldState);
     switch (action.type) {
-        case RECEIVE_REVIEWS:
-            return action.reviews;
-        case RECEIVE_REVIEW:
-            return merge({}, state, { [action.review.id]: action.review });
+        case RECEIVE_RESTAURANT:
+            return merge({}, oldState, action.payload.reviews);
         default:
-            return state;
+            return oldState;
     }
 };
 

@@ -8,6 +8,8 @@ import Restaurant from './restaurant';
 const mSP = (state, ownProps) => {
     return ({
         restaurant: state.entities.restaurants[ownProps.match.params.restId],
+        reviews: state.entities.reviews,
+        users: state.entities.users,
         currentUserId: state.session.id
     });
 };
@@ -19,7 +21,6 @@ const mDP = (dispatch) => {
         deleteFav: (restId) => dispatch(deleteFav(restId)),
         createFav: (restId) => dispatch(createFav(restId)),
         openModal: (modal) => dispatch(openModal(modal))
-
     });
 };
 

@@ -1,7 +1,8 @@
 json.restaurant do   
-    json.set! @restaurant.id do   
-        json.partial! "api/restaurants/restaurant", restaurant: @restaurant
-    end
+    # json.set! @restaurant.id do   
+    #     json.partial! "api/restaurants/restaurant", restaurant: @restaurant
+    # end
+    json.partial! "api/restaurants/restaurant", restaurant: @restaurant
 end
 
 @restaurant.reviews.each do |review|
