@@ -6,7 +6,8 @@ const ReviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_RESTAURANT:
-            return merge({}, oldState, action.payload.reviews);
+            // return merge({}, oldState, action.payload.reviews);
+            return action.payload.reviews;
         default:
             return oldState;
     }

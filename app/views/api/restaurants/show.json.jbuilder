@@ -16,7 +16,7 @@ end
 @restaurant.reviews.each do |review|
     json.users do
         json.set! review.user_id do
-            json.extract! review.user, :id, :fname, :location
+            json.extract! review.user, :id, :fname, :lname, :location
         end
     end
 end

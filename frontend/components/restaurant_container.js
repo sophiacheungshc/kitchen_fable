@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Restaurant from './restaurant';
 
-const mSP = (state, ownProps) => {
+const mSP = (state) => {
     return ({
-        restaurant: state.entities.restaurants[ownProps.match.params.restId],
+        restaurant: state.entities.restaurants,
         reviews: state.entities.reviews,
+        reservations: state.entities.reservations,
         users: state.entities.users,
         currentUserId: state.session.id
     });
