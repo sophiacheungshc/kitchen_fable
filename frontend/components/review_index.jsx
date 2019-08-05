@@ -43,7 +43,7 @@ class ReviewIndex extends React.Component {
         
         return (
             <ul className="review-ul">
-                <h1>What 1730 People Are Saying</h1>
+                <h2>What {Object.keys(this.props.users).length} People Are Saying</h2>
                 {reviews}
             </ul>
         );
