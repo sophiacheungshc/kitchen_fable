@@ -8,8 +8,14 @@ class ReviewIndex extends React.Component {
     render() {
         if (Object.keys(this.props.reviews).length === 0) { return null; }
         let overall = 0;
+        let food = 0;
+        let service = 0;
+        let ambience = 0;
         const reviews = Object.values(this.props.reviews).map((review) => {
             overall += review.overall;
+            food += review.food;
+            service += review.service;
+            ambience += review.ambience;
             const user = this.props.users[review.user_id];
             const res = this.props.reservations[review.res_id];
             const style = {
@@ -45,6 +51,10 @@ class ReviewIndex extends React.Component {
         )}); 
         
         overall /= Object.keys(this.props.reviews).length;
+        food /= Object.keys(this.props.reviews).length;
+        service /= Object.keys(this.props.reviews).length;
+        ambience /= Object.keys(this.props.reviews).length;
+
         const style = {
             backgroundImage: 'url(https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/' + Math.floor(overall) + 'star.png)',
         }
@@ -54,11 +64,25 @@ class ReviewIndex extends React.Component {
                 <div className="reviews-details">
                     <h2>What {Object.keys(this.props.reviews).length} People Are Saying</h2>
                     <h4>Overall ratings and reviews</h4>
-                    <h4>Reviews can only be made by diners who have eaten at this restaurant</h4>
+                    <h4 className="reviews-eaten">Reviews can only be made by diners who have eaten at this restaurant</h4>
                     <span className="review-stars-container">
                         <div className="review-stars overall" style={style}></div>
-                        <h4> {overall} based on recent ratings</h4>
+                        <h5> {overall}  based on recent ratings</h5>
                     </span>
+                    <div className="avg-ratings">
+                        <div className="avg-rating-col">
+                            <span>{food}</span>
+                            <span>Food</span>
+                        </div>
+                        <div className="avg-rating-col">
+                            <span>{service}</span>
+                            <span>Service</span>
+                        </div>
+                        <div className="avg-rating-col">
+                            <span>{ambience}</span>
+                            <span>Ambience</span>
+                        </div>
+                    </div>
                 </div>
                 <ul className="review-ul">
                     {reviews}

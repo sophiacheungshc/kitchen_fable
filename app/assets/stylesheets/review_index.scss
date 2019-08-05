@@ -85,6 +85,34 @@ $colors: red, orange, yellow, green, blue, purple;
     height: 23px;
 }
 
-.overall {
-    margin-right: 5px;
+.reviews-eaten {
+    font-weight: 100;
+}
+
+.review-stars-container > h5 {
+    padding: 10px;
+}
+
+.reviews-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-details > h2 {
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+    border-top: 1px solid lightgray;
+}
+
+.avg-ratings {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+.avg-rating-col {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+    padding: 0 5px;
 }
