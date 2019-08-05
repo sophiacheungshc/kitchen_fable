@@ -1,7 +1,4 @@
 json.restaurant do   
-    # json.set! @restaurant.id do   
-    #     json.partial! "api/restaurants/restaurant", restaurant: @restaurant
-    # end
     json.partial! "api/restaurants/restaurant", restaurant: @restaurant
 end
 
