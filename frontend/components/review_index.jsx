@@ -10,6 +10,9 @@ class ReviewIndex extends React.Component {
         const reviews = Object.values(this.props.reviews).map((review) => {
             const user = this.props.users[review.user_id];
             const res = this.props.reservations[review.res_id];
+            const style = {
+                backgroundImage: 'url(https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/' + review.overall + 'star.png)',
+            }
             
             return(
                 <div className="review-index-item" key={review.id}>
@@ -21,9 +24,7 @@ class ReviewIndex extends React.Component {
 
                     <span className="review-right">
                         <span className="review-stars-container">
-                            <span className="review-stars">
-                                stars here
-                            </span>
+                            <div className="review-stars" style={style}></div>
                             <h5> ∙ Dined on {res.date}</h5>
                         </span>
                         <span className="review-ratings">

@@ -55,6 +55,7 @@ $colors: red, orange, yellow, green, blue, purple;
     flex-direction: row;
     align-items: center;
     height: 2rem;
+    width: fit-content;
 }
 
 .review-ratings {
@@ -77,4 +78,9 @@ $colors: red, orange, yellow, green, blue, purple;
 .review-comment {
     font-weight: lighter;
     margin: 1rem 0;
+}
+
+.review-stars {
+    width: 115px;
+    height: 23px;
 }
