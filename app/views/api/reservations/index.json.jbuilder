@@ -3,3 +3,13 @@
     json.partial! '/api/reservations/reservation', reservation: reservation
   end
 end
+
+@reservations.each do |res|
+  json.reviews do
+    if (res.review)
+        json.set! res.review.id do
+          json.extract! res.review, :id, :res_id, :user_id   
+        end
+      end
+  end
+end

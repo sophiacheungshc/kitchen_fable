@@ -26,6 +26,10 @@ class ReservationIndexItem extends React.Component {
         return this.props.cancel ? (<button className="res-cancel-btn"onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
     }
 
+    checkReview(){
+        // return this.props.
+    }
+
     render() {
         const { name, address } = this.props.restaurant;
         const { date, time, party, occasion, photo } = this.props.reservation;
@@ -44,6 +48,7 @@ class ReservationIndexItem extends React.Component {
                     <span className="res-item-datetime">{date} at {time}</span>
                     <span className="res-item-occ">Occasion: {occasion}</span>
                     <span className="res-item-party">For a party of {party}.</span>
+                    <span className="write-review" onClick={this.writeReview}>Write a Review</span>
                     {this.checkCancel()}
                 </div>
 

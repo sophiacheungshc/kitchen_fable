@@ -49,8 +49,8 @@ class Greeting extends React.Component {
                         <div className="container">
                             <ul className="dropdown">
                                 <li onClick={() => this.props.history.push('/user')}>My Profile</li>
-                                <li onClick={() => this.props.history.push('/user')}>My Dining History</li>
-                                <li onClick={() => this.props.history.push('/user')}>My Saved Restaurants</li>
+                                {/* <li onClick={() => this.props.history.push('/user')}>My Dining History</li>
+                                <li onClick={() => this.props.history.push('/user')}>My Saved Restaurants</li> */}
                                 <li onClick={this.props.logout}>Sign Out</li>
                             </ul>
                         </div>
