@@ -4,7 +4,7 @@ $colors: red, orange, yellow, green, blue, purple;
     width: inherit;
     height: inherit;
     overflow: scroll;
-    margin: 3rem 0;
+    margin: 3rem 0 0;
 }
 .review-index-item {
     display: flex;
@@ -89,8 +89,8 @@ $colors: red, orange, yellow, green, blue, purple;
     font-weight: 100;
 }
 
-.review-stars-container > h5 {
-    padding: 10px;
+.review-stars .overall {
+    padding-right: 10px;
 }
 
 .reviews-details {

@@ -71,15 +71,15 @@ class ReviewIndex extends React.Component {
                     </span>
                     <div className="avg-ratings">
                         <div className="avg-rating-col">
-                            <span>{food}</span>
+                            <span>{Math.round(10 * food )/ 10}</span>
                             <span>Food</span>
                         </div>
                         <div className="avg-rating-col">
-                            <span>{service}</span>
+                            <span>{Math.round(10 * service) / 10}</span>
                             <span>Service</span>
                         </div>
                         <div className="avg-rating-col">
-                            <span>{ambience}</span>
+                            <span>{Math.round(10 * ambience) / 10}</span>
                             <span>Ambience</span>
                         </div>
                     </div>

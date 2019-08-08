@@ -16,17 +16,20 @@ class Restaurant extends React.Component {
     }
 
     componentDidMount(){
-        console.log('yees')
         this.props.fetchRestaurant(this.props.match.params.restId);
     }
 
     scrollTo(el) {
-        return () => {
-            el.scrollIntoView({
-                behavior: 'smooth',
-                block: "start"
-            });
-        };
+        document.getElementsByClassName('tab-selected')[0].classList.remove('tab-selected');
+        if (el === this.overviewSection) {
+            document.getElementById('overview-tab').classList.add('tab-selected');
+        } else {
+            document.getElementById('reviews-tab').classList.add('tab-selected');
+        }
+        el.scrollIntoView({
+            behavior: 'smooth',
+            block: "start"
+        });
     }
 
     deleteFav(id) {
@@ -79,14 +82,13 @@ class Restaurant extends React.Component {
                 <div className="rest-show">
                 <div className="rest-main">
                     <div className="show-tab">
-                        <span className="tab-selected" onClick={this.scrollTo(this.overviewSection)}>Overview</span>
-                        <span>Reviews</span>
-                        <span>Leave a Review</span>
+                        <span id="overview-tab" className="tab-selected" onClick={()=>this.scrollTo(this.overviewSection)}>Overview</span>
+                        <span id="reviews-tab" onClick={()=>this.scrollTo(this.reviewSection)}>Reviews</span>
                     </div>
                     <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
                     <span className="show-item-desc">{description}</span>
                     <span className="show-item-menu"><a href={menu} target="_blank">View menu on restaurant's website</a></span>
-                    <div className="revs-container">
+                        <div className="revs-container" ref={el => this.reviewSection = el}>
                         <ReviewIndex reviews={this.props.reviews} users={this.props.users} reservations={this.props.reservations}/>
                     </div>
                 </div>
