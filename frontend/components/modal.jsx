@@ -3,6 +3,8 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignInFormContainer from './signin_form_container';
 import SignUpFormContainer from './signup_form_container';
+import EditReviewForm from './edit_review_form';
+import CreateReviewForm from './create_review_form';
 
 class Modal extends React.Component {
 
@@ -23,6 +25,12 @@ class Modal extends React.Component {
                 break;
             case 'signup':
                 component = <SignUpFormContainer />;
+                break;
+            case 'editreview':
+                component = <EditReviewForm />;
+                break;
+            case 'newreview':
+                component = <CreateReviewForm />;
                 break;
             default:
                 component = null;

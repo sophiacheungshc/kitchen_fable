@@ -7,7 +7,6 @@ import Home from './home';
 import RestaurantIndexContainer from './restaurant_index_container';
 import RestaurantContainer from './restaurant_container';
 import UserContainer from './user_container';
-import ReviewForm from './review_form';
 
 const App = () => (
     <div className="main-body">
@@ -21,7 +20,6 @@ const App = () => (
                 <Route exact path="/restaurants" component={RestaurantIndexContainer}/>
                 <Route exact path="/restaurants/:restId" component={RestaurantContainer} />
                 <ProtectedRoute exact path="/user" component={UserContainer} />
-                <ProtectedRoute exact path="/review" component={ReviewForm} />
             </Switch>
         </div>
         <footer>

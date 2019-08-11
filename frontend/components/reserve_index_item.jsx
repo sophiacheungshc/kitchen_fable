@@ -5,6 +5,7 @@ import { cancelRes } from '../actions/reservation_actions';
 
 const mDP = (dispatch) => ({
     cancelRes: (id) => dispatch(cancelRes(id)),
+    openModal: (modal, review) => dispatch(openModal(modal, review))
 
 });
 
@@ -13,6 +14,8 @@ class ReservationIndexItem extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.cancel = this.cancel.bind(this);
+        this.writeReview = this.writeReview.bind(this);
+        this.editReview = this.editReview.bind(this);
     }
 
     handleClick() {
@@ -28,24 +31,16 @@ class ReservationIndexItem extends React.Component {
         return this.props.cancel ? (<button className="res-cancel-btn"onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
     }
 
-    editReview(review){
-
-    }
-
-    writeReview(){
-        this.props.history.push('/review');
-    }
-
     checkReview(){
         const { cancel, review } = this.props;
         if (cancel === false) {
             if (review) {
                 return (
-                    <span className="write-review" onClick={this.editReview(review)}>Edit/Delete Review</span>
+                    <span className="write-review" onClick={this.openModal('newreview')}>Edit/Delete Review</span>
                 )
             } else {
                 return (
-                    <span className="write-review" onClick={this.writeReview()}>Write a Review</span>
+                    <span className="write-review" onClick={this.openModal('editreview', review)}>Write a Review</span>
                 )
             }
         }
