@@ -95,7 +95,7 @@ class Restaurant extends React.Component {
 
                 <div className="rest-details">
                     <ReservationContainer />
-                    <Map />
+                    {/* <Map /> */}
                     <span className="show-item-address">
                         <i className="fas fa-map-marker-alt"></i>{address}
                     </span>

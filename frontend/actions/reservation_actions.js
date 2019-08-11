@@ -9,9 +9,9 @@ export const receiveRes = (reservation) => ({
     reservation
 });
 
-export const receiveAllRes = (reservations) => ({
+export const receiveAllRes = (payload) => ({
     type: RECEIVE_ALL_RES,
-    reservations
+    payload
 });
 export const deleteRes = (reservation) => ({
     type: DELETE_RES,

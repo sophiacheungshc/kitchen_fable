@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { cancelRes } from '../actions/reservation_actions';
 
 const mDP = (dispatch) => ({
-    cancelRes: (id) => dispatch(cancelRes(id))
+    cancelRes: (id) => dispatch(cancelRes(id)),
+
 });
 
 class ReservationIndexItem extends React.Component {
@@ -22,12 +23,32 @@ class ReservationIndexItem extends React.Component {
         e.preventDefault();
         this.props.cancelRes(this.props.reservation.id);
     }
+
     checkCancel(){
         return this.props.cancel ? (<button className="res-cancel-btn"onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
     }
 
+    editReview(review){
+
+    }
+
+    writeReview(){
+        this.props.history.push('/review');
+    }
+
     checkReview(){
-        // return this.props.
+        const { cancel, review } = this.props;
+        if (cancel === false) {
+            if (review) {
+                return (
+                    <span className="write-review" onClick={this.editReview(review)}>Edit/Delete Review</span>
+                )
+            } else {
+                return (
+                    <span className="write-review" onClick={this.writeReview()}>Write a Review</span>
+                )
+            }
+        }
     }
 
     render() {
@@ -48,7 +69,7 @@ class ReservationIndexItem extends React.Component {
                     <span className="res-item-datetime">{date} at {time}</span>
                     <span className="res-item-occ">Occasion: {occasion}</span>
                     <span className="res-item-party">For a party of {party}.</span>
-                    <span className="write-review" onClick={this.writeReview}>Write a Review</span>
+                    {this.checkReview()}
                     {this.checkCancel()}
                 </div>
 

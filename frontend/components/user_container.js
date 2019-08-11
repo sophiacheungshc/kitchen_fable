@@ -9,6 +9,7 @@ const mSP = (state) => ({
     // favs: Object.values(state.entities.favorites),
     restaurants: state.entities.restaurants,
     favorites: state.entities.favorites,
+    reviews: state.entities.reviews,
 });
 
 const mDP = (dispatch) => ({
