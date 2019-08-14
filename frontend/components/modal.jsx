@@ -27,7 +27,7 @@ class Modal extends React.Component {
                 component = <SignUpFormContainer />;
                 break;
             case 'editreview':
-                component = <EditReviewForm />;
+                component = <EditReviewForm review={this.props.review}/>;
                 break;
             case 'newreview':
                 component = <CreateReviewForm />;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import merge from 'lodash/merge';
 
 class SignUpForm extends React.Component {
     constructor(props) {

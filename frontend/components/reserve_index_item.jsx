@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { cancelRes } from '../actions/reservation_actions';
+import { openModal } from '../actions/modal_actions';
 
 const mDP = (dispatch) => ({
     cancelRes: (id) => dispatch(cancelRes(id)),
@@ -14,8 +15,7 @@ class ReservationIndexItem extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.cancel = this.cancel.bind(this);
-        this.writeReview = this.writeReview.bind(this);
-        this.editReview = this.editReview.bind(this);
+        this.checkReview = this.checkReview.bind(this);
     }
 
     handleClick() {
@@ -36,11 +36,11 @@ class ReservationIndexItem extends React.Component {
         if (cancel === false) {
             if (review) {
                 return (
-                    <span className="write-review" onClick={this.openModal('newreview')}>Edit/Delete Review</span>
+                    <span className="write-review" onClick={() => this.props.openModal('editreview')}>Edit/Delete Review</span>
                 )
             } else {
                 return (
-                    <span className="write-review" onClick={this.openModal('editreview', review)}>Write a Review</span>
+                    <span className="write-review" onClick={() => this.props.openModal('newreview', review)}>Write a Review</span>
                 )
             }
         }
