@@ -47,6 +47,7 @@ class ReservationIndexItem extends React.Component {
     }
 
     render() {
+        if (!this.props.restaurant || !this.props.reservation) return null;
         const { name, address } = this.props.restaurant;
         const { date, time, party, occasion, photo } = this.props.reservation;
         

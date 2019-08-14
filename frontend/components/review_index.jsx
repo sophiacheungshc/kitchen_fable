@@ -24,7 +24,7 @@ class ReviewIndex extends React.Component {
             
             return(
                 <div className="review-index-item" key={review.id}>
-                    <span className="review-left">
+                    <span className="review-left" >
                         <div className="review-user-icon">{user.fname[0]}{user.lname[0]}</div>
                         <h5>{user.fname}{user.lname[0]}</h5>
                         <h5 className="review-location">{user.location}</h5>

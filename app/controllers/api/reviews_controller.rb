@@ -12,7 +12,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        # @review = Review.includes(:user).find(params[:id])
         @review = Review.find(params[:id])
         if @review.update_attributes(review_params)
             render "api/reservations/show"

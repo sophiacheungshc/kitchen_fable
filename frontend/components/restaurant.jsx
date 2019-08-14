@@ -47,7 +47,6 @@ class Restaurant extends React.Component {
     }
 
     checkFav(){
-
         if (!this.props.currentUserId) { return <div className="unsave-res" onClick={() => this.props.openModal('signin')}><i className="fas fa-bookmark"></i>Sign in to save</div>}
 
         const { restaurant } = this.props;

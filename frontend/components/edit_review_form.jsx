@@ -20,9 +20,10 @@ const mDP = (dispatch) => ({
 class EditReviewForm extends React.Component {
     constructor(props) {
         super(props);
-        const { comment, overall, food, service, ambience } = props.review;
+        const { id, comment, overall, food, service, ambience } = props.review;
 
         this.state = {
+            id: id,
             comment: comment,
             overall: overall,
             food: food,
@@ -42,9 +43,6 @@ class EditReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({
-            id: this.props.review.id
-        });
         this.props.updateReview(this.state).then(this.props.closeModal);
     }
 
