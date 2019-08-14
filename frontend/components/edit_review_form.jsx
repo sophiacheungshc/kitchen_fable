@@ -5,9 +5,11 @@ import { updateReview } from '../actions/review_actions';
 import { closeModal } from '../actions/modal_actions';
 
 
-const mSP = ({ errors }) => {
-    return {
-    };
+const mSP = ({ session, entities: { users, reservations } }) => {
+    return ({
+        currentUser: users[session.id],
+        reservations: reservations
+    });
 };
 
 const mDP = (dispatch) => ({
@@ -47,11 +49,11 @@ class EditReviewForm extends React.Component {
     }
 
     render(){
-
         return(
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="session-form-box">
-                    <h3>How was your visit?</h3>
+                    <h3>{this.props.currentUser.fname}, how was your visit?</h3>
+                    <h5>You dined here on {this.props.reservations[this.props.review.res_id].date}</h5>
                     <hr className="session-hr" />
                     {/* {this.renderErrors()} */}
                     <div className="session-form">
