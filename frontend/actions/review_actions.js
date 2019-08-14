@@ -13,11 +13,6 @@ const removeReview = (review) => ({
     review
 });
 
-// export const receiveReviewErrors = errors => ({
-//     type: RECEIVE_REVIEW_ERRORS,
-//     errors
-// });
-
 export const createReview = (review) => dispatch => (
     ReviewAPI.createReview(review)
         .then((review) => dispatch(receiveReview(review)))

@@ -14,12 +14,14 @@ class Modal extends React.Component {
 
     render(){
         let component;
-
-        if (!this.props.modal) {
+        
+        if (!this.props.payload) {
             return null;
         }
+        const { modal, review } = this.props.payload;
 
-        switch (this.props.modal) {
+        switch (modal) {
+            
             case 'signin':
                 component = <SignInFormContainer />;
                 break;
@@ -27,7 +29,7 @@ class Modal extends React.Component {
                 component = <SignUpFormContainer />;
                 break;
             case 'editreview':
-                component = <EditReviewForm review={this.props.review}/>;
+                component = <EditReviewForm review={review}/>;
                 break;
             case 'newreview':
                 component = <CreateReviewForm />;
@@ -49,7 +51,7 @@ class Modal extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        modal: state.ui.modal
+        payload: state.ui.modal
     };
 };
 

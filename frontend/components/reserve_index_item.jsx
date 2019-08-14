@@ -36,11 +36,11 @@ class ReservationIndexItem extends React.Component {
         if (cancel === false) {
             if (review) {
                 return (
-                    <span className="write-review" onClick={() => this.props.openModal('editreview')}>Edit/Delete Review</span>
+                    <span className="write-review" onClick={() => this.props.openModal('editreview', review)}>Edit/Delete Review</span>
                 )
             } else {
                 return (
-                    <span className="write-review" onClick={() => this.props.openModal('newreview', review)}>Write a Review</span>
+                    <span className="write-review" onClick={() => this.props.openModal('newreview')}>Write a Review</span>
                 )
             }
         }

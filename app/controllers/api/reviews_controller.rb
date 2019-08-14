@@ -12,9 +12,10 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.includes(:user).find(params[:id])
-        if @review.update(review_params)
-            render "api/restaurants/show"
+        # @review = Review.includes(:user).find(params[:id])
+        @review = Review.find(params[:id])
+        if @review.update_attributes(review_params)
+            render "api/reservations/show"
         else
             render json: @review.errors.full_messages, status: 422
         end
