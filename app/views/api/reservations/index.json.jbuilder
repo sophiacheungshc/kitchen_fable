@@ -10,7 +10,8 @@ end
   json.reviews do
     if (res.review)
         json.set! res.review.id do
-          json.extract! res.review, :id, :res_id, :user_id   
+          json.extract! res.review, :id, :res_id, :user_id, :overall, :food, 
+            :service, :ambience, :comment 
         end
       end
   end
