@@ -82,7 +82,7 @@ class User extends React.Component {
         if (all_past.length !== 0) {
             return all_past.map(res => (
                 <ReservationIndexItem restaurant={res.restaurant} 
-                    reservation={res} review={res.review}
+                    reservation={res} review={this.props.reviews[res.review.id]}
                     cancel={false} key={res.id} />
             ));
         } else {

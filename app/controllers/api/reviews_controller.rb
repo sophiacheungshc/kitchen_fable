@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = Review.find(params[:id])
         if @review.update_attributes(review_params)
-            render "api/reservations/show"
+            render "api/reviews/show"
         else
             render json: @review.errors.full_messages, status: 422
         end
@@ -31,8 +31,7 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:res_id, :user_id, :overall, :food, 
-            :service, :ambience, :comment)
+        params.require(:review).permit(:overall, :food, :service, :ambience, :comment)
     end
 
 end
