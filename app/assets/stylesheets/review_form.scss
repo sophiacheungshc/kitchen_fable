@@ -1,0 +1,60 @@
+.session-form textarea {
+    height: 120px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    margin: 0px 0px 10px;
+    font-size: 16px;
+    resize: none;
+}
+
+.session-form textarea:focus {
+    border: 1px solid gray;
+}
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  font-size: 30px;
+  width: fit-content;
+}
+
+.stars-container:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color:lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: #da3743;
+  overflow: hidden;
+}
+
+.stars-0:after { width: 0%; }
+.stars-1:after { width: 20%; }
+.stars-2:after { width: 40%; }
+.stars-3:after { width: 60%; }
+.stars-4:after { width: 80%; }
+.stars-5:after { width: 100%; }
+
+.star-select {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    top: 30px;
+}
+
+.star-select > * {
+    width: 30px;
+    z-index: 3;
+    cursor: pointer;
+}

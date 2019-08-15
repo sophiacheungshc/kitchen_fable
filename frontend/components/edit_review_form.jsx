@@ -41,6 +41,10 @@ class EditReviewForm extends React.Component {
         });
     }
 
+    updateStars(type, rating) {
+        this.setState({[type]: rating});
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateReview(this.state).then(this.props.closeModal);
@@ -55,15 +59,52 @@ class EditReviewForm extends React.Component {
                     <hr className="session-hr" />
                     {/* {this.renderErrors()} */}
                     <div className="session-form">
-                        <input type="text" value={this.state.overall} onChange={this.update('overall')} />
+                        <label>Overall:
+                            <span className="star-select">
+                                <div onClick={() => this.updateStars("overall", 1)}></div>
+                                <div onClick={() => this.updateStars("overall", 2)}></div>
+                                <div onClick={() => this.updateStars("overall", 3)}></div>
+                                <div onClick={() => this.updateStars("overall", 4)}></div>
+                                <div onClick={() => this.updateStars("overall", 5)}></div>
+                            </span>
+                            <span className={`stars-container stars-${this.state.overall}`}>★★★★★</span>
+                        </label>
 
-                        <input type="text" value={this.state.food} onChange={this.update('food')} />
+                        <label>Food:
+                            <span className="star-select">
+                                <div onClick={() => this.updateStars("food", 1)}></div>
+                                <div onClick={() => this.updateStars("food", 2)}></div>
+                                <div onClick={() => this.updateStars("food", 3)}></div>
+                                <div onClick={() => this.updateStars("food", 4)}></div>
+                                <div onClick={() => this.updateStars("food", 5)}></div>
+                            </span>
+                            <span className={`stars-container stars-${this.state.food}`}>★★★★★</span>
+                        </label>
 
-                        <input type="text" value={this.state.service} onChange={this.update('service')} />
+                        <label>Service:
+                            <span className="star-select">
+                                <div onClick={() => this.updateStars("service", 1)}></div>
+                                <div onClick={() => this.updateStars("service", 2)}></div>
+                                <div onClick={() => this.updateStars("service", 3)}></div>
+                                <div onClick={() => this.updateStars("service", 4)}></div>
+                                <div onClick={() => this.updateStars("service", 5)}></div>
+                            </span>
+                            <span className={`stars-container stars-${this.state.service}`}>★★★★★</span>
+                        </label>
 
-                        <input type="text" value={this.state.ambience} onChange={this.update('ambience')} />
+                        <label>Ambience:
+                            <span className="star-select">
+                                <div onClick={() => this.updateStars("ambience", 1)}></div>
+                                <div onClick={() => this.updateStars("ambience", 2)}></div>
+                                <div onClick={() => this.updateStars("ambience", 3)}></div>
+                                <div onClick={() => this.updateStars("ambience", 4)}></div>
+                                <div onClick={() => this.updateStars("ambience", 5)}></div>
+                            </span>
+                            <span className={`stars-container stars-${this.state.ambience}`}>★★★★★</span>
+                        </label>
 
-                        <input type="text" value={this.state.comment} onChange={this.update('comment')} />
+                        <label>Comment:</label>
+                            <textarea value={this.state.comment} onChange={this.update('comment')} />
 
                         <input className="submit-btn" type="submit" />
 
