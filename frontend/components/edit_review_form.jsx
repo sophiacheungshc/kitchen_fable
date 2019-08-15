@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateReview } from '../actions/review_actions';
+import { updateReview, deleteReview } from '../actions/review_actions';
 import { closeModal } from '../actions/modal_actions';
 
 
@@ -14,6 +14,7 @@ const mSP = ({ session, entities: { users, reservations } }) => {
 
 const mDP = (dispatch) => ({
     updateReview: (review) => dispatch(updateReview(review)),
+    deleteReview: (id) => dispatch(deleteReview(id)),
     closeModal: () => dispatch(closeModal())
 });
 
@@ -31,6 +32,7 @@ class EditReviewForm extends React.Component {
             ambience: ambience
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.delete = this.delete.bind(this);
 
 
     }
@@ -48,6 +50,10 @@ class EditReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateReview(this.state).then(this.props.closeModal);
+    }
+
+    delete(){
+        this.props.deleteReview(this.props.review.id).then(this.props.closeModal);
     }
 
     render(){
@@ -106,7 +112,8 @@ class EditReviewForm extends React.Component {
                         <label>Comment:</label>
                             <textarea value={this.state.comment} onChange={this.update('comment')} />
 
-                        <input className="submit-btn" type="submit" />
+                        <input className="submit-btn" type="submit" value="Edit Review"/>
+                        <button className="demo-btn" onClick={this.delete}>Delete Review</button>
 
                     </div>
 

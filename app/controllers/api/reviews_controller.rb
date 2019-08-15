@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find(params[:id])
         if @review.destroy
-            render "api/restaurants/show"
+            render "api/reviews/show"
         else
             render json: ["Review does not exist."]
         end
