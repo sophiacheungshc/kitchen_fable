@@ -7,7 +7,7 @@ const ReviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_RESTAURANT:
-            return action.payload.reviews;
+            return merge({}, action.payload.reviews);
         case RECEIVE_ALL_RES:
             return merge({}, action.payload.reviews);
         case RECEIVE_REVIEW:

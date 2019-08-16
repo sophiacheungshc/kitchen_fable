@@ -8,7 +8,7 @@ const UsersReducer = (oldState = {}, action) => {
         case RECEIVE_USER:
             return merge({}, oldState, { [action.currentUser.id]: action.currentUser });
         case RECEIVE_RESTAURANT:
-            return action.payload.users;
+            return merge({}, action.payload.users);
         default: 
             return oldState;
     }
