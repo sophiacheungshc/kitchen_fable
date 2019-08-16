@@ -25,8 +25,8 @@ const App = () => (
         <footer>
                 <h5>Join me on</h5>
                 <div className="external-links">
-                <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="github"></span></a>
-                <a href="https://github.com/sophiacheungshc/kitchen_fable" target="_blank"><span id="linkedin"></span></a>
+                    <a href="https://github.com/sophiacheungshc" id="github" target="_blank"></a>
+                    <a href="https://www.linkedin.com/in/sophia-cheung-a839a618b/" id="linkedin" target="_blank"></a>
                 </div>
         </footer>
     </div>
