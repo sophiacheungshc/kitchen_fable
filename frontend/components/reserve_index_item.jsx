@@ -28,7 +28,7 @@ class ReservationIndexItem extends React.Component {
     }
 
     checkCancel(){
-        return this.props.cancel ? (<button className="res-cancel-btn"onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
+        return this.props.cancel ? (<button className="res-cancel-btn" onClick={this.cancel}>Cancel Reservation</button>) : (<></>)
     }
 
     checkReview(){
@@ -36,11 +36,11 @@ class ReservationIndexItem extends React.Component {
         if (cancel === false) {
             if (review) {
                 return (
-                    <span className="write-review" onClick={() => this.props.openModal('editreview', review)}>Edit/Delete Review</span>
+                    <button className="res-cancel-btn" onClick={() => this.props.openModal('editreview', review)}>Edit/Delete Review</button>
                 )
             } else {
                 return (
-                    <span className="write-review" onClick={() => this.props.openModal('newreview', {res_id: reservation.id, date: reservation.date})}>Write a Review</span>
+                    <button className="res-cancel-btn" onClick={() => this.props.openModal('newreview', {res_id: reservation.id, date: reservation.date})}>Write a Review</button>
                 )
             }
         }

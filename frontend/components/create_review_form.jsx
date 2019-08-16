@@ -76,38 +76,38 @@ class CreateReviewForm extends React.Component {
 
                             <div className="review-col-right">
                                 <span className="star-select">
-                                    <div onClick={() => this.updateStars("overall", 1)}></div>
-                                    <div onClick={() => this.updateStars("overall", 2)}></div>
-                                    <div onClick={() => this.updateStars("overall", 3)}></div>
-                                    <div onClick={() => this.updateStars("overall", 4)}></div>
-                                    <div onClick={() => this.updateStars("overall", 5)}></div>
+                                    <div onMouseEnter={() => this.updateStars("overall", 1)}></div>
+                                    <div onMouseEnter={() => this.updateStars("overall", 2)}></div>
+                                    <div onMouseEnter={() => this.updateStars("overall", 3)}></div>
+                                    <div onMouseEnter={() => this.updateStars("overall", 4)}></div>
+                                    <div onMouseEnter={() => this.updateStars("overall", 5)}></div>
                                 </span>
                                 <span className={`stars-container stars-${this.state.overall}`}>★★★★★</span>
 
                                 <span className="star-select">
-                                    <div onClick={() => this.updateStars("food", 1)}></div>
-                                    <div onClick={() => this.updateStars("food", 2)}></div>
-                                    <div onClick={() => this.updateStars("food", 3)}></div>
-                                    <div onClick={() => this.updateStars("food", 4)}></div>
-                                    <div onClick={() => this.updateStars("food", 5)}></div>
+                                    <div onMouseEnter={() => this.updateStars("food", 1)}></div>
+                                    <div onMouseEnter={() => this.updateStars("food", 2)}></div>
+                                    <div onMouseEnter={() => this.updateStars("food", 3)}></div>
+                                    <div onMouseEnter={() => this.updateStars("food", 4)}></div>
+                                    <div onMouseEnter={() => this.updateStars("food", 5)}></div>
                                 </span>
                                 <span className={`stars-container stars-${this.state.food}`}>★★★★★</span>
                                 
                                 <span className="star-select">
-                                    <div onClick={() => this.updateStars("service", 1)}></div>
-                                    <div onClick={() => this.updateStars("service", 2)}></div>
-                                    <div onClick={() => this.updateStars("service", 3)}></div>
-                                    <div onClick={() => this.updateStars("service", 4)}></div>
-                                    <div onClick={() => this.updateStars("service", 5)}></div>
+                                    <div onMouseEnter={() => this.updateStars("service", 1)}></div>
+                                    <div onMouseEnter={() => this.updateStars("service", 2)}></div>
+                                    <div onMouseEnter={() => this.updateStars("service", 3)}></div>
+                                    <div onMouseEnter={() => this.updateStars("service", 4)}></div>
+                                    <div onMouseEnter={() => this.updateStars("service", 5)}></div>
                                 </span>
                                 <span className={`stars-container stars-${this.state.service}`}>★★★★★</span>
                                 
                                 <span className="star-select">
-                                    <div onClick={() => this.updateStars("ambience", 1)}></div>
-                                    <div onClick={() => this.updateStars("ambience", 2)}></div>
-                                    <div onClick={() => this.updateStars("ambience", 3)}></div>
-                                    <div onClick={() => this.updateStars("ambience", 4)}></div>
-                                    <div onClick={() => this.updateStars("ambience", 5)}></div>
+                                    <div onMouseEnter={() => this.updateStars("ambience", 1)}></div>
+                                    <div onMouseEnter={() => this.updateStars("ambience", 2)}></div>
+                                    <div onMouseEnter={() => this.updateStars("ambience", 3)}></div>
+                                    <div onMouseEnter={() => this.updateStars("ambience", 4)}></div>
+                                    <div onMouseEnter={() => this.updateStars("ambience", 5)}></div>
                                 </span>
                                 <span className={`stars-container stars-${this.state.ambience}`}>★★★★★</span>
                             </div>
