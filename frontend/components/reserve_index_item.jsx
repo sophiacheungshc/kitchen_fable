@@ -32,7 +32,7 @@ class ReservationIndexItem extends React.Component {
     }
 
     checkReview(){
-        const { cancel, review } = this.props;
+        const { cancel, review, reservation } = this.props;
         if (cancel === false) {
             if (review) {
                 return (
@@ -40,7 +40,7 @@ class ReservationIndexItem extends React.Component {
                 )
             } else {
                 return (
-                    <span className="write-review" onClick={() => this.props.openModal('newreview')}>Write a Review</span>
+                    <span className="write-review" onClick={() => this.props.openModal('newreview', {res_id: reservation.id, date: reservation.date})}>Write a Review</span>
                 )
             }
         }

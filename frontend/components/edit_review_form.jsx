@@ -34,7 +34,6 @@ class EditReviewForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.delete = this.delete.bind(this);
 
-
     }
 
     update(field) {
@@ -56,8 +55,8 @@ class EditReviewForm extends React.Component {
         this.props.deleteReview(this.props.review.id).then(this.props.closeModal);
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit} className="session-form-box">
                     <h3>{this.props.currentUser.fname}, how was your visit?</h3>
@@ -65,54 +64,57 @@ class EditReviewForm extends React.Component {
                     <hr className="session-hr" />
                     {/* {this.renderErrors()} */}
                     <div className="session-form">
-                        <label>Overall:
-                            <span className="star-select">
-                                <div onClick={() => this.updateStars("overall", 1)}></div>
-                                <div onClick={() => this.updateStars("overall", 2)}></div>
-                                <div onClick={() => this.updateStars("overall", 3)}></div>
-                                <div onClick={() => this.updateStars("overall", 4)}></div>
-                                <div onClick={() => this.updateStars("overall", 5)}></div>
-                            </span>
-                            <span className={`stars-container stars-${this.state.overall}`}>★★★★★</span>
-                        </label>
+                        <div className="review-row-top">
+                            <div className="review-col-left">
+                                <label>Overall:</label>
+                                <label>Food:</label>
+                                <label>Service:</label>
+                                <label>Ambience:</label>
+                            </div>
 
-                        <label>Food:
-                            <span className="star-select">
-                                <div onClick={() => this.updateStars("food", 1)}></div>
-                                <div onClick={() => this.updateStars("food", 2)}></div>
-                                <div onClick={() => this.updateStars("food", 3)}></div>
-                                <div onClick={() => this.updateStars("food", 4)}></div>
-                                <div onClick={() => this.updateStars("food", 5)}></div>
-                            </span>
-                            <span className={`stars-container stars-${this.state.food}`}>★★★★★</span>
-                        </label>
+                            <div className="review-col-right">
+                                <span className="star-select">
+                                    <div onClick={() => this.updateStars("overall", 1)}></div>
+                                    <div onClick={() => this.updateStars("overall", 2)}></div>
+                                    <div onClick={() => this.updateStars("overall", 3)}></div>
+                                    <div onClick={() => this.updateStars("overall", 4)}></div>
+                                    <div onClick={() => this.updateStars("overall", 5)}></div>
+                                </span>
+                                <span className={`stars-container stars-${this.state.overall}`}>★★★★★</span>
 
-                        <label>Service:
-                            <span className="star-select">
-                                <div onClick={() => this.updateStars("service", 1)}></div>
-                                <div onClick={() => this.updateStars("service", 2)}></div>
-                                <div onClick={() => this.updateStars("service", 3)}></div>
-                                <div onClick={() => this.updateStars("service", 4)}></div>
-                                <div onClick={() => this.updateStars("service", 5)}></div>
-                            </span>
-                            <span className={`stars-container stars-${this.state.service}`}>★★★★★</span>
-                        </label>
+                                <span className="star-select">
+                                    <div onClick={() => this.updateStars("food", 1)}></div>
+                                    <div onClick={() => this.updateStars("food", 2)}></div>
+                                    <div onClick={() => this.updateStars("food", 3)}></div>
+                                    <div onClick={() => this.updateStars("food", 4)}></div>
+                                    <div onClick={() => this.updateStars("food", 5)}></div>
+                                </span>
+                                <span className={`stars-container stars-${this.state.food}`}>★★★★★</span>
 
-                        <label>Ambience:
-                            <span className="star-select">
-                                <div onClick={() => this.updateStars("ambience", 1)}></div>
-                                <div onClick={() => this.updateStars("ambience", 2)}></div>
-                                <div onClick={() => this.updateStars("ambience", 3)}></div>
-                                <div onClick={() => this.updateStars("ambience", 4)}></div>
-                                <div onClick={() => this.updateStars("ambience", 5)}></div>
-                            </span>
-                            <span className={`stars-container stars-${this.state.ambience}`}>★★★★★</span>
-                        </label>
+                                <span className="star-select">
+                                    <div onClick={() => this.updateStars("service", 1)}></div>
+                                    <div onClick={() => this.updateStars("service", 2)}></div>
+                                    <div onClick={() => this.updateStars("service", 3)}></div>
+                                    <div onClick={() => this.updateStars("service", 4)}></div>
+                                    <div onClick={() => this.updateStars("service", 5)}></div>
+                                </span>
+                                <span className={`stars-container stars-${this.state.service}`}>★★★★★</span>
 
-                        <label>Comment:</label>
-                            <textarea value={this.state.comment} onChange={this.update('comment')} />
+                                <span className="star-select">
+                                    <div onClick={() => this.updateStars("ambience", 1)}></div>
+                                    <div onClick={() => this.updateStars("ambience", 2)}></div>
+                                    <div onClick={() => this.updateStars("ambience", 3)}></div>
+                                    <div onClick={() => this.updateStars("ambience", 4)}></div>
+                                    <div onClick={() => this.updateStars("ambience", 5)}></div>
+                                </span>
+                                <span className={`stars-container stars-${this.state.ambience}`}>★★★★★</span>
+                            </div>
+                        </div>
 
-                        <input className="submit-btn" type="submit" value="Edit Review"/>
+                        <label className="review-comment-label">Comment:</label>
+                        <textarea value={this.state.comment} onChange={this.update('comment')} />
+
+                        <input className="submit-btn" type="submit" value="Edit Review" />
                         <button className="demo-btn" onClick={this.delete}>Delete Review</button>
 
                     </div>

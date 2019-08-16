@@ -32,7 +32,7 @@ class Modal extends React.Component {
                 component = <EditReviewForm review={review}/>;
                 break;
             case 'newreview':
-                component = <CreateReviewForm />;
+                component = <CreateReviewForm review={review}/>;
                 break;
             default:
                 component = null;
