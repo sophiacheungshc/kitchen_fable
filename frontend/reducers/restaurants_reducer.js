@@ -8,12 +8,11 @@ const RestaurantsReducer  = (oldState = {}, action) => {
         case RECEIVE_ALL_RESTAURANTS:
             return merge({}, action.restaurants);
         case RECEIVE_RESTAURANT:
-            // return merge({}, oldState, { [action.payload.restaurant.id]: action.payload.restaurant });
             return action.payload.restaurant;
         case RECEIVE_FAV:
-            return merge({}, oldState, { [action.favorite.id]: action.favorite });
+            return merge({}, oldState, { userSaved: true });
         case DESTROY_FAV:
-            return merge({}, oldState, { [action.favorite.id]: action.favorite });
+            return merge({}, oldState, { userSaved: false });
         default:
             return oldState;
     }
