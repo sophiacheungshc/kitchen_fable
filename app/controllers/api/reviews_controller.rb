@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
 
         if @review.save
             @review
-            render "api/restaurants/show"
+            render "api/reviews/show"
         else
             render json: @review.errors.full_messages, status: 422
         end
@@ -31,7 +31,7 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:overall, :food, :service, :ambience, :comment)
+        params.require(:review).permit(:user_id, :res_id, :overall, :food, :service, :ambience, :comment)
     end
 
 end

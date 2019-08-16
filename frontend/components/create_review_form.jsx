@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateReview, deleteReview } from '../actions/review_actions';
+import { updateReview, deleteReview, createReview } from '../actions/review_actions';
 import { closeModal } from '../actions/modal_actions';
 
 const mSP = ({ session, entities: { users, reservations } }) => {
@@ -13,6 +13,7 @@ const mSP = ({ session, entities: { users, reservations } }) => {
 
 const mDP = (dispatch) => ({
     updateReview: (review) => dispatch(updateReview(review)),
+    createReview: (review) => dispatch(createReview(review)),
     deleteReview: (id) => dispatch(deleteReview(id)),
     closeModal: () => dispatch(closeModal())
 });
@@ -21,6 +22,8 @@ class CreateReviewForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            res_id: this.props.review.res_id,
+            user_id: this.props.currentUser.id,
             comment: '',
             overall: 5,
             food: 5,
@@ -50,8 +53,6 @@ class CreateReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.checkComment()) {
-            this.setState({ res_id: this.props.review.res_id, 
-                user_id: this.props.currentUser.id });
             this.props.createReview(this.state).then(this.props.closeModal);
         }
     }
