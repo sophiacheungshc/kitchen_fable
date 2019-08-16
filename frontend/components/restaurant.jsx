@@ -63,17 +63,16 @@ class Restaurant extends React.Component {
     }
 
     render(){
-        if (this.props.restaurant === undefined) {
+        if (this.props.restaurant.id === undefined ) {
             return(<div></div>);
         }
 
         const { name, address, location, phone_number, cuisine, menu, hours, 
             dress_code, exec_chef, description } = this.props.restaurant;
-
         const style = {
             backgroundImage: 'url(' + this.props.restaurant.photo + ')',
         };
-
+        
         return(
             <>
                 {this.checkFav()}
@@ -94,7 +93,7 @@ class Restaurant extends React.Component {
 
                 <div className="rest-details">
                     <ReservationContainer />
-                    {/* <Map /> */}
+                    <Map city={ location } />
                     <span className="show-item-address">
                         <i className="fas fa-map-marker-alt"></i>{address}
                     </span>
