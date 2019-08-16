@@ -5,7 +5,7 @@ class Search extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            keyword: this.props.location.search.slice(8)
+            keyword: this.props.location.search.slice(8).split('%20').join(' ')
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +24,7 @@ class Search extends React.Component {
         // if (this.state.keyword.length === 0 || this.state.keyword.trim().length === 0) {
         //     this.props.history.push('/restaurants');
         // }
+        debugger
         this.props.searchRestaurants(this.state.keyword)
             .then(() => this.props.history.push({
                 pathname: '/restaurants',
@@ -36,7 +37,6 @@ class Search extends React.Component {
 
 
     render(){
-
         if (this.props.location.pathname === '/') {
             return (
                 <form className="search-container" onSubmit={this.handleSubmit} method="GET">

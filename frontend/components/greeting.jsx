@@ -66,10 +66,10 @@ class Greeting extends React.Component {
                         <span id="logo"></span>
                     </Link>
                     
-                    <span className="nav-location-dropdown"> 
+                    {/* <span className="nav-location-dropdown"> 
                         <span id="pin"></span>
                         <span className="arrow-down"></span>
-                    </span>
+                    </span> */}
                     
                 </span>
                 {this.props.currentUser ? greet() : links()}
