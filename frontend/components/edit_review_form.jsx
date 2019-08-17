@@ -53,7 +53,9 @@ class EditReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.checkComment()) {
-            document.getElementsByClassName('erroring')[0].classList.remove('erroring');
+            if (document.getElementsByClassName('erroring')[0]) {
+                document.getElementsByClassName('erroring')[0].classList.remove('erroring');
+            }
             this.props.updateReview(this.state).then(this.props.closeModal);
         } else {
             document.getElementById('comment-error').classList.add('erroring');
