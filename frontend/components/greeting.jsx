@@ -59,6 +59,7 @@ class Greeting extends React.Component {
             </span>
         );    
 
+        console.dir(this.props.currentUser)
         return (
             <div className="navbar">
                 <span className="nav-left">

@@ -7,7 +7,7 @@ const UsersReducer = (oldState = {}, action) => {
         case RECEIVE_USER:
             return Object.assign({}, oldState, { [action.currentUser.id]: action.currentUser });
         case RECEIVE_RESTAURANT:
-            return Object.assign({}, action.payload.users);
+            return Object.assign({}, oldState, action.payload.users);
         default: 
             return oldState;
     }
