@@ -10,6 +10,7 @@
    width: 100%;
    padding-left: 1.25rem;
    padding-right: 1.25rem;
+  margin-bottom: 10px;
    height: max-content;
  }
  
@@ -20,12 +21,13 @@
  }
 
   span#logo {
-   background: image-url('logo.png') 100% 100% no-repeat;
-   display: block;
-   width: 15.75rem;
-   height: 3rem;
-   border-right: 0.5px solid whitesmoke;
-   opacity: 0.8;
+    background: image-url('logo.png') 100% 100% no-repeat;
+    display: block;
+    width: 253px;
+    height: 47px;
+    border-right: 0.5px solid whitesmoke;
+    opacity: 0.8;
+    background-size: cover;
  }
 
   span#pin {
