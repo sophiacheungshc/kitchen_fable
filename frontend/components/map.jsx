@@ -11,7 +11,7 @@ class Map extends React.Component {
 
         switch (this.props.city) {
             case 'San Diego':
-                coords = { lat: 37.7157, lng: -117.1611 };
+                coords = { lat: 32.7157, lng: -117.1611 };
                 break;
             case 'Los Angeles':
                 coords = { lat: 34.0522, lng: -118.2437 };
@@ -22,10 +22,13 @@ class Map extends React.Component {
             case 'Chicago':
                 coords = { lat: 41.8781, lng: -87.6298 };
                 break;
+            case 'Las Vegas':
+                coords = { lat: 36.1699, lng: -115.1398 };
+                break;
             default:
                 break;
         }
-        this.map = new google.maps.Map(map, { center: coords, zoom: 13});
+        this.map = new google.maps.Map(map, { center: coords, zoom: 12});
     }
 
     render() {
