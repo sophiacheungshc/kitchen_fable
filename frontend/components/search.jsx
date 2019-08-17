@@ -24,7 +24,6 @@ class Search extends React.Component {
         // if (this.state.keyword.length === 0 || this.state.keyword.trim().length === 0) {
         //     this.props.history.push('/restaurants');
         // }
-        debugger
         this.props.searchRestaurants(this.state.keyword)
             .then(() => this.props.history.push({
                 pathname: '/restaurants',
