@@ -33,7 +33,7 @@ class EditReviewForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.delete = this.delete.bind(this);
-
+        this.checkComment = this.checkComment.bind(this);
     }
 
     update(field) {
@@ -46,9 +46,18 @@ class EditReviewForm extends React.Component {
         this.setState({[type]: rating});
     }
 
+    checkComment() {
+        return (this.state.comment.length > 5 && this.state.comment.length < 500);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateReview(this.state).then(this.props.closeModal);
+        if (this.checkComment()) {
+            document.getElementsByClassName('erroring')[0].classList.remove('erroring');
+            this.props.updateReview(this.state).then(this.props.closeModal);
+        } else {
+            document.getElementById('comment-error').classList.add('erroring');
+        }
     }
 
     delete(){
@@ -112,6 +121,7 @@ class EditReviewForm extends React.Component {
                         </div>
 
                         <label className="review-comment-label">Comment:</label>
+                        <p id="comment-error">must be between 5 and 500 characters</p>
                         <textarea value={this.state.comment} onChange={this.update('comment')} />
 
                         <input className="submit-btn" type="submit" value="Edit Review" />

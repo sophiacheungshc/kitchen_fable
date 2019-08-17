@@ -32,7 +32,6 @@ class CreateReviewForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkComment = this.checkComment.bind(this);
-
     }
 
 
@@ -53,7 +52,10 @@ class CreateReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.checkComment()) {
+            document.getElementsByClassName('erroring')[0].classList.remove('erroring');
             this.props.createReview(this.state).then(this.props.closeModal);
+        } else {
+            document.getElementById('comment-error').classList.add('erroring');
         }
     }
 
@@ -64,7 +66,6 @@ class CreateReviewForm extends React.Component {
                     <h3>{this.props.currentUser.fname}, how was your visit?</h3>
                     <h5>You dined here on {this.props.review.date}</h5>
                     <hr className="session-hr" />
-                    <p className="comment-error"></p>
                     <div className="session-form">
                         <div className="review-row-top">
                             <div className="review-col-left">
@@ -114,6 +115,7 @@ class CreateReviewForm extends React.Component {
                         </div>
 
                         <label className="review-comment-label">Comment:</label>
+                        <p id="comment-error">must be between 5 and 500 characters</p>
                         <textarea value={this.state.comment} onChange={this.update('comment')} />
 
                         <input className="submit-btn" type="submit" value="Create Review" />

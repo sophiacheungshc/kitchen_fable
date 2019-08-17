@@ -23,9 +23,9 @@ class RestaurantIndex extends React.Component {
             );
 
         } else {
-            return this.props.restaurants.map(rest => (
+            return this.props.restaurants.map((rest, idx) => (
                 
-                <RestaurantIndexItem restaurant={rest} key={rest.id} />
+                <RestaurantIndexItem restaurant={rest} key={idx} />
             ));
         }
     }

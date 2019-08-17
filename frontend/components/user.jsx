@@ -56,8 +56,8 @@ class User extends React.Component {
         all_upcoming = this.sortDates(all_upcoming, true);
 
         if (all_upcoming.length !== 0){
-            return all_upcoming.map(res => (
-                <ReservationIndexItem restaurant={res.restaurant} reservation={res} cancel={true} key={res.id} />
+            return all_upcoming.map((res, idx) => (
+                <ReservationIndexItem restaurant={res.restaurant} reservation={res} cancel={true} key={idx} />
             ));
         } else {
             return (
@@ -80,10 +80,10 @@ class User extends React.Component {
         all_past = this.sortDates(all_past, false);
 
         if (all_past.length !== 0) {
-            return all_past.map(res => (
+            return all_past.map((res, idx) => (
                 <ReservationIndexItem restaurant={res.restaurant} 
                     reservation={res} review={res.review ? this.props.reviews[res.review.id] : null}
-                    cancel={false} key={res.id} />
+                    cancel={false} key={idx} />
             ));
         } else {
             return (

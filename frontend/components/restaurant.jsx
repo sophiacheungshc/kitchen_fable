@@ -86,8 +86,17 @@ class Restaurant extends React.Component {
                     <span className="show-item-name" ref={el => this.overviewSection = el}>{name}</span>
                     <span className="show-item-desc">{description}</span>
                     <span className="show-item-menu"><a href={menu} target="_blank">View menu on restaurant's website</a></span>
-                        <div className="revs-container" ref={el => this.reviewSection = el}>
-                        {this.props.reviews ? <ReviewIndex reviews={this.props.reviews} users={this.props.users} reservations={this.props.reservations}/> : <></>}
+                    <div className="revs-container" ref={el => this.reviewSection = el}>
+                        {this.props.reviews ? 
+                        <ReviewIndex reviews={this.props.reviews} users={this.props.users} reservations={this.props.reservations}/> :
+                        <div className="reviews-container">
+                            <div className="reviews-details">
+                                <h2>What 0 People Are Saying</h2>
+                                <h4>Overall ratings and reviews</h4>
+                                <h4 className="reviews-eaten">Reviews can only be made by diners who have eaten at this restaurant</h4>
+                                <span className="no-reviews">No reviews yet!</span>
+                            </div>
+                        </div>}
                     </div>
                 </div>
 
