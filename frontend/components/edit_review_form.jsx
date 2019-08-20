@@ -127,7 +127,7 @@ class EditReviewForm extends React.Component {
                         <textarea value={this.state.comment} onChange={this.update('comment')} />
 
                         <input className="submit-btn" type="submit" value="Edit Review" />
-                        <button className="demo-btn" onClick={this.delete}>Delete Review</button>
+                        <button className="demo-btn" type="button" onClick={this.delete}>Delete Review</button>
 
                     </div>
 

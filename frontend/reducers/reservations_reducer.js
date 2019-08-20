@@ -4,6 +4,7 @@ import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
 
 const ReservationsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
+    
     switch (action.type) {
         case RECEIVE_ALL_RES:
             return Object.assign({}, action.payload.reservations);
@@ -16,9 +17,14 @@ const ReservationsReducer = (oldState = {}, action) => {
         case RECEIVE_RESTAURANT:
             return Object.assign({}, oldState, action.payload.reservations);
         case RECEIVE_REVIEW:
-            return Object.assign({}, oldState, { [action.review.res_id]: { review: action.review} });
+            //Object.assign only dups one layer deep, need to pre-fix the state first
+            var oldRes = oldState[action.review.res_id];
+            var fixedRes = Object.assign({}, oldRes, {review: action.review});
+            return Object.assign({}, oldState, { [action.review.res_id]: fixedRes });
         case REMOVE_REVIEW:
-            return Object.assign({}, oldState, { [action.review.res_id]: { review: null } });
+            var oldRes = oldState[action.review.res_id];
+            var fixedRes = Object.assign({}, oldRes, { review: null });
+            return Object.assign({}, oldState, { [action.review.res_id]: fixedRes });
         default:
             return oldState;
     }

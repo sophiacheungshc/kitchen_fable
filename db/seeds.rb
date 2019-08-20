@@ -55,10 +55,10 @@ ActiveRecord::Base.transaction do
     location: 'Los Angeles'
   )
   user6 = User.create!(
-    email: 'kevinla79@aa.io',
-    password: 'pleaserefermeJimmy',
-    fname: 'Kevin',
-    lname: 'La',
+    email: 'selamweldu@aa.io',
+    password: 'password',
+    fname: 'Selam',
+    lname: 'Weldu',
     location: 'San Francisco'
   )
 
@@ -71,6 +71,9 @@ ActiveRecord::Base.transaction do
       location: ["San Francisco", "San Diego", "New York", "Los Angeles", "Chicago", "Las Vegas"].sample
     )
   end
+
+  min_date = Time.now - 3.years
+  max_date = Time.now 
 
   rest1 = Restaurant.create!(
     name: "Marta",
@@ -87,6 +90,25 @@ ActiveRecord::Base.transaction do
   file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/5.jpg")
   rest1.photo.attach(io: file, filename: '5.jpg')
 
+  res = Reservation.create!({
+    user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+    rest_id: rest1.id,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+
+  Review.create(
+    res_id: res.id,
+    user_id: res.user_id,
+    comment: Faker::Restaurant.review,
+    overall: (1..5).to_a.sample,
+    food: (1..5).to_a.sample,
+    service: (1..5).to_a.sample,
+    ambience: (1..5).to_a.sample,
+  )
+
   rest2 = Restaurant.create!(
     name: "Gramercy Tavern",
     address: "42 E. 20th St, New York, NY 10003",
@@ -101,6 +123,25 @@ ActiveRecord::Base.transaction do
   )
   file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/6.jpg")
   rest2.photo.attach(io: file, filename: '6.jpg')
+
+  res = Reservation.create!({
+    user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+    rest_id: rest2.id,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+
+  Review.create(
+    res_id: res.id,
+    user_id: res.user_id,
+    comment: Faker::Restaurant.review,
+    overall: (1..5).to_a.sample,
+    food: (1..5).to_a.sample,
+    service: (1..5).to_a.sample,
+    ambience: (1..5).to_a.sample,
+  )
 
   rest3 = Restaurant.create!(
     name: 'Kusakabe',
@@ -117,6 +158,25 @@ ActiveRecord::Base.transaction do
   file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/7.jpg")
   rest3.photo.attach(io: file, filename: '7.jpg')
 
+  res = Reservation.create!({
+    user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+    rest_id: rest3.id,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+
+  Review.create(
+    res_id: res.id,
+    user_id: res.user_id,
+    comment: Faker::Restaurant.review,
+    overall: (1..5).to_a.sample,
+    food: (1..5).to_a.sample,
+    service: (1..5).to_a.sample,
+    ambience: (1..5).to_a.sample,
+  )
+
   rest4 = Restaurant.create!(
     name: 'Brenda\'s French Soul Food',
     address: '652 Polk St San Francisco, CA 94102',
@@ -132,6 +192,25 @@ ActiveRecord::Base.transaction do
   file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/8.jpg")
   rest4.photo.attach(io: file, filename: '8.jpg')
 
+  res = Reservation.create!({
+    user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+    rest_id: rest4.id,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+
+  Review.create(
+    res_id: res.id,
+    user_id: res.user_id,
+    comment: Faker::Restaurant.review,
+    overall: (1..5).to_a.sample,
+    food: (1..5).to_a.sample,
+    service: (1..5).to_a.sample,
+    ambience: (1..5).to_a.sample,
+  )
+
   rest5 = Restaurant.create!(
     name: 'The Cavalier',
     address: '360 Jessie Street San Francisco, CA 94103',
@@ -146,6 +225,25 @@ ActiveRecord::Base.transaction do
   )
   file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/9.jpg")
   rest5.photo.attach(io: file, filename: '9.jpg')
+
+  res = Reservation.create!({
+    user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+    rest_id: rest5.id,
+    time: "#{("1".."12").to_a.sample}:00 PM",
+    date: rand(min_date..max_date).to_s[0..9],
+    party: (1..20).to_a.sample,
+    occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+  })
+
+  Review.create(
+    res_id: res.id,
+    user_id: res.user_id,
+    comment: Faker::Restaurant.review,
+    overall: (1..5).to_a.sample,
+    food: (1..5).to_a.sample,
+    service: (1..5).to_a.sample,
+    ambience: (1..5).to_a.sample,
+  )
 
   100.times do
       name = Faker::Restaurant.name
@@ -169,6 +267,24 @@ ActiveRecord::Base.transaction do
       file = open("https://kitchenfable-seeds.s3-us-west-1.amazonaws.com/#{num}.jpg")
       fake.photo.attach(io: file, filename: "#{num}.jpg")
 
+      res = Reservation.create!({
+        user_id: [user2.id, user3.id, user4.id, user5.id, user6.id].sample,
+        rest_id: fake.id,
+        time: "#{("1".."12").to_a.sample}:00 PM",
+        date: rand(min_date..max_date).to_s[0..9],
+        party: (1..20).to_a.sample,
+        occasion: ['none', 'birthday', 'anniversary', 'promotion', 'just hired!', 'treat yo self'].sample
+      })
+
+      Review.create(
+        res_id: res.id,
+        user_id: res.user_id,
+        comment: Faker::Restaurant.review,
+        overall: (1..5).to_a.sample,
+        food: (1..5).to_a.sample,
+        service: (1..5).to_a.sample,
+        ambience: (1..5).to_a.sample,
+      )
   end
 
   5.times do
@@ -186,7 +302,7 @@ ActiveRecord::Base.transaction do
     
   end
 
-  10.times do
+  5.times do
     min_date = Time.now - 3.years
     max_date = Time.now 
     
