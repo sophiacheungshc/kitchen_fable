@@ -34,6 +34,25 @@ class Search extends React.Component {
 
     }
 
+    // checkSuggestions(){
+    //     this.props.searchRestaurants(this.state.keyword)
+    //         .then(() => this.props.history.push({
+    //             pathname: '/restaurants',
+    //             search: `?search=${this.state.keyword}`
+    //         }))
+    // }
+
+    // debounceEvent(callback, time) {
+    //     let interval;
+    //     return (...args) => {
+    //         clearTimeout(interval);
+    //         interval = setTimeout(() => {
+    //             interval = null;
+    //             callback(...args);
+    //         }, time);
+    //     };
+    // };
+
 
     render(){
         if (this.props.location.pathname === '/') {
@@ -55,6 +74,7 @@ class Search extends React.Component {
                         <span className="search-type">
                             <div className="search-icon"></div>
                             <input type="text" value={this.state.keyword} onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
+                            {/* {this.checkSuggestions()} */}
                         </span>
                         <button type="submit" className="search-submit" >Find a Table</button>
                     </form>
