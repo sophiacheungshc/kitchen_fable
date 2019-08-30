@@ -67,7 +67,7 @@ class ReviewIndex extends React.Component {
                     <h4 className="reviews-eaten">Reviews can only be made by diners who have eaten at this restaurant</h4>
                     <span className="review-stars-container">
                         <div className="review-stars overall" style={style}></div>
-                        <h5> {overall}  based on recent ratings</h5>
+                        <h5> {Math.round(10 * overall) / 10}  based on recent ratings</h5>
                     </span>
                     <div className="avg-ratings">
                         <div className="avg-rating-col">
