@@ -3,21 +3,21 @@
     position: relative;
   }
 
-  .navbar {
-   position: relative;
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   padding-left: 1.25rem;
-   padding-right: 1.25rem;
-  margin-bottom: 10px;
-   height: max-content;
- }
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  height: 60px;
+}
  
  .nav-left {
    display: flex;
    position: relative;
    height: max-content;
+   margin-top: 6px;
  }
 
   span#logo {
@@ -105,7 +105,8 @@ button#sign-up {
     position: absolute;
     display: flex;
     flex-direction: row;
-    right: 1%
+    right: 1%;
+    margin-top: 2px;
 }
 
 

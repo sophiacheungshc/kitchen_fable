@@ -17,7 +17,9 @@
  button:focus {
    outline: 0;
 }
-
+body {
+   margin: 0;
+}
 .main-body {
    -webkit-font-smoothing: antialiased;
    font-size: 100%;

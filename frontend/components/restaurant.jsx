@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Map from './map';
 import ReservationContainer from './reservation_container';
 import ReviewIndex from './review_index';
+import LoadingIcon from './loading';
 
 class Restaurant extends React.Component {
     constructor(props){
@@ -63,7 +64,9 @@ class Restaurant extends React.Component {
     }
 
     render(){
-        if (this.props.restaurant.id === undefined ) {
+        if (this.props.loading) {
+            return <LoadingIcon />
+        } else if (this.props.restaurant.id === undefined ) {
             return(<div></div>);
         }
 

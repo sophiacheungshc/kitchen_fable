@@ -11,7 +11,8 @@ const mSP = (state) => {
         reviews: state.entities.reviews,
         reservations: state.entities.reservations,
         users: state.entities.users,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        loading: state.ui.loading
     });
 };
 
