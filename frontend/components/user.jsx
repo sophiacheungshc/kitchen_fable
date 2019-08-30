@@ -11,11 +11,8 @@ class User extends React.Component {
         this.all_saved = this.all_saved.bind(this);
     }
 
-    componentWillMount(){
-        document.getElementsByClassName('navbar')[0].scrollIntoView();
-    }
-    
     componentDidMount(){
+        document.getElementsByClassName('navbar')[0].scrollIntoView();
         this.props.fetchAllRes(this.props.currentUserId);
         this.props.fetchFavs(this.props.currentUserId);
     }

@@ -16,11 +16,8 @@ class Restaurant extends React.Component {
 
     }
 
-    componentWillMount() {
-        document.getElementsByClassName('navbar')[0].scrollIntoView();
-    }
-
     componentDidMount(){
+        document.getElementsByClassName('navbar')[0].scrollIntoView();
         this.props.fetchRestaurant(this.props.match.params.restId);
     }
 
