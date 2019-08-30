@@ -5,7 +5,8 @@ import RestaurantIndex from './restaurant_index';
 
 const mSP = (state) => {
     return ({
-        restaurants: Object.values(state.entities.restaurants)
+        restaurants: Object.values(state.entities.restaurants),
+        loading: state.ui.loading.isLoading
     });
 };
 
