@@ -20,18 +20,10 @@ class Search extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        //check for empty strings
-        // if (this.state.keyword.length === 0 || this.state.keyword.trim().length === 0) {
-        //     this.props.history.push('/restaurants');
-        // }
-        this.props.searchRestaurants(this.state.keyword)
-            .then(() => this.props.history.push({
+        this.props.history.push({
                 pathname: '/restaurants',
                 search: `?search=${this.state.keyword}`
-            }))
-            // .then(() => this.setState({ keyword: '' }))
-            // .then(() => this.props.history.push("/restaurants"));
-
+        });
     }
 
     // checkSuggestions(){
