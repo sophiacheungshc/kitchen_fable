@@ -35,7 +35,9 @@ export const fetchRestaurant = (id) => (dispatch) => {
 };
 
 
-export const searchRestaurants = (keyword) => (dispatch) => (
-    RestAPI.searchRestaurants(keyword)
+export const searchRestaurants = (keyword) => (dispatch) => {
+    dispatch(loadRestaurants());
+
+    return RestAPI.searchRestaurants(keyword)
         .then( searchResult => (dispatch(receiveAllRestaurants(searchResult))))
-);
+};

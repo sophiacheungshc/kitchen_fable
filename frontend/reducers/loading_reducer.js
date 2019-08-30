@@ -1,16 +1,15 @@
-import {
-    LOAD_RESTAURANTS
-} from '../actions/restaurant_actions';
+import { LOAD_RESTAURANTS } from '../actions/restaurant_actions';
+import { RECEIVE_ALL_RESTAURANTS, RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 
-const initialState = {
-    isLoading: false
-};
-
-const LoadingReducer = (state = initialState, action) => {
+const LoadingReducer = (state = false, action) => {
     Object.freeze(state);
     switch (action.type) {
         case LOAD_RESTAURANTS:
-            return Object.assign({}, {isLoading: true});
+            return true;
+        case RECEIVE_ALL_RESTAURANTS:
+            return false;
+        case RECEIVE_RESTAURANT:
+            return false;
         default:
             return state;
     }

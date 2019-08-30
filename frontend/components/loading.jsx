@@ -1,21 +1,12 @@
 import React from 'react';
 
 const LoadingIcon = () => (
-    <div className='loading-page'>
-        <div className="la-pacman la-3x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <br />
-        <div className='loading-text'> bon appétit </div>
+    <div className="lds-roller">
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
     </div>
-
-
 );
 
 export default LoadingIcon;
