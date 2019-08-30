@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { searchRestaurantNames, searchRestaurants } from './util/restaurant_api_util';
+
 // import {fetchAllRestaurants, fetchRestaurant} from './actions/restaurant_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     // window.dispatch = store.dispatch;
     // window.fetchAllRestaurants = fetchAllRestaurants;
-    // window.fetchRestaurant = fetchRestaurant;
+    window.searchRestaurantNames = searchRestaurantNames;
+    window.searchRestaurants = searchRestaurants;
     ReactDOM.render(<Root store={store}/>, root);
 });

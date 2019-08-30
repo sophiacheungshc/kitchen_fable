@@ -18,3 +18,12 @@ export const searchRestaurants = keyword => (
         data: { keyword }
     })
 );
+
+export const searchRestaurantNames = (name) => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/restaurants',
+        data: { name }
+    })
+);
+

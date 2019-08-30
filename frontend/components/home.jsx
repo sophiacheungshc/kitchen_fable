@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import SearchContainer from './search_container';
+import Search from './search';
 import { connect } from 'react-redux';
 import { searchRestaurants } from '../actions/restaurant_actions';
 
@@ -31,7 +31,7 @@ class Home extends React.Component {
                     <div className='slide1'></div>
                     <div className='slide2'></div>
                     <div className='slide3'></div>
-                    <SearchContainer />
+                    <Search />
                 </div>
 
                 {/* <h3 className="featured-head">Top Cuisines</h3>

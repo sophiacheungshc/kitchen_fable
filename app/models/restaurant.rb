@@ -58,4 +58,8 @@ class Restaurant < ApplicationRecord
                 .or(Restaurant.where("lower(cuisine) like ?", "%#{keyword.downcase}%"))
     end
 
+    def self.find_by_name(name)
+        Restaurant.where("lower(name) like ?", "%#{name.downcase}%")
+    end
+
 end

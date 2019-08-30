@@ -1,6 +1,6 @@
 import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
-import SearchContainer from './search_container';
+import Search from './search';
 import LoadingIcon from './loading';
 
 
@@ -40,7 +40,7 @@ class RestaurantIndex extends React.Component {
     render(){
         return(
             <>
-                <SearchContainer />
+                <Search />
                 <div className="rest-index-container">
                     {/* <div className="searched-for">You searched for "{this.props.location.search.slice(8)}"</div> */}
                     {this.restaurant_index()}
