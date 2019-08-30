@@ -12,6 +12,7 @@ class RestaurantIndex extends React.Component {
     }
 
     componentWillMount(){
+        document.getElementsByClassName('navbar')[0].scrollIntoView();
         this.props.searchRestaurants(this.props.location.search.slice(8).split('%20').join(' '));
     }
 
