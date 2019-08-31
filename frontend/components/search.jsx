@@ -22,9 +22,9 @@ class Search extends React.Component {
                 [field]: query
             }, () => {
                 searchRestaurantNames(this.state.keyword)
-                    .then((results) => {
+                    .then((result) => {
                         this.setState({ 
-                            suggestions: results.map(el => el['name'])
+                            suggestions: result
                         }, () => console.log(this.state.suggestions))
                     })
                 });
