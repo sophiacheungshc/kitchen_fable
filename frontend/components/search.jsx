@@ -13,6 +13,7 @@ class Search extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showSuggestions = this.showSuggestions.bind(this);
         this.debounce = this.debounce.bind(this);
+        this.timeOut = null;
     }
 
 
@@ -20,15 +21,7 @@ class Search extends React.Component {
         return (e) => {
             let query = e.target.value;
             this.setState({[field]: query}, 
-            this.debounce(function(){
-                searchRestaurantNames(this.state.keyword)
-                    .then((result) => {
-                        this.setState({ 
-                            suggestions: result
-                        }, () => console.log(this.state.suggestions))
-                    })
-                }, 1000)
-            );
+            this.debounce)
         }
     }
 
@@ -46,17 +39,18 @@ class Search extends React.Component {
         ))
     }
 
-    debounce(func, wait) {
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            var later = function () {
-                timeout = null;
-                func.apply(context, args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+    debounce() {
+        clearTimeout(this.timeout);
+
+        this.timeout = setTimeout(() => {
+            searchRestaurantNames(this.state.keyword)
+                .then((result) => {
+                    console.log('in search')
+                    this.setState({
+                        suggestions: result
+                    }, () => console.log(this.state.suggestions))
+                })
+        }, 1000);
     };
 
 
