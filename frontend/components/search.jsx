@@ -33,7 +33,14 @@ class Search extends React.Component {
     }
 
     showSuggestions(){
-        return this.state.suggestions.result.map( (name, idx) => (
+        let suggestArr;
+        if (this.state.suggestions.result.length > 5) {
+            debugger
+            suggestArr = this.state.suggestions.result.slice(0, 5);
+        } else {
+            suggestArr = this.state.suggestions.result;
+        }
+        return suggestArr.map( (name, idx) => (
             <li key={idx} onClick={() => {
                 document.getElementsByClassName('suggest-dropdown')[0].classList.add('hidden');
                 this.setState({ keyword: name });
