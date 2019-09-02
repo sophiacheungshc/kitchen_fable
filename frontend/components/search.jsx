@@ -12,7 +12,7 @@ class Search extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showSuggestions = this.showSuggestions.bind(this);
-        this.debounce = this.debounce.bind(this);
+        this.debouncedSuggest = this.debouncedSuggest.bind(this);
         this.timeOut = null;
     }
 
@@ -20,9 +20,7 @@ class Search extends React.Component {
     update(field) {
         return (e) => {
             let query = e.target.value;
-            this.setState({[field]: query}, 
-            this.debounce)
-        }
+            this.setState({[field]: query}, this.debouncedSuggest)};
     }
 
     handleSubmit(e){
@@ -34,22 +32,19 @@ class Search extends React.Component {
     }
 
     showSuggestions(){
-        return this.state.suggestions.map( (name) => (
-                <li onClick = {() => this.update('keyword')}>{name}</li>
+        return this.state.suggestions.result.map( (name, idx) => (
+            <li key={idx} onClick={() => this.setState({ keyword: name })}>{name}</li>
         ))
     }
 
-    debounce() {
+    debouncedSuggest() {
         clearTimeout(this.timeout);
 
         this.timeout = setTimeout(() => {
             searchRestaurantNames(this.state.keyword)
-                .then((result) => {
-                    console.log('in search')
-                    this.setState({
-                        suggestions: result
-                    }, () => console.log(this.state.suggestions))
-                })
+            .then((result) => {
+                this.setState({ suggestions: result })
+            })
         }, 1000);
     };
 
@@ -62,7 +57,7 @@ class Search extends React.Component {
                     <span className="search-type">
                         <div className="search-icon"></div>
                         <input type="text" onChange={(e) => this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
-                        {/* {this.state.suggestions.length > 0 ? this.showSuggestions() : null} */}
+                        <ul className="suggest-dropdown">{this.state.suggestions.result ? this.showSuggestions() : null}</ul>
                     </span>
                     <button type="submit "className="search-submit">Let's go</button>
                 </form>
@@ -75,7 +70,7 @@ class Search extends React.Component {
                         <span className="search-type">
                             <div className="search-icon"></div>
                             <input type="text" value={this.state.keyword} onChange={this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
-                            {/* {this.state.suggestions.length > 0 ? this.showSuggestions() : null} */}
+                            <ul className="suggest-dropdown">{this.state.suggestions.result ? this.showSuggestions() : null}</ul>
                         </span>
                         <button type="submit" className="search-submit" >Find a Table</button>
                     </form>
