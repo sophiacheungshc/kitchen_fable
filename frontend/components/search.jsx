@@ -19,6 +19,7 @@ class Search extends React.Component {
 
     update(field) {
         return (e) => {
+            document.getElementsByClassName('suggest-dropdown')[0].classList.remove('hidden');
             let query = e.target.value;
             this.setState({[field]: query}, this.debouncedSuggest)};
     }
@@ -33,7 +34,10 @@ class Search extends React.Component {
 
     showSuggestions(){
         return this.state.suggestions.result.map( (name, idx) => (
-            <li key={idx} onClick={() => this.setState({ keyword: name })}>{name}</li>
+            <li key={idx} onClick={() => {
+                document.getElementsByClassName('suggest-dropdown')[0].classList.add('hidden');
+                this.setState({ keyword: name });
+            }}>{name}</li>
         ))
     }
 
