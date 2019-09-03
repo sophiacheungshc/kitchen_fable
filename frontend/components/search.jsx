@@ -34,8 +34,8 @@ class Search extends React.Component {
 
     showSuggestions(){
         let suggestArr;
+        //for when there are a lot of suggestions
         if (this.state.suggestions.result.length > 5) {
-            debugger
             suggestArr = this.state.suggestions.result.slice(0, 5);
         } else {
             suggestArr = this.state.suggestions.result;
