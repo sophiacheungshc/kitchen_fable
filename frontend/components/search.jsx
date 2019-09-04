@@ -21,7 +21,15 @@ class Search extends React.Component {
         return (e) => {
             document.getElementsByClassName('suggest-dropdown')[0].classList.remove('hidden');
             let query = e.target.value;
-            this.setState({[field]: query}, this.debouncedSuggest)};
+            if (query.length > 0) {
+                this.setState({[field]: query}, this.debouncedSuggest);
+            } else {
+                this.setState({ 
+                    [field]: query,
+                    suggestions : []
+                })
+            }
+        };
     }
 
     handleSubmit(e){
@@ -55,8 +63,8 @@ class Search extends React.Component {
             searchRestaurantNames(this.state.keyword)
             .then((result) => {
                 this.setState({ suggestions: result })
-            })
-        }, 1000);
+            });
+        }, 500);
     };
 
 
