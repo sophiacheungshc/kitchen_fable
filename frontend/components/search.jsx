@@ -75,7 +75,7 @@ class Search extends React.Component {
           
                     <span className="search-type">
                         <div className="search-icon"></div>
-                        <input type="text" onChange={(e) => this.update('keyword')} placeholder="Location, Restaurant, or Cuisine" />
+                        <input type="text" onChange={this.update('keyword')} value={this.state.keyword} placeholder="Location, Restaurant, or Cuisine" />
                         <ul className="suggest-dropdown">{this.state.suggestions.result ? this.showSuggestions() : null}</ul>
                     </span>
                     <button type="submit "className="search-submit">Let's go</button>

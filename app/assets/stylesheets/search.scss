@@ -122,20 +122,24 @@ input:focus{
 
 .suggest-dropdown {
     position: absolute;
-    top: 75px;
+    top: 85px;
     display: flex;
     flex-direction: column;
     width: 576px;
     font-size: 18px;
     background-color: white;
     z-index: 2;
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.10);
-
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.1);
+}
+.search-container .suggest-dropdown {
+    top: 75px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.3);
 }
 
 .suggest-dropdown > * {
     border-bottom: 1px solid whitesmoke;
     padding: 1rem 3rem;
+    text-align: start;
 }
 
 .suggest-dropdown > *:hover {
