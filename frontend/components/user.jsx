@@ -100,32 +100,32 @@ class User extends React.Component {
         let mid = Math.floor(arr.length/2);
         let left = arr.slice(0, mid);
         let right = arr.slice(mid);
+        let comparator;
 
-        return desc ? this.merge(this.sortDates(left, desc), this.sortDates(right, desc)) :
-            this.otherMerge(this.sortDates(left, desc), this.sortDates(right, desc));
-    }
-
-    merge(left, right){
-        let result = [];
-
-        while (left.length && right.length){
-            if ((Date.parse(left[0].date) < (Date.parse(right[0].date)))) {
-                result.push(left.shift());
-            } else {
-                result.push(right.shift());
+        if (desc) {
+            comparator = function(left, right) {
+                return left > right ? -1 : 1;
+            }
+        } else {
+            comparator = function (left, right) {
+                return left < right ? -1 : 1;
             }
         }
 
-        return result.concat(left).concat(right);
+        return this.merge(this.sortDates(left, desc), this.sortDates(right, desc), comparator);
     }
-    otherMerge(left, right){
+
+    merge(left, right, comparator){
         let result = [];
 
         while (left.length && right.length){
-            if ((Date.parse(left[0].date) > (Date.parse(right[0].date)))) {
-                result.push(left.shift());
-            } else {
-                result.push(right.shift());
+            switch (comparator(Date.parse(left[0].date), Date.parse(right[0].date))){
+                case -1:
+                    result.push(left.shift());
+                    break;
+                case 1:
+                    result.push(right.shift());
+                    break;
             }
         }
 
