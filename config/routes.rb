@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'notifications/index'
+    get 'notifications/create'
+    get 'notifications/destroy'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show]
