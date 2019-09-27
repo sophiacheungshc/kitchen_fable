@@ -20,25 +20,3 @@ const mDP = (dispatch) => ({
 });
 
 export default connect(mSP,mDP)(User);
-
-// fetch user
-// user show
-// show json jbuilder
-
-// user info
-// fav restaurants + reserved restaurants
-// favorites
-// reservations
-
-// receiveUser payload
-
-// users, restaurants, favorites, resrvations
-
-// action.payload.restaurants
-
-// user container
-
-// user: state.entities.users[state.session.id]
-// restaurants: state.entities.restaurants
-// favorites: Object.values(state.entities.favorites)
-// reservations: Object.values(state.entities.resrvations)

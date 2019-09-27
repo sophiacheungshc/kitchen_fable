@@ -1,7 +1,7 @@
 import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css';
-
+import { toast } from 'react-toastify';
 
 class Reservation extends React.Component {
 
@@ -39,7 +39,12 @@ class Reservation extends React.Component {
         let result = Object.assign({}, this.state);
         result.date = this.state.date.toISOString().substring(0, 10);
         this.props.createRes(result).then(() => {
-            this.props.history.push(`/user`)
+            //successful reservation toast message
+            toast(`Hooray! Your table for ${this.state.party} has been successfully 
+                reserved for ${this.state.date.toString().slice(0, 15)} 
+                at ${this.state.time}.`);
+
+            this.props.history.push(`/user`);
         });
     }
 
@@ -66,7 +71,7 @@ class Reservation extends React.Component {
             )
         } else {
             userCheck = (
-                <button className="reserve-form-submit" onClick={this.handleSubmit}>Find a Table</button>
+                <button className="reserve-form-submit" onClick={this.handleSubmit}>Book a Table</button>
             )
         }
 

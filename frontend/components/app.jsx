@@ -7,9 +7,12 @@ import Home from './home';
 import RestaurantIndexContainer from './restaurant_index_container';
 import RestaurantContainer from './restaurant_container';
 import UserContainer from './user_container';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
     <div className="main-body">
+        <ToastContainer autoClose={4000}/>
         <Modal />
         <header>
             <GreetingContainer />

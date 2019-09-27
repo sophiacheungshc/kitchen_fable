@@ -54,7 +54,7 @@ class User extends React.Component {
             }
         });
 
-        all_upcoming = this.sortDates(all_upcoming, true);
+        all_upcoming = this.sortDates(all_upcoming, false);
 
         if (all_upcoming.length !== 0){
             return all_upcoming.map((res, idx) => (
@@ -78,7 +78,7 @@ class User extends React.Component {
             }
         });
 
-        all_past = this.sortDates(all_past, false);
+        all_past = this.sortDates(all_past, true);
 
         if (all_past.length !== 0) {
             return all_past.map((res, idx) => (
