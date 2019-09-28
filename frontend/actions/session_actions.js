@@ -4,9 +4,9 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
-export const receiveUser = (currentUser) => ({
+export const receiveUser = (payload) => ({
     type: RECEIVE_USER,
-    currentUser
+    payload
 });
 
 export const logoutUser = () => ({

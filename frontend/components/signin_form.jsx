@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 class SignInForm extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class SignInForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
-
+        this.notify = this.notify.bind(this);
     }
 
     update(field) {
@@ -23,9 +24,36 @@ class SignInForm extends React.Component {
         this.props.clearErrors();
     }
 
+    notify(){
+        debugger
+        const { reservations } = this.props;
+        if (reservations.length) {
+            reservations.forEach(res => {
+                //date difference divided by number of millisecs = total number of days between 2 dates
+                let dateDiff = Math.ceil(((new Date(res.date)) - (new Date())) / (1000 * 60 * 60 * 24));
+                if (dateDiff >= 0 && dateDiff <= 5) {
+                    switch (dateDiff) {
+                        case 0:
+                            dateDiff = 'today';
+                            break;
+                        case 1:
+                            dateDiff = 'tomorrow';
+                            break;
+                        default:
+                            dateDiff = `in ${dateDiff} days`;
+                    }
+                    toast(`You have an upcoming reservation ${dateDiff}.`);
+                }
+            })        
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state).then(this.props.closeModal);
+        const { closeModal, processForm } = this.props;
+        processForm(this.state)
+            .then(this.notify)
+            .then(closeModal)
     }
 
     async demo(e) {

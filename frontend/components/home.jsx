@@ -3,9 +3,14 @@ import { withRouter } from 'react-router-dom';
 import Search from './search';
 import { connect } from 'react-redux';
 import { searchRestaurants } from '../actions/restaurant_actions';
+import { toast } from 'react-toastify';
+
 
 const mDP = (dispatch) => ({
     searchRestaurants: keyword => dispatch(searchRestaurants(keyword))
+});
+const mSP = (state) => ({
+    reservations: Object.values(state.entities.reservations),
 });
 
 class Home extends React.Component { 
@@ -24,6 +29,25 @@ class Home extends React.Component {
     }
 
     render(){
+        // if (this.props.reservations.length > 0) {
+        //     this.props.reservations.forEach(res => {
+        //         //date difference divided by number of millisecs = total number of days between 2 dates
+        //         let dateDiff = Math.ceil(((new Date(res.date)) - (new Date())) / (1000 * 60 * 60 * 24));
+        //         if (dateDiff >= 0 && dateDiff <= 5) {
+        //             switch (dateDiff) {
+        //                 case 0:
+        //                     dateDiff = 'today';
+        //                     break;
+        //                 case 1:
+        //                     dateDiff = 'tomorrow';
+        //                     break;
+        //                 default:
+        //                     dateDiff = `in ${dateDiff} days`;
+        //             }
+        //             toast(`You have an upcoming reservation ${dateDiff}.`);
+        //         }
+        //     })
+        // }
         return(
             <>
                 <div className='carousel'>
@@ -92,4 +116,4 @@ class Home extends React.Component {
 };
 
 
-export default withRouter(connect(null, mDP)(Home));
+export default withRouter(connect(mSP, mDP)(Home));
