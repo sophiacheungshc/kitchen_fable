@@ -33,7 +33,6 @@ class Search extends React.Component {
     }
 
     handleSubmit(e){
-        // debugger
         e.preventDefault();
         this.props.history.push({
                 pathname: '/restaurants',

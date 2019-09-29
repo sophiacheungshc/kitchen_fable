@@ -11,6 +11,8 @@ const mSP = (state) => {
         errors: state.errors.session,
         formType: 'Sign In',
         navLink: <Link to="/signup">Create an account</Link>,
+        // connecting the reservation data (along with restaurant names) 
+        // that was put in global state to component's props
         reservations: Object.values(state.entities.reservations),
         restaurants: state.entities.restaurants
     };

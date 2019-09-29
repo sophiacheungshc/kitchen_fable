@@ -26,10 +26,12 @@ class SignInForm extends React.Component {
 
     notify(){
         const { reservations, restaurants } = this.props;
+        //if there are any reservations under the logged in user, go through them
         if (reservations.length) {
             reservations.forEach((res, idx) => {
                 //date difference divided by number of millisecs = total number of days between 2 dates
                 let dateDiff = Math.ceil(((new Date(res.date)) - (new Date())) / (1000 * 60 * 60 * 24));
+                //only want to notify user about reservations that are 1-5 days away
                 if (dateDiff >= 0 && dateDiff <= 5) {
                     switch (dateDiff) {
                         case 0:
@@ -53,6 +55,7 @@ class SignInForm extends React.Component {
         const { closeModal, processForm } = this.props;
         processForm(this.state)
             .then(closeModal)
+            //check for notifications about upcoming reservations upon sign in
             .then(this.notify)
     }
 

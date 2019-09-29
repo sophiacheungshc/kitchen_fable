@@ -7,6 +7,8 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
+      # after successful log in, grab all associated reservations & respective 
+      # restaurant names (for a more informative notification)
       @reservations = @user.reservations
       @restaurants = @reservations.map { |res| Restaurant.find(res.rest_id).name }
       render "api/users/show"

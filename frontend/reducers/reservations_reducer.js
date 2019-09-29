@@ -26,6 +26,7 @@ const ReservationsReducer = (oldState = {}, action) => {
             var oldRes = oldState[action.review.res_id];
             var fixedRes = Object.assign({}, oldRes, { review: null });
             return Object.assign({}, oldState, { [action.review.res_id]: fixedRes });
+        // put user's reservation data in global state upon user log in
         case RECEIVE_USER:
             return Object.assign({}, action.payload.reservations);
         default:
