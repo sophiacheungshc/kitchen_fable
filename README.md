@@ -9,12 +9,14 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 * Frontend: React/Redux
 * [ReactDayPicker API](http://react-day-picker.js.org/)
 * [Google Maps API](https://developers.google.com/maps/documentation/)
+* [React-Toastify API](https://www.npmjs.com/package/react-toastify)
 
 ## Key Features
 * User authentication from frontend to backend ensures that the privacy of personal site use history is secured.
-* Restaurants may be searched by typing in a name, city, or cuisine. 
+* Restaurants may be searched by typing in a name, city, or cuisine; suggestions are shown as input changes. 
 * Signed in users may make reservations for restaurants, specifying the time, date, party size and occasion.
 * Profile page shows history of reservations and saved restaurants.
+* Toast notifications upon log in to remind user of upcoming reservations (within 5 days).
 
 ## Search, Sign-up/Sign-in, Restaurants Index
 * No user log in is required to search and look up restaurants. Just type in a keyword for either name, city, or cuisine in the search bar.
@@ -60,29 +62,43 @@ Kitchen Fable is a single page app inspired by Open Table, which allows users to
 
 ##### Code Snippet - Merge sorting reservation dates
 ```js
-  sortDates(arr){
-      if (arr.length <= 1) return arr;
+  sortDates(arr, desc){
+        if (arr.length <= 1) return arr;
 
-      let mid = Math.floor(arr.length / 2);
-      let left = arr.slice(0, mid);
-      let right = arr.slice(mid);
+        let mid = Math.floor(arr.length/2);
+        let left = arr.slice(0, mid);
+        let right = arr.slice(mid);
+        let comparator;
 
-      return this.merge(this.sortDates(left), this.sortDates(right))
-  }
+        if (desc) {
+            comparator = function(left, right) {
+                return left > right ? -1 : 1;
+            }
+        } else {
+            comparator = function (left, right) {
+                return left < right ? -1 : 1;
+            }
+        }
 
-  merge(left, right){
-      let result = [];
+        return this.merge(this.sortDates(left, desc), this.sortDates(right, desc), comparator);
+    }
 
-      while (left.length && right.length) {
-          if ((Date.parse(left[0].date) < (Date.parse(right[0].date)))) {
-              result.push(left.shift());
-          } else {
-              result.push(right.shift());
-          }
-      }
+    merge(left, right, comparator){
+        let result = [];
 
-      return result.concat(left).concat(right);
-  }
+        while (left.length && right.length){
+            switch (comparator(Date.parse(left[0].date), Date.parse(right[0].date))){
+                case -1:
+                    result.push(left.shift());
+                    break;
+                case 1:
+                    result.push(right.shift());
+                    break;
+            }
+        }
+
+        return result.concat(left).concat(right);
+    }
 ```
 
 
