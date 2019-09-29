@@ -33,6 +33,9 @@ class SignInForm extends React.Component {
                 let dateDiff = Math.ceil(((new Date(res.date)) - (new Date())) / (1000 * 60 * 60 * 24));
                 //only want to notify user about reservations that are 1-5 days away
                 if (dateDiff >= 0 && dateDiff <= 5) {
+                    //correlate delay time of toast to how far away the reservation is, so that
+                    //they appear in order of soonest to furthest
+                    let delay = (dateDiff * 1000) + 1000;
                     switch (dateDiff) {
                         case 0:
                             dateDiff = 'today';
@@ -44,7 +47,7 @@ class SignInForm extends React.Component {
                             dateDiff = `in ${dateDiff} days`;
                     }
                     toast(`Reminder: You have an upcoming reservation ${dateDiff} 
-                        at ${restaurants[idx]}.`, { delay: 1000, className: 'toasty' });
+                        at ${restaurants[idx]}.`, { delay: delay, className: 'toasty' });
                 }
             })        
         }
