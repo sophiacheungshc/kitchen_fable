@@ -28,10 +28,6 @@ class Restaurant < ApplicationRecord
         foreign_key: :rest_id,
         class_name: :Favorite
 
-    has_many :notifications,
-        foreign_key: :rest_id,
-        class_name: :Notification
-
     has_many :reviews,
         through: :reservations,
         source: :review

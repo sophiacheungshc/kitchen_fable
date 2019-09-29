@@ -45,14 +45,6 @@ ActiveRecord::Schema.define(version: 2019_09_26_224647) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer "rest_id", null: false
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["rest_id"], name: "index_notifications_on_rest_id"
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "rest_id", null: false
