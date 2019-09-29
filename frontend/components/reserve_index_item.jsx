@@ -28,7 +28,7 @@ class ReservationIndexItem extends React.Component {
         this.props.cancelRes(this.props.reservation.id);
         //successful cancellation toast message
         toast(`Your reservation at ${this.props.restaurant.name} on 
-            ${this.props.reservation.date} has been cancelled.`);
+            ${this.props.reservation.date} has been cancelled.`, { className: 'toasty' });
     }
 
     checkCancel(){

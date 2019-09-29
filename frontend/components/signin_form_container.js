@@ -11,7 +11,8 @@ const mSP = (state) => {
         errors: state.errors.session,
         formType: 'Sign In',
         navLink: <Link to="/signup">Create an account</Link>,
-        reservations: Object.values(state.entities.reservations)
+        reservations: Object.values(state.entities.reservations),
+        restaurants: state.entities.restaurants
     };
 };
 

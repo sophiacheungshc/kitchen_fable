@@ -39,9 +39,9 @@ class Reservation extends React.Component {
         result.date = this.state.date.toISOString().substring(0, 10);
         this.props.createRes(result).then(() => {
             //successful reservation toast message
-            toast(`Hooray! Your table for ${this.state.party} has been successfully 
+            toast(`🗓 Hooray! Your table for ${this.state.party} has been successfully 
                 reserved for ${this.state.date.toString().slice(0, 15)} 
-                at ${this.state.time}.`);
+                at ${this.state.time}.`, { className: 'toasty' });
 
             this.props.history.push(`/user`);
         });

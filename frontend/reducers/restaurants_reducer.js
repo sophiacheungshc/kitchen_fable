@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_RESTAURANTS, RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 import { RECEIVE_FAV, DESTROY_FAV } from '../actions/favorite_actions';
+import { RECEIVE_USER } from '../actions/session_actions';
 
 const RestaurantsReducer  = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -12,6 +13,8 @@ const RestaurantsReducer  = (oldState = {}, action) => {
             return Object.assign({}, oldState, { userSaved: true });
         case DESTROY_FAV:
             return Object.assign({}, oldState, { userSaved: false });
+        case RECEIVE_USER:
+            return Object.assign({}, action.payload.restaurants);
         default:
             return oldState;
     }

@@ -25,10 +25,9 @@ class SignInForm extends React.Component {
     }
 
     notify(){
-        debugger
-        const { reservations } = this.props;
+        const { reservations, restaurants } = this.props;
         if (reservations.length) {
-            reservations.forEach(res => {
+            reservations.forEach((res, idx) => {
                 //date difference divided by number of millisecs = total number of days between 2 dates
                 let dateDiff = Math.ceil(((new Date(res.date)) - (new Date())) / (1000 * 60 * 60 * 24));
                 if (dateDiff >= 0 && dateDiff <= 5) {
@@ -42,7 +41,8 @@ class SignInForm extends React.Component {
                         default:
                             dateDiff = `in ${dateDiff} days`;
                     }
-                    toast(`You have an upcoming reservation ${dateDiff}.`);
+                    toast(`Reminder: You have an upcoming reservation ${dateDiff} 
+                        at ${restaurants[idx]}.`, { delay: 1000, className: 'toasty' });
                 }
             })        
         }
@@ -52,8 +52,8 @@ class SignInForm extends React.Component {
         e.preventDefault();
         const { closeModal, processForm } = this.props;
         processForm(this.state)
-            .then(this.notify)
             .then(closeModal)
+            .then(this.notify)
     }
 
     async demo(e) {
